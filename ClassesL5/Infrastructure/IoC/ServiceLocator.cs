@@ -1,7 +1,8 @@
 ﻿using ActionImplementation;
 using InterfaceActions.Actions;
 using Ninject;
-
+using Repository;
+using Repository.Interfaces;
 
 
 namespace Infrastructure.IoC
@@ -14,9 +15,8 @@ namespace Infrastructure.IoC
         {
             Kernel.Bind<IDisplayInfoAction>().To<DisplayAll>();
             Kernel.Bind<ICompany>().To<ComapnyInfo>();
-            Kernel.Bind<IProject>().To<ProjectInfo>();
             Kernel.Bind<IContractorDisplay>().To<DisplayImportantInfo>();
-            //Kernel.Bind<>
+            Kernel.Bind<IPersonRepository>().To<PersonRepository>();
         }
 
         public static T Get<T>()
