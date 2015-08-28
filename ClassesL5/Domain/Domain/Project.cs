@@ -4,7 +4,7 @@ namespace Domain.Domain
 {
     public class Project
     {
-public Project(int projectId, string projectName, string decription)
+        public Project(int projectId, string projectName, string decription)
         {
             //WorkerList = workerList;
             ProjectName = projectName;
@@ -22,7 +22,6 @@ public Project(int projectId, string projectName, string decription)
         public int ProjectId { get; private set; }
         public string ProjectName { get; private set; }
         public string ProjectDescription { get; private set; }
-
 
 
         public void DisplayAll()

@@ -7,7 +7,6 @@ namespace Repository
 {
     public class PersonRepository : Repository, IPersonRepository
     {
-
         public void AddPerson(IEnumerable<Person> personsList)
         {
             using (var transaction = _session.BeginTransaction())
@@ -24,10 +23,9 @@ namespace Repository
                 }
                 catch (Exception ex)
                 {
-                    
+                    Logger.Logger.AddToLog("PersonRepository | AddPerson | {0}", ex);
                     transaction.Rollback();
                 }
-                
             }
         }
 
@@ -47,7 +45,7 @@ namespace Repository
                 }
                 catch (Exception ex)
                 {
-
+                    Logger.Logger.AddToLog("PersonRepository | UpdatePerson | {0}", ex);
                     transaction.Rollback();
                 }
             }
@@ -66,10 +64,9 @@ namespace Repository
                 }
                 catch (Exception ex)
                 {
-
+                    Logger.Logger.AddToLog("PersonRepository | DeletePerson | {0}", ex);
                     transaction.Rollback();
                 }
-                
             }
         }
     }

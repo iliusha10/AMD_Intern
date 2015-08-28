@@ -15,16 +15,16 @@ namespace ClassesL5
         private static readonly ContractorFactory ContractorFactory;
         private static readonly PersonFactory PersonFactory;
         private static readonly IPersonRepository PersonRepository;
-	private static readonly InternFactory InternFactory;
+        private static readonly InternFactory InternFactory;
         private static readonly EmployeeFactory EmployeeFactory;
         private static readonly ProjectFactory ProjectFactory;
 
         static Program()
         {
             ServiceLocator.RegisterAll();
-	    EmployeeFactory = ServiceLocator.Get<EmployeeFactory>();
-ProjectFactory = ServiceLocator.Get<ProjectFactory>();            
-InternFactory = ServiceLocator.Get<InternFactory>();
+            EmployeeFactory = ServiceLocator.Get<EmployeeFactory>();
+            ProjectFactory = ServiceLocator.Get<ProjectFactory>();
+            InternFactory = ServiceLocator.Get<InternFactory>();
             CompanyFactory = ServiceLocator.Get<CompanyFactory>();
             ContractorFactory = ServiceLocator.Get<ContractorFactory>();
             PersonFactory = ServiceLocator.Get<PersonFactory>();
@@ -39,16 +39,14 @@ InternFactory = ServiceLocator.Get<InternFactory>();
 
             for (var i = 0; i < number; i++)
             {
-                 var skills = new Dictionary<string, int>() ; 
-                skills.Add("C#", 80 + i);
-                skills.Add("SQL", 90 + i); 
-                var person = PersonFactory.CreatePersonWSkills(string.Format("Person {0}", i + 1), "Smith", "1990-12-13", skills);
+                var skills = new Dictionary<string, int> {{"C#", 80 + i}, {"SQL", 90 + i}};
+                var person = PersonFactory.CreatePersonWSkills(string.Format("Person {0}", i + 1), "Smith", "1990-12-13",
+                    skills);
                 personsList.Add(person);
             }
             PersonRepository.AddPerson(personsList);
+        }
 
-        } 
-        
         //public static void SaveNewPersons(int number)
         //{
         //    var personsList = new List<Person>();
@@ -64,13 +62,12 @@ InternFactory = ServiceLocator.Get<InternFactory>();
 
         private static void Main(string[] args)
         {
-
             try
             {
                 //decorator pattern
                 Logger.Logger.AddToLog("----Begining of the program-----");
 
-                //AddNewPersons(5);
+                AddNewPersons(5);
                 //PersonRepository.UpdatePerson(15016, "White", "Dude", "1999-1-31");
                 //PersonRepository.UpdatePerson(19022, lname: "White", fname: "Dude");
                 //PersonRepository.UpdatePerson(15015, bdate: "2005-12-12");
@@ -78,28 +75,25 @@ InternFactory = ServiceLocator.Get<InternFactory>();
 
                 Console.ReadLine();
 
-//Proxy
-                var appointment = new DirectorProxy(intern, director);
-                appointment.NewAppontment(DateTime.Today);
-                var appointment2 = new DirectorProxy(contractor, director);
-                appointment2.NewAppontment(DateTime.Today);
-                Console.ReadLine();
+////Proxy
+//                var appointment = new DirectorProxy(intern, director);
+//                appointment.NewAppontment(DateTime.Today);
+//                var appointment2 = new DirectorProxy(contractor, director);
+//                appointment2.NewAppontment(DateTime.Today);
+//                Console.ReadLine();
 
-//observer
-                var hr = new HumanResources();
-                ProjectFactory.Subscribe(director);
-                ProjectFactory.Subscribe(hr);
-                ProjectFactory.CreateProject(1, "Rufus", "Making first project");
-                Console.ReadLine();
+////observer
+//                var hr = new HumanResources();
+//                ProjectFactory.Subscribe(director);
+//                ProjectFactory.Subscribe(hr);
+//                ProjectFactory.CreateProject(1, "Rufus", "Making first project");
+//                Console.ReadLine();
 
-                //TDD
-                var internlist = new List<Intern>();
-                internlist.Add(intern);
-                internlist.Add(intern2);
-                var hiredList = hr.Hire(internlist);
-
-
-
+//                //TDD
+//                var internlist = new List<Intern>();
+//                internlist.Add(intern);
+//                internlist.Add(intern2);
+//                var hiredList = hr.Hire(internlist);
             }
             catch (InternValidationException exc1)
             {
@@ -121,7 +115,7 @@ InternFactory = ServiceLocator.Get<InternFactory>();
             }
             finally
             {
-Logger.Logger.AddToLog("-------The End-------");
+                Logger.Logger.AddToLog("-------The End-------");
                 Debug.WriteLine("Debug: Good luck!");
             }
         }

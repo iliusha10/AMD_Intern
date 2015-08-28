@@ -16,7 +16,7 @@ namespace Infrastructure.IoC
             Kernel.Bind<IDisplayInfoAction>().To<DisplayAll>();
             Kernel.Bind<ICompany>().To<ComapnyInfo>();
             Kernel.Bind<IContractorDisplay>().To<DisplayImportantInfo>();
-Kernel.Bind<IProject>().To<ProjectInfo>();
+            Kernel.Bind<IProject>().To<ProjectInfo>();
             Kernel.Bind<IPersonRepository>().To<PersonRepository>();
         }
 

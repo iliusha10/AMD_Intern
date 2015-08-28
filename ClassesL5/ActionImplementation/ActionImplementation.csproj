@@ -42,6 +42,7 @@
     <Compile Include="DisplayImportantInfo.cs" />
     <Compile Include="CompanyInfo.cs" />
     <Compile Include="DisplayInfoAll.cs" />
+    <Compile Include="ProjectInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

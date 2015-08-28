@@ -62,8 +62,12 @@
       <Name>Domain.Mapping</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{5b502518-6f64-4c68-b0d2-1dcbecdfab85}</Project>
+      <Project>{5B502518-6F64-4C68-B0D2-1DCBECDFAB85}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger\Logger.csproj">
+      <Project>{44E4CD77-848C-4826-B19A-A7C0A68D8C93}</Project>
+      <Name>Logger</Name>
     </ProjectReference>
     <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj">
       <Project>{c95cad52-9159-4052-ad4e-48da61b8c2fe}</Project>

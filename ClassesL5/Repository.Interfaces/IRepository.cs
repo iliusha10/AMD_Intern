@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Domain.Domain;
+﻿using Domain.Domain;
 
 namespace Repository.Interfaces
 {

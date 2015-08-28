@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Bl.SalaryCalculator;
 using Domain.Domain;
+using Domain.Interfaces;
+using Domain.Privileges;
 using InterfaceActions.Actions;
 
 namespace Factories.Factories
@@ -18,8 +20,8 @@ namespace Factories.Factories
         {
             var contractor = new Contractor(fname, lname, bdate, company, workexp, salary);
             OnContractorCreation(contractor);
-Logger.Logger.AddToLog("ContractorFactory|CreateContractor Contractor");
-IPrivileges a = contractor;
+            Logger.Logger.AddToLog("ContractorFactory|CreateContractor Contractor");
+            IPrivileges a = contractor;
             IPrivileges b = new HollidayPrivilege(a);
             IPrivileges d = new SalaryBonusPrivilege(b);
             d.AddPrivilege();

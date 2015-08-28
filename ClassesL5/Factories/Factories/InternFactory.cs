@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using Bl.SalaryCalculator;
 using Domain.Domain;
+using Domain.Interfaces;
+using Domain.Privileges;
 using InterfaceActions.Actions;
 
 namespace Factories.Factories
@@ -22,8 +25,8 @@ IPrivileges a = intern;
             IPrivileges b = new HollidayPrivilege(a);
             IPrivileges d = new SalaryBonusPrivilege(b);
             d.AddPrivilege();
-            var salaryCalculator = new SalaryCalculator();
-            intern.Salary = salaryCalculator.Calculate(intern.Salary, new InternSalaryCalculator());
+            //var salaryCalculator = new SalaryCalculator();
+            //intern.Salary = salaryCalculator.Calculate(intern.Salary, new InternSalaryCalculator());
             return intern;
                
         }

@@ -50,7 +50,7 @@ namespace Domain.Domain
 
         public void DisplayAll()
         {
-Console.WriteLine();
+            Console.WriteLine();
             CompanyAddress adress = CompanyAddress.Address;
             Console.WriteLine("{2} Company {0}: {1} - {3} {4}", CompanyId, CompanyName, Activity, adress.Street,
                 adress.City);

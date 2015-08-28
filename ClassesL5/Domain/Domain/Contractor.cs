@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
+using Domain.Interfaces;
 
 namespace Domain.Domain
 {
     public class Contractor : Person, IPrivileges
     {
         protected readonly double WorkExp;
-        private string contractorCompany = "contractorCompany";
 
         public Contractor(string fname, string lname, string bdate, Company company, double workexp,
             double salary)
@@ -20,14 +19,8 @@ namespace Domain.Domain
             Salary = salary;
         }
 
-        public double Salary { get; private set; }
+        public double Salary { get; set; }
 
-        /*public override string GetCompanyName()
-        {
-            company = "contractorCompany";
-            //Console.WriteLine("Contractor / GetCompanyName()");
-            return company;
-        }*/
 
         public virtual double calcBonus(double salary)
         {
@@ -47,7 +40,7 @@ namespace Domain.Domain
             Console.WriteLine();
         }
 
-public void AddPrivilege()
+        public void AddPrivilege()
         {
             Console.WriteLine("Privileges:");
         }

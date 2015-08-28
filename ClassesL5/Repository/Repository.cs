@@ -1,5 +1,4 @@
-﻿using System.Runtime.Versioning;
-using Domain.Domain;
+﻿using Domain.Domain;
 using NHibernate;
 using Repository.Interfaces;
 

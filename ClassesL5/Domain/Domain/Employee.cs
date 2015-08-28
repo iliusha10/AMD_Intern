@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using Domain.Interfaces;
 
 namespace Domain.Domain
 {
@@ -33,7 +33,7 @@ namespace Domain.Domain
             Console.WriteLine();
         }
 
-public void AddPrivilege()
+        public new void AddPrivilege()
         {
             Console.WriteLine("Privileges:");
         }
@@ -41,7 +41,6 @@ public void AddPrivilege()
         public override bool HasAcces()
         {
             return true;
-            Console.WriteLine();
         }
     }
 }

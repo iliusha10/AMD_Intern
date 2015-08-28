@@ -62,7 +62,7 @@
       <Name>InterfaceActions</Name>
     </ProjectReference>
     <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj">
-      <Project>{C95CAD52-9159-4052-AD4E-48DA61B8C2FE}</Project>
+      <Project>{c95cad52-9159-4052-ad4e-48da61b8c2fe}</Project>
       <Name>Repository.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\Repository\Repository.csproj">

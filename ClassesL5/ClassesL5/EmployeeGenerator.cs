@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Domain.Domain;
 using Factories.Factories;
 using Infrastructure.IoC;

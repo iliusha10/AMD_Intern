@@ -44,9 +44,14 @@
     <Compile Include="Factories\EmployeeFactory.cs" />
     <Compile Include="Factories\PersonFactory.cs" />
     <Compile Include="Factories\InternFactory.cs" />
+    <Compile Include="Factories\ProjectFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{6B4BEA23-60A7-482E-8CB1-94EDF3F54771}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{5B502518-6F64-4C68-B0D2-1DCBECDFAB85}</Project>
       <Name>Domain</Name>
@@ -54,6 +59,10 @@
     <ProjectReference Include="..\InterfaceActions\InterfaceActions.csproj">
       <Project>{D18356E4-7AE1-446E-8267-E736CC3165B2}</Project>
       <Name>InterfaceActions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger\Logger.csproj">
+      <Project>{44E4CD77-848C-4826-B19A-A7C0A68D8C93}</Project>
+      <Name>Logger</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

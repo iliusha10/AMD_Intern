@@ -4,9 +4,8 @@ using System.Linq;
 
 namespace Domain.Domain
 {
-    public class Person:Entity
+    public class Person : Entity
     {
-
         public Person(string fName, string lName, string bdate)
         {
             if (string.IsNullOrWhiteSpace(fName))
@@ -16,7 +15,7 @@ namespace Domain.Domain
 
             FName = fName;
             LName = lName;
-            
+
             try
             {
                 _dateOfBirth = DateTime.Parse(bdate);
@@ -51,13 +50,19 @@ namespace Domain.Domain
 
         [Obsolete]
         protected Person()
-        { }
+        {
+        }
 
-	public virtual bool HasAcces()
+
         public virtual string FName { get; protected set; }
         public virtual string LName { get; protected set; }
         public virtual DateTime _dateOfBirth { get; protected set; }
         public virtual IList<PersonSkills> SkillsList { get; protected set; }
+
+        public virtual bool HasAcces()
+        {
+            return false;
+        }
 
         //public virtual int Age
         //{

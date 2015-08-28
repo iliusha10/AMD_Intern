@@ -1,5 +1,4 @@
 ﻿using Bl.SalaryCalculator;
-using Factories.Factories;
 using NUnit.Framework;
 
 namespace UnitTest
@@ -13,7 +12,7 @@ namespace UnitTest
             double Salary = 1500;
             var salEmpl = new EmployeeSalaryCalculator();
             var actual = salEmpl.Calculate(Salary);
-            Assert.AreEqual(1500 + 300, actual); 
+            Assert.AreEqual(1500 + 300, actual);
         }
     }
 }
