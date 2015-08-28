@@ -48,7 +48,6 @@
     <Compile Include="Domain\Entity.cs" />
     <Compile Include="Domain\HumanResources.cs" />
     <Compile Include="Domain\PersonSkills.cs" />
-    <Compile Include="Domain\WorkerList.cs" />
     <Compile Include="EnumFieldofActivity.cs" />
     <Compile Include="Domain\Intern.cs" />
     <Compile Include="Domain\Person.cs" />

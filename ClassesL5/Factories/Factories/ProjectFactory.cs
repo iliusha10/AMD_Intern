@@ -16,9 +16,9 @@ namespace Factories.Factories
             _displayInfoAction = displayInfoAction;
         }
 
-        public Project CreateProject(int projectId, string name, string decription)
+        public Project CreateProject(Company company, string projectName, string decription)
         {
-            var project = new Project(projectId, name, decription);
+            var project = new Project(company, projectName, decription);
             Logger.Logger.AddToLog("ProjectFactory|CreateProject Project");
             OnProjectCreation(project);
             return project;

@@ -1,59 +1,78 @@
 ﻿using System;
-using Domain.Exceptions;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Domain.Domain
 {
-    public class Company
+    public class Company : Entity
     {
-        public Company(int companyId, string name, FieldOfActivity activity, string street, string city)
+        public Company(string name, FieldOfActivity activity, string address,
+            Dictionary<string, string> projectDictionary)
         {
-            CompanyAddress adress = CompanyAddress.Address;
-            adress.SetCity(city);
-            adress.SetStreet(street);
             CompanyName = name;
             Activity = activity;
-            CompanyId = companyId;
+            Address = address;
+            ProjectList = projectDictionary.Select(x => new Project(this, x.Key, x.Value)).ToList();
+
         }
 
-        public override string ToString()
+        public virtual int CompanyId { get; protected set; }
+        public virtual FieldOfActivity Activity { get; protected set; }
+        public virtual string CompanyName { get; protected set; }
+        public virtual string Address { get; protected set; }
+        public virtual IList<Project> ProjectList { get; protected set; }
+
+        [Obsolete]
+        protected Company()
+        {
+        }
+
+        public virtual string ToString()
         {
             return CompanyName;
         }
 
-        public int CompanyId { get; private set; }
-        public FieldOfActivity Activity { get; private set; }
-        public string CompanyName { get; private set; }
+        //public static void JobValidation(Intern intern)
+        //{
+        //    //if (intern.workExp < 2)
+        //    //{
+        //    //    InternValidationException exc1 = new InternValidationException(intern.LName, "Not enough work experience");
+        //    //    //Console.WriteLine("static public void JobValidation(Intern intern)");
+        //    //    throw exc1;
 
+        //    //}
 
-        public static void JobValidation(Intern intern)
-        {
-            //if (intern.workExp < 2)
-            //{
-            //    InternValidationException exc1 = new InternValidationException(intern.LName, "Not enough work experience");
-            //    //Console.WriteLine("static public void JobValidation(Intern intern)");
-            //    throw exc1;
+        //    //if (intern.Age < 16)
+        //    //{
+        //    //    InternValidationException exc2 = new InternValidationException(intern.LName, "Too young to work");
+        //    //    throw exc2;
+        //    //}
 
-            //}
+        //    if (intern.AverageMark < 8)
+        //    {
+        //        InternValidationException exc2 = new InternValidationException(intern.LName, "Average mark is too small");
+        //        throw exc2;
+        //    }
+        //}
 
-            //if (intern.Age < 16)
-            //{
-            //    InternValidationException exc2 = new InternValidationException(intern.LName, "Too young to work");
-            //    throw exc2;
-            //}
-
-            if (intern.AverMark < 8)
-            {
-                InternValidationException exc2 = new InternValidationException(intern.LName, "Average mark is too small");
-                throw exc2;
-            }
-        }
-
-        public void DisplayAll()
+        public virtual void DisplayAll()
         {
             Console.WriteLine();
             CompanyAddress adress = CompanyAddress.Address;
             Console.WriteLine("{2} Company {0}: {1} - {3} {4}", CompanyId, CompanyName, Activity, adress.Street,
                 adress.City);
+        }
+
+        public virtual void Rename(string name)
+        {
+            CompanyName = name;
+            Console.WriteLine("Renaming company");
+        }
+
+        public virtual void ChangeFieldofActivity(FieldOfActivity activity)
+        {
+            Activity = activity;
+            Console.WriteLine("Changing Field of Activity");
         }
     }
 }

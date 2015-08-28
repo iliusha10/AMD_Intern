@@ -1,4 +1,5 @@
 ﻿using Domain.Domain;
+using FluentNHibernate.Conventions;
 
 namespace Domain.Mapping
 {
@@ -8,7 +9,7 @@ namespace Domain.Mapping
         {
             Map(x => x.FName).Not.Nullable();
             Map(x => x.LName).Not.Nullable();
-            Map(x => x._dateOfBirth);
+            Map(x => x.DateOfBirth).Not.Nullable();
             HasMany(x => x.SkillsList).Cascade.All().Inverse().AsBag();
         }
     }

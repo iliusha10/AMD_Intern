@@ -4,18 +4,6 @@ namespace Domain.Domain
 {
     public class PersonSkills : Entity
     {
-        public virtual Person Person { get; protected set; }
-        public virtual string Name { get; protected set; }
-        public virtual int Level { get; protected set; }
-
-        //public PersonSkills( string name, int level)
-        //{
-        //    if (string.IsNullOrWhiteSpace(name))
-        //        throw new ArgumentException("name is required.");
-        //    Name = name;
-        //    Level = level;
-        //}
-
         public PersonSkills(Person person, string name, int level)
         {
             if (string.IsNullOrWhiteSpace(name))
@@ -24,6 +12,10 @@ namespace Domain.Domain
             Level = level;
             Person = person;
         }
+
+        public virtual Person Person { get; protected set; }
+        public virtual string Name { get; protected set; }
+        public virtual int Level { get; protected set; }
 
         [Obsolete]
         protected PersonSkills()

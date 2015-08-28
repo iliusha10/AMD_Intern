@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using Domain.Interfaces;
 
 namespace Domain.Domain
 {
     public class Intern : Person, IPrivileges
     {
-        public readonly double AverageMark;
-        public Company Company { get; set; }
-
+        [Obsolete]
+        protected Intern()
+        {
+        }
 
         public Intern(string fname, string lname, string bdate, double avmark, Company company)
             : base(fname, lname, bdate)
@@ -16,15 +16,11 @@ namespace Domain.Domain
             AverageMark = avmark;
             Company = company;
         }
-        
 
-        public double AverMark
-        {
-            get { return AverageMark; }
-        }
+        public virtual Company Company { get; protected set; }
+        public virtual double AverageMark { get; protected set; }
 
-        
-        public override void DisplayAll()
+        public virtual void DisplayAll()
         {
             Console.WriteLine("Intern:");
             DisplayPersonInfo();
@@ -33,7 +29,7 @@ namespace Domain.Domain
             Console.WriteLine();
         }
 
-public void AddPrivilege()
+        public virtual void AddPrivilege()
         {
             Console.WriteLine("Priveleges:");
             Console.WriteLine();

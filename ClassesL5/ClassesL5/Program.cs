@@ -11,25 +11,17 @@ namespace ClassesL5
 {
     internal class Program
     {
-        private static readonly CompanyFactory CompanyFactory;
-        private static readonly ContractorFactory ContractorFactory;
-        private static readonly PersonFactory PersonFactory;
-        private static readonly IPersonRepository PersonRepository;
-        private static readonly InternFactory InternFactory;
-        private static readonly EmployeeFactory EmployeeFactory;
-        private static readonly ProjectFactory ProjectFactory;
+        private static  CompanyFactory CompanyFactory;
+        private static  ContractorFactory ContractorFactory;
+        private static  PersonFactory PersonFactory;
+        private static  IPersonRepository PersonRepository;
+        private static  InternFactory InternFactory;
+        private static  EmployeeFactory EmployeeFactory;
+        private static  ProjectFactory ProjectFactory;
 
         static Program()
         {
-            ServiceLocator.RegisterAll();
-            EmployeeFactory = ServiceLocator.Get<EmployeeFactory>();
-            ProjectFactory = ServiceLocator.Get<ProjectFactory>();
-            InternFactory = ServiceLocator.Get<InternFactory>();
-            CompanyFactory = ServiceLocator.Get<CompanyFactory>();
-            ContractorFactory = ServiceLocator.Get<ContractorFactory>();
-            PersonFactory = ServiceLocator.Get<PersonFactory>();
-            PersonRepository = ServiceLocator.Get<IPersonRepository>();
-            NHibernateProfiler.Initialize();
+            
         }
 
 
@@ -64,10 +56,20 @@ namespace ClassesL5
         {
             try
             {
+
+                ServiceLocator.RegisterAll();
+                EmployeeFactory = ServiceLocator.Get<EmployeeFactory>();
+                ProjectFactory = ServiceLocator.Get<ProjectFactory>();
+                InternFactory = ServiceLocator.Get<InternFactory>();
+                CompanyFactory = ServiceLocator.Get<CompanyFactory>();
+                ContractorFactory = ServiceLocator.Get<ContractorFactory>();
+                PersonFactory = ServiceLocator.Get<PersonFactory>();
+                PersonRepository = ServiceLocator.Get<IPersonRepository>();
+                NHibernateProfiler.Initialize();
                 //decorator pattern
                 Logger.Logger.AddToLog("----Begining of the program-----");
 
-                AddNewPersons(5);
+                //AddNewPersons(5);
                 //PersonRepository.UpdatePerson(15016, "White", "Dude", "1999-1-31");
                 //PersonRepository.UpdatePerson(19022, lname: "White", fname: "Dude");
                 //PersonRepository.UpdatePerson(15015, bdate: "2005-12-12");

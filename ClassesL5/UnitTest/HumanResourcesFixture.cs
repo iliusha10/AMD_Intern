@@ -19,13 +19,13 @@ namespace UnitTest
             _mockDisplayIntern = new Mock<IDisplayInfoAction>();
 
             
-            CompanyFactory factory = new CompanyFactory(_mockDisplayInfoAction.Object);
-            var comp = factory.CreateCompany(1, "Amdaris", FieldOfActivity.IT, "Puskin 22", "Chisinau");
-            InternFactory internf = new InternFactory(_mockDisplayIntern.Object);
-            var intern = internf.CreateIntern("Wano", "Smith", "1990-1-1", 6, comp);
-            InternFactory internf2 = new InternFactory(_mockDisplayIntern.Object);
-            var intern2 = internf2.CreateIntern("Ion", "Bamby", "2000-10-10", 8.5, comp);
-            InternList = new List<Intern> {intern, intern2};
+            //CompanyFactory factory = new CompanyFactory(_mockDisplayInfoAction.Object);
+            //var comp = factory.CreateCompany(1, "Amdaris", FieldOfActivity.IT, "Puskin 22", "Chisinau");
+            //InternFactory internf = new InternFactory(_mockDisplayIntern.Object);
+            //var intern = internf.CreateIntern("Wano", "Smith", "1990-1-1", 6, comp);
+            //InternFactory internf2 = new InternFactory(_mockDisplayIntern.Object);
+            //var intern2 = internf2.CreateIntern("Ion", "Bamby", "2000-10-10", 8.5, comp);
+            //InternList = new List<Intern> {intern, intern2};
             //var hr = new HumanResources();
         }
 
@@ -45,7 +45,7 @@ namespace UnitTest
         public void ItChecksInternAverageMarkGreaterThanEight()
         {
             var hiring = hr.Hire(InternList);
-            Assert.IsFalse(hiring.Any(x => x.AverMark < 8));
+            Assert.IsFalse(hiring.Any(x => x.AverageMark < 8));
         }
     }
 }

@@ -5,8 +5,7 @@ namespace Domain.Domain
 {
     public class Employee : Contractor, IPrivileges
     {
-        public string Department { get; set; }
-
+        
         public Employee(string fname, string lname, string bdate, Company company, double workexp,
             double salary, string department)
             : base(fname, lname, bdate, company, workexp, salary)
@@ -16,6 +15,7 @@ namespace Domain.Domain
             Department = department;
         }
 
+        public string Department { get; protected set; }
 
         public override double calcBonus(double salary)
         {

@@ -18,7 +18,7 @@ namespace Domain.Domain
 
             try
             {
-                _dateOfBirth = DateTime.Parse(bdate);
+                DateOfBirth = DateTime.Parse(bdate);
             }
             catch (ArgumentOutOfRangeException e)
             {
@@ -37,7 +37,7 @@ namespace Domain.Domain
             LName = lName;
             try
             {
-                _dateOfBirth = DateTime.Parse(bdate);
+                DateOfBirth = DateTime.Parse(bdate);
             }
             catch (ArgumentOutOfRangeException e)
             {
@@ -56,7 +56,7 @@ namespace Domain.Domain
 
         public virtual string FName { get; protected set; }
         public virtual string LName { get; protected set; }
-        public virtual DateTime _dateOfBirth { get; protected set; }
+        public virtual DateTime DateOfBirth { get; protected set; }
         public virtual IList<PersonSkills> SkillsList { get; protected set; }
 
         public virtual bool HasAcces()
@@ -73,7 +73,7 @@ namespace Domain.Domain
         protected virtual void DisplayPersonInfo()
         {
             Console.WriteLine("Name: {0} {1}", FName, LName);
-            Console.WriteLine("Birth Date: " + _dateOfBirth.ToString("dd/MM/yyyy") + ".");
+            Console.WriteLine("Birth Date: " + DateOfBirth.ToString("dd/MM/yyyy") + ".");
             //Console.WriteLine("Age: {0}", Age);
             //Console.WriteLine();
             //Console.WriteLine("Skills: ");
@@ -104,7 +104,7 @@ namespace Domain.Domain
 
         public virtual void ChangeBDate(string date)
         {
-            _dateOfBirth = DateTime.Parse(date);
+            DateOfBirth = DateTime.Parse(date);
             Console.WriteLine("Changing birth date");
         }
     }

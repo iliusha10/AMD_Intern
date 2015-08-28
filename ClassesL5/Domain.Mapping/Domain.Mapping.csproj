@@ -50,8 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityMap.cs" />
+    <Compile Include="ContractorMap.cs" />
+    <Compile Include="InternMap.cs" />
+    <Compile Include="ComapnyMap.cs" />
     <Compile Include="PersonMap.cs" />
+    <Compile Include="ProjectMap.cs" />
     <Compile Include="PersonSkillsMap.cs" />
+    <Compile Include="PrivilegeMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

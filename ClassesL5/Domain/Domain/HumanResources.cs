@@ -14,7 +14,7 @@ namespace Domain.Domain
 
         public List<Intern> Hire(List<Intern> interns)
         {
-            var hired = interns.Where(x => x.AverMark >= 8).ToList();
+            var hired = interns.Where(x => x.AverageMark >= 8).ToList();
             return hired;
         }
 

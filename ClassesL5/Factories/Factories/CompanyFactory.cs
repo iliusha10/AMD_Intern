@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using System.Collections.Generic;
+using Domain;
 using Domain.Domain;
 using InterfaceActions.Actions;
 
@@ -13,10 +14,10 @@ namespace Factories.Factories
             _displayInfoAction = displayInfoAction;
         }
 
-        public Company CreateCompany(int companyId, string name, FieldOfActivity activity, string street,
-            string city)
+        public Company CreateCompany(string name, FieldOfActivity activity, string address,
+            Dictionary<string, string> projectDictionary)
         {
-            var company = new Company(companyId, name, activity, street, city);
+            var company = new Company(name, activity, address, projectDictionary);
             OnCompanyCreation(company);
             Logger.Logger.AddToLog("CompanyFactory|CreateCompany Company");
             return company;
