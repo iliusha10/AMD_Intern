@@ -7,7 +7,6 @@ namespace Domain.Domain
 {
     public class HumanResources : INotify
     {
-
         public void Inform(Project p)
         {
             Console.WriteLine("HumanResources: We have only 3 free employee for this project!");

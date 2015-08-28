@@ -39,25 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Factories\ProjectFactory.cs" />
     <Compile Include="Factories\CompanyFactory.cs" />
     <Compile Include="Factories\ContractorFactory.cs" />
     <Compile Include="Factories\EmployeeFactory.cs" />
+    <Compile Include="Factories\PersonFactory.cs" />
     <Compile Include="Factories\InternFactory.cs" />
+    <Compile Include="Factories\ProjectFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BL\Bl.csproj">
+    <ProjectReference Include="..\BL\BL.csproj">
       <Project>{6B4BEA23-60A7-482E-8CB1-94EDF3F54771}</Project>
-      <Name>Bl</Name>
+      <Name>BL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{5B502518-6F64-4C68-B0D2-1DCBECDFAB85}</Project>
       <Name>Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
-      <Project>{64F4C9F7-265D-4BC8-8A71-F2CD8574424C}</Project>
-      <Name>Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\InterfaceActions\InterfaceActions.csproj">
       <Project>{D18356E4-7AE1-446E-8267-E736CC3165B2}</Project>

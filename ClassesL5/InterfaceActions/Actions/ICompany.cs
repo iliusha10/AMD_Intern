@@ -6,5 +6,4 @@ namespace InterfaceActions.Actions
     {
         void ShowCpmpanyInfo(Company company);
     }
-
 }

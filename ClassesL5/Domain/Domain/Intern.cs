@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Domain.Interfaces;
 
 namespace Domain.Domain
@@ -9,13 +10,13 @@ namespace Domain.Domain
         public Company Company { get; set; }
 
 
-        public Intern(string fname, string lname, int bdate, int bmonth, int byear, double salary, double avmark, Company company)
-            : base(fname, lname, bdate, bmonth, byear, salary)
+        public Intern(string fname, string lname, string bdate, double avmark, Company company)
+            : base(fname, lname, bdate)
         {
             AverageMark = avmark;
             Company = company;
         }
-
+        
 
         public double AverMark
         {
@@ -25,19 +26,17 @@ namespace Domain.Domain
         
         public override void DisplayAll()
         {
-            Console.WriteLine();
             Console.WriteLine("Intern:");
             DisplayPersonInfo();
             Console.WriteLine("Company: {0}", Company);
             Console.WriteLine("Average Mark: {0}", AverageMark);
-            
+            Console.WriteLine();
         }
 
-        public void AddPrivilege()
+public void AddPrivilege()
         {
             Console.WriteLine("Priveleges:");
+            Console.WriteLine();
         }
-
-        
     }
 }

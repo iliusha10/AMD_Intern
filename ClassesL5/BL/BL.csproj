@@ -46,12 +46,6 @@
     <Compile Include="SalaryCalculator\EmployeeSalaryCalculator.cs" />
     <Compile Include="SalaryCalculator\SalaryCalculator.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{5B502518-6F64-4C68-B0D2-1DCBECDFAB85}</Project>
-      <Name>Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

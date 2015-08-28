@@ -7,7 +7,6 @@ namespace Domain.Domain
     {
         public Company(int companyId, string name, FieldOfActivity activity, string street, string city)
         {
-            //var companyAddress = new CompanyAddress(CompanyID, street, city);
             CompanyAddress adress = CompanyAddress.Address;
             adress.SetCity(city);
             adress.SetStreet(street);
@@ -36,11 +35,11 @@ namespace Domain.Domain
 
             //}
 
-            if (intern.Age < 16)
-            {
-                InternValidationException exc2 = new InternValidationException(intern.LName, "Too young to work");
-                throw exc2;
-            }
+            //if (intern.Age < 16)
+            //{
+            //    InternValidationException exc2 = new InternValidationException(intern.LName, "Too young to work");
+            //    throw exc2;
+            //}
 
             if (intern.AverMark < 8)
             {

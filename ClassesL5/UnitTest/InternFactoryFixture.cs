@@ -23,7 +23,7 @@ namespace UnitTest
 
         public void ActOnCreatingIntern()
         {
-            _internFactory.CreateIntern("Wano", "Smith", 1, 1, 1990, 500, 6, comp);
+            _internFactory.CreateIntern("Wano", "Smith", "1990-1-1", 6, comp);
         }
 
         [Test]

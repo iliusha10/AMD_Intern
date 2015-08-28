@@ -5,14 +5,14 @@ namespace Domain.Domain
 {
     public class Director : Person, IPrivileges, IAppointment, INotify
     {
-        public Director(string fname, string lname, int bdate, int bmonth, int byear, double salary)
-            : base(fname, lname, bdate, bmonth, byear, salary)
+        public Director(string fname, string lname, string bdate)
+            : base(fname, lname, bdate)
         {
         }
 
         public void AddPrivilege()
         {
-            Console.WriteLine("I'm King of the World");
+            Console.WriteLine("I'm Director");
         }
 
         public void NewAppontment(DateTime apointmenTime)

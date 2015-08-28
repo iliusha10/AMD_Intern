@@ -14,12 +14,12 @@ namespace ClassesL5
         {
             var internList = new List<Intern>();
 
-            for (int i = 0; i < number; i++)
-            {
-                var intern = InternFactory.CreateIntern(String.Format("Intern {0}", i + 1), "Smith", i + 3, i + 1,
-                    i + 1990, i*500, i + 1, comp);
-                internList.Add(intern);
-            }
+            //for (int i = 0; i < number; i++)
+            //{
+            //    //var intern = InternFactory.CreateIntern(String.Format("Intern {0}", i + 1), "Smith", i + 3, i + 1,
+            //    //    i + 1990, i + 1, comp);
+            //    internList.Add(new Intern());
+            //}
             return internList;
         }
     }
