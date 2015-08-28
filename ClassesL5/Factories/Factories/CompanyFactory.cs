@@ -17,8 +17,8 @@ namespace Factories.Factories
             string city)
         {
             var company = new Company(companyId, name, activity, street, city);
-            Logger.Logger.AddToLog("CompanyFactory|CreateCompany Company");
             OnCompanyCreation(company);
+Logger.Logger.AddToLog("CompanyFactory|CreateCompany Company");
             return company;
         }
 

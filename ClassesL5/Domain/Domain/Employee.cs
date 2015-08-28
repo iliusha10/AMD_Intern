@@ -1,5 +1,5 @@
 ﻿using System;
-using Domain.Interfaces;
+using System.Collections.Generic;
 
 namespace Domain.Domain
 {
@@ -7,9 +7,9 @@ namespace Domain.Domain
     {
         public string Department { get; set; }
 
-        public Employee(string fname, string lname, int bdate, int bmonth, int byear, double salary, Company company, double workexp,
-            string department)
-            : base(fname, lname, bdate, bmonth, byear, salary, company, workexp)
+        public Employee(string fname, string lname, string bdate, Company company, double workexp,
+            double salary, string department)
+            : base(fname, lname, bdate, company, workexp, salary)
         {
             if (string.IsNullOrWhiteSpace(department))
                 throw new ArgumentException("department is required.");
@@ -17,23 +17,23 @@ namespace Domain.Domain
         }
 
 
-        //public override double calcBonus(double salary)
-        //{
-        //    return salary + (salary*0.04);
-        //}
+        public override double calcBonus(double salary)
+        {
+            return salary + (salary*0.04);
+        }
 
         public override void DisplayAll()
         {
-            Console.WriteLine();
             Console.WriteLine("Employee:");
             DisplayPersonInfo();
             Console.WriteLine("Work Experience: {0}", WorkExp);
             Console.WriteLine("Salary: {0}", Salary);
-            //Console.WriteLine("Salary + Bonus: {0}", calcBonus(Salary));
-            Console.WriteLine("Department: {0}", Department);
+            Console.WriteLine("Salary + Bonus: {0}", calcBonus(Salary));
+            //Console.WriteLine("Department: {0}", Department);
+            Console.WriteLine();
         }
 
-        public void AddPrivilege()
+public void AddPrivilege()
         {
             Console.WriteLine("Privileges:");
         }
@@ -41,6 +41,7 @@ namespace Domain.Domain
         public override bool HasAcces()
         {
             return true;
+            Console.WriteLine();
         }
     }
 }

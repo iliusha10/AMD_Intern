@@ -1,33 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Domain.Domain
 {
-    public class Person
+    public class Person:Entity
     {
-        private DateTime _dateOfBirth;
 
-        public virtual bool HasAcces()
+        public Person(string fName, string lName, string bdate)
         {
-            return false;
-        }
-
-        protected Person(string fname, string lname, int bdate, int bmonth, int byear, double salary)
-        {
-            if (string.IsNullOrWhiteSpace(fname))
+            if (string.IsNullOrWhiteSpace(fName))
                 throw new ArgumentException("First name is required.");
-            if (string.IsNullOrWhiteSpace(lname))
+            if (string.IsNullOrWhiteSpace(lName))
                 throw new ArgumentException("Last name is required.");
 
-            FName = fname;
-            LName = lname;
-            Salary = salary;
-
-            //var Skills = new Dictionary<string, int>();
-            //var Skills = new Dictionary<string, int>();
+            FName = fName;
+            LName = lName;
+            
             try
             {
-                _dateOfBirth = new DateTime(byear, bmonth, bdate);
+                _dateOfBirth = DateTime.Parse(bdate);
             }
             catch (ArgumentOutOfRangeException e)
             {
@@ -36,22 +28,44 @@ namespace Domain.Domain
             }
         }
 
-
-        public string FName { get; private set; }
-        public string LName { get; private set; }
-        public double Salary { get; set; }
-
-
-        public int Age
+        public Person(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary)
         {
-            get { return DateTime.Now.Year - _dateOfBirth.Year; }
+            if (string.IsNullOrWhiteSpace(fName))
+                throw new ArgumentException("First name is required.");
+            if (string.IsNullOrWhiteSpace(lName))
+                throw new ArgumentException("Last name is required.");
+            FName = fName;
+            LName = lName;
+            try
+            {
+                _dateOfBirth = DateTime.Parse(bdate);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                Console.Write(LName);
+                throw new ArgumentOutOfRangeException("Birthdate is out of range.", e);
+            }
+
+            SkillsList = skillsDictionary.Select(x => new PersonSkills(this, x.Key, x.Value)).ToList();
         }
 
+        [Obsolete]
+        protected Person()
+        { }
 
-        //public abstract double calcBonus(double salary);
+	public virtual bool HasAcces()
+        public virtual string FName { get; protected set; }
+        public virtual string LName { get; protected set; }
+        public virtual DateTime _dateOfBirth { get; protected set; }
+        public virtual IList<PersonSkills> SkillsList { get; protected set; }
 
+        //public virtual int Age
+        //{
+        //    get { return DateTime.Now.Year - _dateOfBirth.Year; }
+        //    protected set {} ;
+        //}
 
-        protected void DisplayPersonInfo()
+        protected virtual void DisplayPersonInfo()
         {
             Console.WriteLine("Name: {0} {1}", FName, LName);
             Console.WriteLine("Birth Date: " + _dateOfBirth.ToString("dd/MM/yyyy") + ".");
@@ -61,52 +75,32 @@ namespace Domain.Domain
             //ShowSkills();
         }
 
-        public void DisplayMainInfo()
+        public virtual void DisplayMainInfo()
         {
             DisplayPersonInfo();
-            //Console.WriteLine();
+
+            Console.WriteLine();
         }
 
 
         public virtual void DisplayAll()
         {
-            Console.WriteLine("Age: {0}", Age);
+            //Console.WriteLine("Age: {0}", Age);
             DisplayPersonInfo();
         }
 
 
-        public Dictionary<string, int> Skills { get; private set; }
-
-
-        public void AddSkill(string skillName, int level)
+        public virtual void Rename(string fname, string lname)
         {
-            try
-            {
-                Skills.Add(skillName, level);
-            }
-            catch (ArgumentException)
-            {
-                Console.WriteLine("An skill with the name {0} already exist", skillName, level);
-                int value;
-                Skills.TryGetValue(skillName, out value);
-                if (value < level)
-                {
-                    Skills[skillName] = level;
-                    Console.WriteLine("Updated skill level from {0} to {1}", value, level);
-                }
-                else Console.WriteLine("The skill is already updated", skillName, level);
-            }
+            FName = fname;
+            LName = lname;
+            Console.WriteLine("Renaming person");
         }
 
-
-        public void ShowSkills()
+        public virtual void ChangeBDate(string date)
         {
-            if (Skills.Count < 1) Console.WriteLine("There is no Skills");
-            else
-                foreach (KeyValuePair<string, int> skill in Skills)
-                {
-                    Console.WriteLine("Key = {0}, Value = {1}", skill.Key, skill.Value);
-                }
+            _dateOfBirth = DateTime.Parse(date);
+            Console.WriteLine("Changing birth date");
         }
     }
 }

@@ -1,9 +1,6 @@
-﻿using Bl.SalaryCalculator;
+﻿using System.Collections.Generic;
 using Domain.Domain;
-using Domain.Interfaces;
-using Domain.Privileges;
 using InterfaceActions.Actions;
-
 
 namespace Factories.Factories
 {
@@ -16,13 +13,13 @@ namespace Factories.Factories
             _displayInfoAction = displayInfoAction;
         }
 
-        public Employee CreateEmployee(string fname, string lname, int bdate, int bmonth, int byear, double salary,
-            Company company, double workexp, string department)
+        public Employee CreateEmployee(string fname, string lname, string bdate, Company company, double workexp,
+            double salary, string department)
         {
-            var employee = new Employee(fname, lname, bdate, bmonth, byear, salary, company, workexp, department);
-            Logger.Logger.AddToLog("EmployeeFactory|CreateEmployee Employee");
+            var employee = new Employee(fname, lname, bdate, company, workexp, salary, department);
             OnEmployeeCreation(employee);
-            IPrivileges a = employee;
+Logger.Logger.AddToLog("EmployeeFactory|CreateEmployee Employee");
+IPrivileges a = employee;
             IPrivileges b = new HollidayPrivilege(a);
             IPrivileges c = new LunchTichetsPrivilege(b);
             IPrivileges d = new SalaryBonusPrivilege(c);
@@ -36,6 +33,7 @@ namespace Factories.Factories
         public void OnEmployeeCreation(Employee employee)
         {
             _displayInfoAction.DisplayInfo(employee);
+            //employee.DisplayAll();
         }
     }
 }
