@@ -14,13 +14,12 @@ namespace ClassesL5
         {
             var employeeList = new List<Employee>();
 
-            for (int i = 0; i < number; i++)
-            {
-                var employee = EmployeeFactory.CreateEmployee(String.Format("Employee {0}", i + 1), "Black", i + 15,
-                    i + 1, i + 1980, i*750, comp, i + 1, "Department");
-                employeeList.Add(employee);
-            }
-
+            //for (int i = 0; i < number; i++)
+            //{
+            //    var employee = EmployeeFactory.CreateEmployee(String.Format("Employee {0}", i + 1), "Black", i + 15,
+            //        i + 1, i + 1980, comp, i + 1, i + 1000, "Department");
+            //    employeeList.Add(employee);
+            //}
             return employeeList;
         }
     }

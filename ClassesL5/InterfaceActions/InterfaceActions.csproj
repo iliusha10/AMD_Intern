@@ -42,7 +42,6 @@
     <Compile Include="Actions\IContractorDisplay.cs" />
     <Compile Include="Actions\ICompany.cs" />
     <Compile Include="Actions\IDisplayInfoAction.cs" />
-    <Compile Include="Actions\IProject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProjectInfo.cs" />
     <Compile Include="DisplayImportantInfo.cs" />
     <Compile Include="CompanyInfo.cs" />
     <Compile Include="DisplayInfoAll.cs" />

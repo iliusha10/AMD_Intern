@@ -43,31 +43,15 @@
     <Compile Include="Domain\Company.cs" />
     <Compile Include="Domain\CompanyAddress.cs" />
     <Compile Include="Domain\Contractor.cs" />
-    <Compile Include="Domain\Director.cs" />
     <Compile Include="Domain\Employee.cs" />
-    <Compile Include="Domain\HumanResources.cs" />
-    <Compile Include="Domain\WorkerList.cs" />
-    <Compile Include="Proxy\DirectorProxy.cs" />
+    <Compile Include="Domain\Entity.cs" />
+    <Compile Include="Domain\PersonSkills.cs" />
     <Compile Include="EnumFieldofActivity.cs" />
     <Compile Include="Domain\Intern.cs" />
     <Compile Include="Domain\Person.cs" />
     <Compile Include="Domain\Project.cs" />
     <Compile Include="Exceptions\InternValidationException.cs" />
-    <Compile Include="Interfaces\IAppointment.cs" />
-    <Compile Include="Interfaces\INotify.cs" />
-    <Compile Include="Interfaces\IPrivileges.cs" />
-    <Compile Include="Privileges\HollidayPrivilege.cs" />
-    <Compile Include="Privileges\KingOfTheWorldPrivilege.cs" />
-    <Compile Include="Privileges\LunchTichetsPrivilege.cs" />
-    <Compile Include="Privileges\Privileges.cs" />
-    <Compile Include="Privileges\SalaryBonusPrivilege.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Logger\Logger.csproj">
-      <Project>{44E4CD77-848C-4826-B19A-A7C0A68D8C93}</Project>
-      <Name>Logger</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
