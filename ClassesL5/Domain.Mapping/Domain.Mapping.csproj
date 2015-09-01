@@ -49,14 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeMap.cs" />
     <Compile Include="EntityMap.cs" />
     <Compile Include="ContractorMap.cs" />
     <Compile Include="InternMap.cs" />
     <Compile Include="ComapnyMap.cs" />
     <Compile Include="PersonMap.cs" />
+    <Compile Include="TaskMap.cs" />
+    <Compile Include="SalaryMap.cs" />
     <Compile Include="ProjectMap.cs" />
     <Compile Include="PersonSkillsMap.cs" />
-    <Compile Include="PrivilegeMap.cs" />
+    <Compile Include="AddressMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -8,5 +8,7 @@ namespace Repository.Interfaces
         void AddPerson(IEnumerable<Person> personsList);
         void UpdatePerson(long id, string fname = null, string lname = null, string bdate = null);
         void DeletePerson(long id);
+
+        IList<Person> GetAll();
     }
 }

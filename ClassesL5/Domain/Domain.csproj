@@ -41,13 +41,14 @@
   <ItemGroup>
     <Compile Include="Domain\Address.cs" />
     <Compile Include="Domain\Company.cs" />
-    <Compile Include="Domain\CompanyAddress.cs" />
     <Compile Include="Domain\Contractor.cs" />
     <Compile Include="Domain\Director.cs" />
     <Compile Include="Domain\Employee.cs" />
     <Compile Include="Domain\Entity.cs" />
     <Compile Include="Domain\HumanResources.cs" />
     <Compile Include="Domain\PersonSkills.cs" />
+    <Compile Include="Domain\Salary.cs" />
+    <Compile Include="Domain\Task.cs" />
     <Compile Include="EnumFieldofActivity.cs" />
     <Compile Include="Domain\Intern.cs" />
     <Compile Include="Domain\Person.cs" />
@@ -57,7 +58,7 @@
     <Compile Include="Interfaces\INotify.cs" />
     <Compile Include="Interfaces\IPrivileges.cs" />
     <Compile Include="Privileges\HollidayPrivilege.cs" />
-    <Compile Include="Privileges\KingOfTheWorldPrivilege.cs" />
+    <Compile Include="Privileges\DirectorPrivilege.cs" />
     <Compile Include="Privileges\LunchTichetsPrivilege.cs" />
     <Compile Include="Privileges\Privileges.cs" />
     <Compile Include="Privileges\SalaryBonusPrivilege.cs" />

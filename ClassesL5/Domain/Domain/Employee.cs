@@ -1,28 +1,43 @@
 ﻿using System;
+using System.Collections.Generic;
 using Domain.Interfaces;
 
 namespace Domain.Domain
 {
     public class Employee : Contractor, IPrivileges
     {
-        
-        public Employee(string fname, string lname, string bdate, Company company, double workexp,
-            double salary, string department)
-            : base(fname, lname, bdate, company, workexp, salary)
+        public Employee(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
+            IList<Privileges.Privileges> privilegeList, Address address, Company company, double workexp, double salary,
+            string department, string role)
+            : base(fName, lName, bdate, skillsDictionary, privilegeList, address, company, workexp, salary)
         {
             if (string.IsNullOrWhiteSpace(department))
                 throw new ArgumentException("department is required.");
             Department = department;
+            if (string.IsNullOrWhiteSpace(role))
+                throw new ArgumentException("department is required.");
+            Role = role;
         }
 
-        public string Department { get; protected set; }
+        [Obsolete]
+        protected Employee()
+        {
+        }
 
-        public override double calcBonus(double salary)
+        public virtual string Department { get; protected set; }
+        public virtual string Role { get; protected set; }
+
+        public new virtual void AddPrivilege()
+        {
+            Console.WriteLine("Privileges:");
+        }
+
+        public virtual double calcBonus(double salary)
         {
             return salary + (salary*0.04);
         }
 
-        public override void DisplayAll()
+        public virtual void DisplayAll()
         {
             Console.WriteLine("Employee:");
             DisplayPersonInfo();
@@ -33,12 +48,7 @@ namespace Domain.Domain
             Console.WriteLine();
         }
 
-        public new void AddPrivilege()
-        {
-            Console.WriteLine("Privileges:");
-        }
-
-        public override bool HasAcces()
+        public virtual bool HasAcces()
         {
             return true;
         }

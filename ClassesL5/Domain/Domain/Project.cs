@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Domain.Domain
 {
@@ -13,18 +14,19 @@ namespace Domain.Domain
             Logger.Logger.AddToLog("Creating new project");
         }
 
+        [Obsolete]
+        protected Project()
+        {
+        }
+
         public virtual Company Company { get; protected set; }
         public virtual string ProjectName { get; protected set; }
         public virtual string ProjectDescription { get; protected set; }
+        public virtual IList<Task> TaskList { get; protected set; }
 
         public new virtual string ToString()
         {
             return ProjectName;
-        }
-
-        [Obsolete]
-        protected Project()
-        {
         }
 
         public virtual void DisplayAll()
@@ -35,13 +37,13 @@ namespace Domain.Domain
 
         public virtual void AddTask(int taskid)
         {
-            int taskId = taskid;
+            var taskId = taskid;
             Console.WriteLine("Added a task with {0} id number", taskId);
         }
 
         public virtual void AddTask(string tasksubj)
         {
-            string taskSubj = tasksubj;
+            var taskSubj = tasksubj;
             Console.WriteLine("Added a task with subject: {0} ", taskSubj);
         }
     }

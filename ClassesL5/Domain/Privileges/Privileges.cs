@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces;
+﻿using System;
+using Domain.Interfaces;
 
 namespace Domain.Privileges
 {
@@ -10,6 +11,7 @@ namespace Domain.Privileges
         {
             Input = i; //store the item to be decorated
         }
+
 
         public abstract void AddPrivilege();
     }

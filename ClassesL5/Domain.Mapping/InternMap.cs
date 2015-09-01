@@ -7,9 +7,8 @@ namespace Domain.Mapping
     {
         public InternMap()
         {
-            References(x => x.Company).Not.Nullable();
-           
-            Map(x => x.AverageMark).Not.Nullable();
+            //References(x => x.Company).Not.Nullable();
+           Map(x => x.AverageMark).Not.Nullable();
         }
     }
 }

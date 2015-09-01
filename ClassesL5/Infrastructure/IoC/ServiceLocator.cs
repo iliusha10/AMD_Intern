@@ -18,6 +18,7 @@ namespace Infrastructure.IoC
             Kernel.Bind<IContractorDisplay>().To<DisplayImportantInfo>();
             Kernel.Bind<IProject>().To<ProjectInfo>();
             Kernel.Bind<IPersonRepository>().To<PersonRepository>();
+            Kernel.Bind<ICompanyRepository>().To<CompanyRepository>();
         }
 
         public static T Get<T>()

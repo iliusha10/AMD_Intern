@@ -7,8 +7,8 @@ namespace Domain.Mapping
     {
         public ContractorMap()
         {
-            References(x => x.Company).Not.Nullable();
-            Map(x => x).Not.Nullable();
+            Map(x => x.Salary).Not.Nullable();
+            Map(x => x.WorkExp).Not.Nullable();
         }
     }
 }

@@ -21,6 +21,7 @@ namespace Domain.Domain
         public virtual string CompanyName { get; protected set; }
         public virtual string Address { get; protected set; }
         public virtual IList<Project> ProjectList { get; protected set; }
+        public virtual Person Person { get; protected set; }
 
         [Obsolete]
         protected Company()
@@ -58,9 +59,9 @@ namespace Domain.Domain
         public virtual void DisplayAll()
         {
             Console.WriteLine();
-            CompanyAddress adress = CompanyAddress.Address;
-            Console.WriteLine("{2} Company {0}: {1} - {3} {4}", CompanyId, CompanyName, Activity, adress.Street,
-                adress.City);
+            //CompanyAddress adress = CompanyAddress.Address;
+            //Console.WriteLine("{2} Company {0}: {1} - {3} {4}", CompanyId, CompanyName, Activity, adress.Street,
+            //    adress.City);
         }
 
         public virtual void Rename(string name)

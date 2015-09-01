@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Xml;
+using System.Collections.Generic;
 using Domain.Interfaces;
 
 namespace Domain.Domain
 {
     public class Contractor : Person, IPrivileges
     {
-        protected readonly double WorkExp;
-
-        public Contractor(string fname, string lname, string bdate, Company company, double workexp,
-            double salary)
-            : base(fname, lname, bdate)
+        public Contractor(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
+            IList<Privileges.Privileges> privilegeList, Address address, Company company, double workexp, double salary)
+            : base(fName, lName, bdate, skillsDictionary, privilegeList, address, company)
         {
             if (workexp <= 0)
                 throw new ArgumentException("Work expirience must be positive.");
@@ -20,8 +18,18 @@ namespace Domain.Domain
             Salary = salary;
         }
 
-        public double Salary { get; set; }
+        [Obsolete]
+        protected Contractor()
+        {
+        }
 
+        public virtual double Salary { get; protected set; }
+        public virtual double WorkExp { get; protected set; }
+
+        public virtual void AddPrivilege()
+        {
+            Console.WriteLine("Privileges:");
+        }
 
         public virtual double calcBonus(double salary)
         {
@@ -31,7 +39,7 @@ namespace Domain.Domain
             return calcbonus = salary + (salary*0.02);
         }
 
-        public override void DisplayAll()
+        public new virtual void DisplayAll()
         {
             Console.WriteLine("Contractor:");
             DisplayPersonInfo();
@@ -41,12 +49,7 @@ namespace Domain.Domain
             Console.WriteLine();
         }
 
-        public void AddPrivilege()
-        {
-            Console.WriteLine("Privileges:");
-        }
-
-        public override bool HasAcces()
+        public new virtual bool HasAcces()
         {
             return true;
         }

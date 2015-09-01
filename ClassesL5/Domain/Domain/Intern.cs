@@ -1,24 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
 using Domain.Interfaces;
 
 namespace Domain.Domain
 {
     public class Intern : Person, IPrivileges
     {
+        public Intern(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
+            IList<Privileges.Privileges> privilegeList, Address address, Company company, double avmark)
+            : base(fName, lName, bdate, skillsDictionary, privilegeList, address, company)
+        {
+            AverageMark = avmark;
+        }
+
         [Obsolete]
         protected Intern()
         {
         }
 
-        public Intern(string fname, string lname, string bdate, double avmark, Company company)
-            : base(fname, lname, bdate)
-        {
-            AverageMark = avmark;
-            Company = company;
-        }
-
-        public virtual Company Company { get; protected set; }
         public virtual double AverageMark { get; protected set; }
+
+        public virtual void AddPrivilege()
+        {
+            Console.WriteLine("Priveleges:");
+            Console.WriteLine();
+        }
 
         public virtual void DisplayAll()
         {
@@ -26,12 +32,6 @@ namespace Domain.Domain
             DisplayPersonInfo();
             Console.WriteLine("Company: {0}", Company);
             Console.WriteLine("Average Mark: {0}", AverageMark);
-            Console.WriteLine();
-        }
-
-        public virtual void AddPrivilege()
-        {
-            Console.WriteLine("Priveleges:");
             Console.WriteLine();
         }
     }

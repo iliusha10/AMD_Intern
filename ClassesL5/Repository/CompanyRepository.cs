@@ -8,20 +8,6 @@ namespace Repository
 {
     public class CompanyRepository : Repository, ICompanyRepository
     {
-        public void AddPerson(IEnumerable<Person> personsList)
-        {
-            
-        }
-
-        public void UpdatePerson(long id, string fname = null, string lname = null, string bdate = null)
-        {
-            
-        }
-
-        public void DeletePerson(long id)
-        {
-            
-        }
 
         public void AddCompany(Company company)
         {

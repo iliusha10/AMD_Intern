@@ -69,5 +69,11 @@ namespace Repository
                 }
             }
         }
+
+        public IList<Person> GetAll()
+        {
+
+            return _session.QueryOver<Person>().List();
+        }
     }
 }

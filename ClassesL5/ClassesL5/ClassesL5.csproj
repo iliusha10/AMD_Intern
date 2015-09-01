@@ -110,6 +110,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CollectionsHelper.cs" />
     <Compile Include="EmployeeGenerator.cs" />
     <Compile Include="InternGenerator.cs" />
     <Compile Include="Program.cs" />
@@ -139,6 +140,10 @@
     <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj">
       <Project>{C95CAD52-9159-4052-AD4E-48DA61B8C2FE}</Project>
       <Name>Repository.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{6A55512B-4BDF-43B3-B3E8-E4695D9ED4D6}</Project>
+      <Name>Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,14 +7,15 @@ using Domain.Domain;
 
 namespace Domain.Mapping
 {
-    class PrivilegeMap: EntityMap<PersonSkills>
+    class SalaryMap: EntityMap<Salary>
     {
         #region Public members
 
-        public PrivilegeMap()
+        public SalaryMap()
         {
-            References(x => x.Person);
-            Map(x => x.Name).Not.Nullable();
+            //References(x => x.ID);
+            Map(x => x.GetDate).Not.Nullable();
+            Map(x => x.Amount).Not.Nullable();
         }
 
         #endregion

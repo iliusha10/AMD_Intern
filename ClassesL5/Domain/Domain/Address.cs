@@ -2,7 +2,7 @@
 
 namespace Domain.Domain
 {
-    internal class Address
+    public class Address:Entity
     {
         public Address(string street, string city)
         {
@@ -15,7 +15,13 @@ namespace Domain.Domain
             City = city;
         }
 
-        public string Street { get; set; }
-        public string City { get; set; }
+        [Obsolete]
+        protected Address()
+        {
+        }
+
+        public virtual string Street { get; protected set; }
+        public virtual string City { get; protected set; }
+        public virtual Person Person { get; protected set; }
     }
 }

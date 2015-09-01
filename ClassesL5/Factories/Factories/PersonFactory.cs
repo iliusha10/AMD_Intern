@@ -14,16 +14,16 @@ namespace Factories.Factories
             _displayInfoAction = displayInfoAction;
         }
 
-        public Person CreatePerson(string fname, string lname, string bdate)
-        {
-            var person = new Person(fname, lname, bdate);
-            OnInternCreation(person);
-            return person;
-        }
+        //public Person CreatePerson(string fname, string lname, string bdate)
+        //{
+        //    var person = new Person(fname, lname, bdate);
+        //    OnInternCreation(person);
+        //    return person;
+        //}
 
-        public Person CreatePersonWSkills(string fname, string lname, string bdate, Dictionary<string, int> skillsDictionary)
+        public Person CreatePersonWSkills(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary, IList<Domain.Privileges.Privileges> privilegeList, Address address, Company company)
         {
-            var person = new Person(fname, lname, bdate, skillsDictionary);
+            var person = new Person(fName, lName, bdate, skillsDictionary, privilegeList, address, company);
             OnInternCreation(person);
             return person;
         }

@@ -6,28 +6,29 @@ namespace Domain.Domain
 {
     public class Person : Entity
     {
-        public Person(string fName, string lName, string bdate)
-        {
-            if (string.IsNullOrWhiteSpace(fName))
-                throw new ArgumentException("First name is required.");
-            if (string.IsNullOrWhiteSpace(lName))
-                throw new ArgumentException("Last name is required.");
+        //public Person(string fName, string lName, string bdate)
+        //{
+        //    if (string.IsNullOrWhiteSpace(fName))
+        //        throw new ArgumentException("First name is required.");
+        //    if (string.IsNullOrWhiteSpace(lName))
+        //        throw new ArgumentException("Last name is required.");
 
-            FName = fName;
-            LName = lName;
+        //    FName = fName;
+        //    LName = lName;
 
-            try
-            {
-                DateOfBirth = DateTime.Parse(bdate);
-            }
-            catch (ArgumentOutOfRangeException e)
-            {
-                Console.Write(LName);
-                throw new ArgumentOutOfRangeException("Birthdate is out of range.", e);
-            }
-        }
+        //    try
+        //    {
+        //        DateOfBirth = DateTime.Parse(bdate);
+        //    }
+        //    catch (ArgumentOutOfRangeException e)
+        //    {
+        //        Console.Write(LName);
+        //        throw new ArgumentOutOfRangeException("Birthdate is out of range.", e);
+        //    }
+        //}
 
-        public Person(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary)
+        public Person(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
+            IList<Privileges.Privileges> privilegeList, Address address, Company company)
         {
             if (string.IsNullOrWhiteSpace(fName))
                 throw new ArgumentException("First name is required.");
@@ -46,18 +47,29 @@ namespace Domain.Domain
             }
 
             SkillsList = skillsDictionary.Select(x => new PersonSkills(this, x.Key, x.Value)).ToList();
+            PrivilegeList = privilegeList;
+            Address = address;
+            Company = company;
         }
+
 
         [Obsolete]
         protected Person()
         {
         }
 
-
         public virtual string FName { get; protected set; }
         public virtual string LName { get; protected set; }
         public virtual DateTime DateOfBirth { get; protected set; }
         public virtual IList<PersonSkills> SkillsList { get; protected set; }
+        public virtual IList<Privileges.Privileges> PrivilegeList { get; protected set; }
+        public virtual Address Address { get; protected set; }
+        public virtual Company Company { get; protected set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0,-15} {1.-15} {2.-15} {3.-15} {4.-15}", FName, LName, DateOfBirth, Address, Company);
+        }
 
         public virtual bool HasAcces()
         {

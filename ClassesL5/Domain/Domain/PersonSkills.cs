@@ -13,23 +13,23 @@ namespace Domain.Domain
             Person = person;
         }
 
-        public virtual Person Person { get; protected set; }
-        public virtual string Name { get; protected set; }
-        public virtual int Level { get; protected set; }
-
         [Obsolete]
         protected PersonSkills()
         {
         }
 
-
-        //public virtual Dictionary<string, int> SkillsDictionary { get; protected set; }
+        public virtual Person Person { get; protected set; }
+        public virtual string Name { get; protected set; }
+        public virtual int Level { get; protected set; }
+        //    {
+        //    try
+        //{
 
 
         //public virtual void AddSkill(string skillName, int level)
-        //{
-        //    try
-        //    {
+
+
+        //public virtual Dictionary<string, int> SkillsDictionary { get; protected set; }
         //        SkillsDictionary.Add(skillName, level);
         //    }
         //    catch (ArgumentException)

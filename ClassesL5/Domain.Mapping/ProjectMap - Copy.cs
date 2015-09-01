@@ -11,7 +11,6 @@ namespace Domain.Mapping
             References(x => x.Company);
             Map(x => x.ProjectName).Not.Nullable();
             Map(x => x.ProjectDescription).Not.Nullable();
-            HasMany(x => x.TaskList).Cascade.All().Inverse().AsBag();
         }
 
         #endregion
