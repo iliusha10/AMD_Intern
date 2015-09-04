@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
-using Domain.Domain;
+using Domain.Company;
+using Domain.Interfaces;
+using Domain.Persons;
 using Domain.Privileges;
 using InterfaceActions.Actions;
 
@@ -15,11 +17,11 @@ namespace Factories.Factories
         }
 
         public Employee CreateEmployee(string fName, string lName, string bdate,
-            Dictionary<string, int> skillsDictionary, IList<Privileges> privilegeList, Address address,
+            Dictionary<string, int> skillsDictionary, Address address,
             Company company, double workexp, double salary,
             string department, string function)
         {
-            var employee = new Employee(fName, lName, bdate, skillsDictionary, privilegeList, address, company, workexp,
+            var employee = new Employee(fName, lName, bdate, skillsDictionary,  address, company, workexp,
                 salary, department, function);
             OnEmployeeCreation(employee);
             Logger.Logger.AddToLog("EmployeeFactory|CreateEmployee Employee");
@@ -31,6 +33,13 @@ namespace Factories.Factories
 
         public void OnEmployeeCreation(Employee employee)
         {
+            var a = employee;
+            IPrivileges b = new HollidayPrivilege(a);
+            b.AddPrivilege();
+            b = new LunchTichetsPrivilege(a);
+            b.AddPrivilege();
+            b = new SalaryBonusPrivilege(a);
+            b.AddPrivilege();
             _displayInfoAction.DisplayInfo(employee);
             //employee.DisplayAll();
         }

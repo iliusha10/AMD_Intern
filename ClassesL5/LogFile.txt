@@ -1534,3 +1534,192 @@ The statement has been terminated.
 9/1/2015 6:25:15 PM, -------The End------- 
 9/1/2015 6:36:40 PM, ----Begining of the program----- 
 9/1/2015 6:36:44 PM, -------The End------- 
+9/2/2015 8:20:09 AM, ----Begining of the program----- 
+9/2/2015 8:20:11 AM, -------The End------- 
+9/2/2015 8:25:52 AM, ----Begining of the program----- 
+9/2/2015 8:27:46 AM, ----Begining of the program----- 
+9/2/2015 8:30:13 AM, ----Begining of the program----- 
+9/2/2015 8:30:13 AM, Creating new project 
+9/2/2015 8:30:13 AM, Creating new project 
+9/2/2015 8:30:13 AM, Creating new project 
+9/2/2015 8:30:13 AM, CompanyFactory|CreateCompany Company 
+9/2/2015 8:30:13 AM, Creating new project 
+9/2/2015 8:30:13 AM, Creating new project 
+9/2/2015 8:30:13 AM, Creating new project 
+9/2/2015 8:30:13 AM, CompanyFactory|CreateCompany Company 
+9/2/2015 8:30:13 AM, CompanyRepository | AddCompany | {0} , NHibernate.Exceptions.GenericADOException: could not execute batch command.[SQL: SQL not available] ---> System.Data.SqlClient.SqlException: Violation of UNIQUE KEY constraint 'UQ__Company__7EA6E7A2F12C1068'. Cannot insert duplicate key in object 'dbo.Company'. The duplicate key value is (<NULL>).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.SqlClient.SqlCommand.ExecuteBatchRPCCommand()
+   at System.Data.SqlClient.SqlCommandSet.ExecuteNonQuery()
+   at NHibernate.AdoNet.SqlClientSqlCommandSet.ExecuteNonQuery()
+   at NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps)
+   --- End of inner exception stack trace ---
+   at NHibernate.AdoNet.SqlClientBatchingBatcher.DoExecuteBatch(IDbCommand ps)
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteBatchWithTiming(IDbCommand ps)
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteBatch()
+   at NHibernate.AdoNet.AbstractBatcher.OnPreparedCommand()
+   at NHibernate.AdoNet.AbstractBatcher.PrepareCommand(CommandType type, SqlString sql, SqlType[] parameterTypes)
+   at NHibernate.AdoNet.AbstractBatcher.PrepareBatchCommand(CommandType type, SqlString sql, SqlType[] parameterTypes)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Object obj, ISessionImplementor session)
+   at NHibernate.Action.EntityInsertAction.Execute()
+   at NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   at NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   at NHibernate.Engine.ActionQueue.ExecuteActions()
+   at NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+   at NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event)
+   at NHibernate.Impl.SessionImpl.Flush()
+   at NHibernate.Transaction.AdoTransaction.Commit()
+   at Repository.CompanyRepository.AddCompany(Company company) in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 20 
+9/2/2015 8:30:13 AM, InternFactory|CreateIntern Intern 
+9/2/2015 8:30:13 AM, InternFactory|CreateIntern Intern 
+9/2/2015 8:30:13 AM, InternFactory|CreateIntern Intern 
+9/2/2015 8:30:13 AM, InternFactory|CreateIntern Intern 
+9/2/2015 8:30:13 AM, InternFactory|CreateIntern Intern 
+9/2/2015 8:30:13 AM, ContractorFactory|CreateContractor Contractor 
+9/2/2015 8:30:13 AM, ContractorFactory|CreateContractor Contractor 
+9/2/2015 8:30:13 AM, ContractorFactory|CreateContractor Contractor 
+9/2/2015 8:30:13 AM, ContractorFactory|CreateContractor Contractor 
+9/2/2015 8:30:13 AM, ContractorFactory|CreateContractor Contractor 
+9/2/2015 8:30:13 AM, EmployeeFactory|CreateEmployee Employee 
+9/2/2015 8:30:13 AM, EmployeeFactory|CreateEmployee Employee 
+9/2/2015 8:30:13 AM, EmployeeFactory|CreateEmployee Employee 
+9/2/2015 8:30:13 AM, EmployeeFactory|CreateEmployee Employee 
+9/2/2015 8:30:13 AM, EmployeeFactory|CreateEmployee Employee 
+9/2/2015 9:13:28 AM, ----Begining of the program----- 
+9/2/2015 9:14:43 AM, ----Begining of the program----- 
+9/2/2015 9:15:03 AM, -------The End------- 
+9/2/2015 9:31:44 AM, ----Begining of the program----- 
+9/2/2015 9:31:50 AM, -------The End------- 
+9/2/2015 9:43:24 AM, ----Begining of the program----- 
+9/2/2015 9:48:12 AM, ----Begining of the program----- 
+9/2/2015 10:20:57 AM, ----Begining of the program----- 
+9/2/2015 10:24:03 AM, ----Begining of the program----- 
+9/2/2015 10:26:17 AM, ----Begining of the program----- 
+9/2/2015 10:27:15 AM, ----Begining of the program----- 
+9/2/2015 10:39:47 AM, ----Begining of the program----- 
+9/2/2015 10:40:46 AM, ----Begining of the program----- 
+9/2/2015 11:04:06 AM, ----Begining of the program----- 
+9/2/2015 11:04:11 AM, -------The End------- 
+9/2/2015 11:04:20 AM, ----Begining of the program----- 
+9/2/2015 11:09:21 AM, ----Begining of the program----- 
+9/2/2015 11:09:26 AM, -------The End------- 
+9/2/2015 12:35:37 PM, ----Begining of the program----- 
+9/2/2015 12:37:18 PM, ----Begining of the program----- 
+9/2/2015 12:37:32 PM, ----Begining of the program----- 
+9/2/2015 12:38:12 PM, ----Begining of the program----- 
+9/2/2015 12:39:28 PM, ----Begining of the program----- 
+9/2/2015 12:39:42 PM, ----Begining of the program----- 
+9/2/2015 12:39:56 PM, ----Begining of the program----- 
+9/2/2015 12:40:15 PM, ----Begining of the program----- 
+9/2/2015 12:42:22 PM, ----Begining of the program----- 
+9/2/2015 12:42:41 PM, ----Begining of the program----- 
+9/2/2015 12:44:20 PM, ----Begining of the program----- 
+9/2/2015 12:44:33 PM, ----Begining of the program----- 
+9/2/2015 12:46:32 PM, ----Begining of the program----- 
+9/2/2015 12:46:56 PM, ----Begining of the program----- 
+9/2/2015 12:48:03 PM, ----Begining of the program----- 
+9/2/2015 1:42:52 PM, ----Begining of the program----- 
+9/2/2015 1:43:15 PM, ----Begining of the program----- 
+9/2/2015 2:28:24 PM, ----Begining of the program----- 
+9/2/2015 2:28:46 PM, ----Begining of the program----- 
+9/2/2015 2:29:34 PM, ----Begining of the program----- 
+9/2/2015 2:30:12 PM, ----Begining of the program----- 
+9/3/2015 1:57:26 PM, ----Begining of the program----- 
+9/3/2015 3:44:43 PM, ----Begining of the program----- 
+9/3/2015 3:47:32 PM, ----Begining of the program----- 
+9/3/2015 3:47:56 PM, ----Begining of the program----- 
+9/3/2015 3:48:49 PM, ----Begining of the program----- 
+9/4/2015 9:30:07 AM, ----Begining of the program----- 
+9/4/2015 9:30:13 AM, -------The End------- 
+9/4/2015 9:31:02 AM, ----Begining of the program----- 
+9/4/2015 9:32:19 AM, -------The End------- 
+9/4/2015 10:50:19 AM, ----Begining of the program----- 
+9/4/2015 11:04:18 AM, ----Begining of the program----- 
+9/4/2015 11:07:56 AM, ----Begining of the program----- 
+9/4/2015 12:02:53 PM, ----Begining of the program----- 
+9/4/2015 12:02:56 PM, -------The End------- 
+9/4/2015 12:50:01 PM, ----Begining of the program----- 
+9/4/2015 1:51:55 PM, ----Begining of the program----- 
+9/4/2015 1:53:52 PM, ----Begining of the program----- 
+9/4/2015 1:55:03 PM, ----Begining of the program----- 
+9/4/2015 1:55:26 PM, ----Begining of the program----- 
+9/4/2015 1:55:39 PM, ----Begining of the program----- 
+9/4/2015 1:56:29 PM, ----Begining of the program----- 
+9/4/2015 1:56:31 PM, Creating new project 
+9/4/2015 1:56:31 PM, Creating new project 
+9/4/2015 1:56:31 PM, Creating new project 
+9/4/2015 1:56:31 PM, CompanyFactory|CreateCompany Company 
+9/4/2015 1:57:05 PM, ----Begining of the program----- 
+9/4/2015 1:57:30 PM, Creating new project 
+9/4/2015 1:57:40 PM, Creating new project 
+9/4/2015 1:57:49 PM, Creating new project 
+9/4/2015 1:58:17 PM, CompanyFactory|CreateCompany Company 
+9/4/2015 2:00:44 PM, ----Begining of the program----- 
+9/4/2015 2:00:49 PM, Creating new project 
+9/4/2015 2:00:49 PM, Creating new project 
+9/4/2015 2:00:49 PM, Creating new project 
+9/4/2015 2:00:49 PM, CompanyFactory|CreateCompany Company 
+9/4/2015 2:01:34 PM, ----Begining of the program----- 
+9/4/2015 2:01:41 PM, Creating new project 
+9/4/2015 2:01:41 PM, Creating new project 
+9/4/2015 2:01:41 PM, Creating new project 
+9/4/2015 2:01:41 PM, CompanyFactory|CreateCompany Company 
+9/4/2015 2:02:39 PM, ----Begining of the program----- 
+9/4/2015 2:02:43 PM, Creating new project 
+9/4/2015 2:02:43 PM, Creating new project 
+9/4/2015 2:02:43 PM, Creating new project 
+9/4/2015 2:02:43 PM, CompanyFactory|CreateCompany Company 
+9/4/2015 2:02:57 PM, Added HollidayPrivilege 
+9/4/2015 2:02:57 PM, Added LunchTichetsPrivilege 
+9/4/2015 2:02:57 PM, Added SalaryBonusPrivilege 
+9/4/2015 2:02:57 PM, EmployeeFactory|CreateEmployee Employee 
+9/4/2015 2:20:47 PM, ----Begining of the program----- 
+9/4/2015 2:20:49 PM, Creating new project 
+9/4/2015 2:20:49 PM, Creating new project 
+9/4/2015 2:20:49 PM, Creating new project 
+9/4/2015 2:20:49 PM, CompanyFactory|CreateCompany Company 
+9/4/2015 2:20:49 PM, Added HollidayPrivilege 
+9/4/2015 2:20:49 PM, Added LunchTichetsPrivilege 
+9/4/2015 2:20:49 PM, Added SalaryBonusPrivilege 
+9/4/2015 2:20:49 PM, EmployeeFactory|CreateEmployee Employee 
+9/4/2015 2:21:03 PM, -------The End------- 
+9/4/2015 2:25:49 PM, ----Begining of the program----- 
+9/4/2015 2:25:50 PM, Creating new project 
+9/4/2015 2:25:50 PM, Creating new project 
+9/4/2015 2:25:50 PM, Creating new project 
+9/4/2015 2:25:50 PM, CompanyFactory|CreateCompany Company 
+9/4/2015 2:25:51 PM, Added HollidayPrivilege 
+9/4/2015 2:25:51 PM, Added LunchTichetsPrivilege 
+9/4/2015 2:25:51 PM, Added SalaryBonusPrivilege 
+9/4/2015 2:25:51 PM, EmployeeFactory|CreateEmployee Employee 
+9/4/2015 2:25:51 PM, -------The End------- 
+9/4/2015 2:27:00 PM, ----Begining of the program----- 
+9/4/2015 2:27:02 PM, Creating new project 
+9/4/2015 2:27:02 PM, Creating new project 
+9/4/2015 2:27:02 PM, Creating new project 
+9/4/2015 2:27:02 PM, CompanyFactory|CreateCompany Company 
+9/4/2015 2:27:02 PM, Added HollidayPrivilege 
+9/4/2015 2:27:02 PM, Added LunchTichetsPrivilege 
+9/4/2015 2:27:02 PM, Added SalaryBonusPrivilege 
+9/4/2015 2:27:02 PM, EmployeeFactory|CreateEmployee Employee 
+9/4/2015 2:27:05 PM, -------The End------- 
+9/4/2015 2:28:19 PM, ----Begining of the program----- 
+9/4/2015 2:28:19 PM, Creating new project 
+9/4/2015 2:28:19 PM, Creating new project 
+9/4/2015 2:28:19 PM, Creating new project 
+9/4/2015 2:28:19 PM, CompanyFactory|CreateCompany Company 
+9/4/2015 2:28:25 PM, Added HollidayPrivilege 
+9/4/2015 2:28:25 PM, Added LunchTichetsPrivilege 
+9/4/2015 2:28:25 PM, Added SalaryBonusPrivilege 
+9/4/2015 2:28:25 PM, EmployeeFactory|CreateEmployee Employee 
+9/4/2015 2:28:27 PM, -------The End------- 

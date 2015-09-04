@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Domain;
-using Domain.Domain;
+using Domain.Company;
 
 namespace Repository.Interfaces
 {

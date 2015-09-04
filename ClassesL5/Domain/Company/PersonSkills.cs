@@ -1,6 +1,7 @@
 ﻿using System;
+using Domain.Persons;
 
-namespace Domain.Domain
+namespace Domain.Company
 {
     public class PersonSkills : Entity
     {
@@ -21,9 +22,11 @@ namespace Domain.Domain
         public virtual Person Person { get; protected set; }
         public virtual string Name { get; protected set; }
         public virtual int Level { get; protected set; }
-        //    {
-        //    try
-        //{
+
+        public override string ToString()
+        {
+            return string.Format("{0, -15} {1, -15} ", Name, Level);
+        }
 
 
         //public virtual void AddSkill(string skillName, int level)

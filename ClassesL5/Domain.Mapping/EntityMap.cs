@@ -1,5 +1,4 @@
-﻿using Domain.Domain;
-using FluentNHibernate.Mapping;
+﻿using FluentNHibernate.Mapping;
 
 namespace Domain.Mapping
 {
@@ -8,7 +7,7 @@ namespace Domain.Mapping
         protected EntityMap()
         {
             Id(x => x.Id).GeneratedBy.HiLo("1000");
-
+            Version(x => x.Version);
             DynamicUpdate();
         }
     }

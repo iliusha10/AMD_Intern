@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using Domain.Interfaces;
+using Domain.Company;
 
-namespace Domain.Domain
+namespace Domain.Persons
 {
-    public class Intern : Person, IPrivileges
+    public class Intern : Person
     {
         public Intern(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
-            IList<Privileges.Privileges> privilegeList, Address address, Company company, double avmark)
-            : base(fName, lName, bdate, skillsDictionary, privilegeList, address, company)
+            Address address, Company.Company company, double avmark)
+            : base(fName, lName, bdate, skillsDictionary, address, company)
         {
             AverageMark = avmark;
         }
@@ -20,11 +20,6 @@ namespace Domain.Domain
 
         public virtual double AverageMark { get; protected set; }
 
-        public virtual void AddPrivilege()
-        {
-            Console.WriteLine("Priveleges:");
-            Console.WriteLine();
-        }
 
         public virtual void DisplayAll()
         {

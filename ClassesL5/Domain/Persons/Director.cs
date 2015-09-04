@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using Domain.Company;
 using Domain.Interfaces;
 
-namespace Domain.Domain
+namespace Domain.Persons
 {
     public class Director : Person, IPrivileges, IAppointment, INotify
     {
-        public Director(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary, IList<Privileges.Privileges> privilegeList, Address address, Company company)
-            : base(fName, lName, bdate, skillsDictionary, privilegeList, address, company)
+        public Director(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary, Address address, Company.Company company)
+            : base(fName, lName, bdate, skillsDictionary,  address, company)
         {
         }
 

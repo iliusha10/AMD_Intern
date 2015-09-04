@@ -1,10 +1,12 @@
 using System;
 
-namespace Domain.Domain
+namespace Domain
 {
     public abstract class Entity
     {
         #region Public static members
+
+        public virtual long Version { get; protected set; }
 
         public static bool operator ==(Entity left, Entity right)
         {

@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using Domain.Company;
 using Domain.Interfaces;
 
-namespace Domain.Domain
+namespace Domain.Persons
 {
     public class Contractor : Person, IPrivileges
     {
         public Contractor(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
-            IList<Privileges.Privileges> privilegeList, Address address, Company company, double workexp, double salary)
-            : base(fName, lName, bdate, skillsDictionary, privilegeList, address, company)
+            Address address, Company.Company company, double workexp, double salary)
+            : base(fName, lName, bdate, skillsDictionary, address, company)
         {
             if (workexp <= 0)
                 throw new ArgumentException("Work expirience must be positive.");

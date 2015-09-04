@@ -1,4 +1,4 @@
-﻿using Domain.Domain;
+﻿using Domain;
 using NHibernate;
 using Repository.Interfaces;
 

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Domain.Domain;
+using Domain.Company;
 using Domain.Interfaces;
 using InterfaceActions.Actions;
 

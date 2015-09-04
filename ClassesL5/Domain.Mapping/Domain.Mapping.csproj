@@ -55,6 +55,7 @@
     <Compile Include="InternMap.cs" />
     <Compile Include="ComapnyMap.cs" />
     <Compile Include="PersonMap.cs" />
+    <Compile Include="PersonPrivilegeMap.cs" />
     <Compile Include="TaskMap.cs" />
     <Compile Include="SalaryMap.cs" />
     <Compile Include="ProjectMap.cs" />

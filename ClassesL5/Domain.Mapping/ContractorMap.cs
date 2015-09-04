@@ -1,4 +1,5 @@
-﻿using Domain.Domain;
+﻿using Domain.Company;
+using Domain.Persons;
 using FluentNHibernate.Mapping;
 
 namespace Domain.Mapping
@@ -9,6 +10,7 @@ namespace Domain.Mapping
         {
             Map(x => x.Salary).Not.Nullable();
             Map(x => x.WorkExp).Not.Nullable();
+            HasMany<Salary>(x => x.Salary);
         }
     }
 }

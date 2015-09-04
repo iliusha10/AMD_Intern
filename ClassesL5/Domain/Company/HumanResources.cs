@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Domain.Interfaces;
+using Domain.Persons;
 
-namespace Domain.Domain
+namespace Domain.Company
 {
     public class HumanResources : INotify
     {

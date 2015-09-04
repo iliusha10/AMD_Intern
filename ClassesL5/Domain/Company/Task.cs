@@ -1,6 +1,7 @@
 ﻿using System;
+using Domain.Persons;
 
-namespace Domain.Domain
+namespace Domain.Company
 {
     public class Task : Entity
     {
@@ -22,5 +23,10 @@ namespace Domain.Domain
         public virtual DateTime Deadline { get; protected set; }
         public virtual Project Project { get; protected set; }
         public virtual Person Person { get; protected set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0, -15} {1, -15} {2, -15}", TaskName, TaskDescription, Deadline);
+        }
     }
 }

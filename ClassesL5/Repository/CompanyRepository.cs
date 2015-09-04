@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Domain;
-using Domain.Domain;
+using Domain.Company;
 using Repository.Interfaces;
 
 namespace Repository

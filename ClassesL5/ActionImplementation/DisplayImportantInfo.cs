@@ -1,4 +1,4 @@
-﻿using Domain.Domain;
+﻿using Domain.Persons;
 using InterfaceActions.Actions;
 
 namespace ActionImplementation

@@ -1,17 +1,21 @@
 ﻿using System;
 using Domain.Interfaces;
+using Domain.Persons;
+
 
 namespace Domain.Privileges
 {
-    public abstract class Privileges : IPrivileges
+    public abstract class Privileges<TPrivileges> : IPrivileges where TPrivileges : IPrivileges
     {
-        protected IPrivileges Input;
+        protected TPrivileges Input;
 
-        protected Privileges(IPrivileges i)
+        protected Privileges(TPrivileges person)
         {
-            Input = i; //store the item to be decorated
+            Input = person; //store the item to be decorated
         }
 
+       
+         
 
         public abstract void AddPrivilege();
     }

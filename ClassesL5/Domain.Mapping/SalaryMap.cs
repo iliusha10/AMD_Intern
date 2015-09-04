@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.Domain;
+using Domain.Company;
 
 namespace Domain.Mapping
 {
@@ -13,7 +13,7 @@ namespace Domain.Mapping
 
         public SalaryMap()
         {
-            //References(x => x.ID);
+            References(x => x.Contractor);
             Map(x => x.GetDate).Not.Nullable();
             Map(x => x.Amount).Not.Nullable();
         }

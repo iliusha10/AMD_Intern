@@ -1,6 +1,6 @@
 ﻿using System;
-using Domain.Domain;
 using Domain.Interfaces;
+using Domain.Persons;
 
 namespace Domain.Proxy
 {

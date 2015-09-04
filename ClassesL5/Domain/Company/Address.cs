@@ -1,6 +1,7 @@
 ﻿using System;
+using Domain.Persons;
 
-namespace Domain.Domain
+namespace Domain.Company
 {
     public class Address:Entity
     {

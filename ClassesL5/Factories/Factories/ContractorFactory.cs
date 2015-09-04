@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
-using Domain.Domain;
+using Domain.Company;
+using Domain.Interfaces;
+using Domain.Persons;
 using Domain.Privileges;
 using InterfaceActions.Actions;
 
@@ -16,9 +18,9 @@ namespace Factories.Factories
 
         public Contractor CreateContractor(string fName, string lName, string bdate,
             Dictionary<string, int> skillsDictionary,
-            IList<Privileges> privilegeList, Address address, Company company, double workexp, double salary)
+            Address address, Company company, double workexp, double salary)
         {
-            var contractor = new Contractor(fName, lName, bdate, skillsDictionary, privilegeList, address, company,
+            var contractor = new Contractor(fName, lName, bdate, skillsDictionary,  address, company,
                 workexp, salary);
             OnContractorCreation(contractor);
             Logger.Logger.AddToLog("ContractorFactory|CreateContractor Contractor");
@@ -33,6 +35,11 @@ namespace Factories.Factories
 
         public void OnContractorCreation(Contractor contractor)
         {
+            var a = contractor;
+            IPrivileges b = new HollidayPrivilege(a);
+            b.AddPrivilege();
+            IPrivileges d = new SalaryBonusPrivilege(a);
+            d.AddPrivilege();
             _displayInfoAction.DisplayInfo(contractor);
             //contractor.DisplayAll();
         }

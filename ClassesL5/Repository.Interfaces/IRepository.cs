@@ -1,4 +1,4 @@
-﻿using Domain.Domain;
+﻿using Domain;
 
 namespace Repository.Interfaces
 {

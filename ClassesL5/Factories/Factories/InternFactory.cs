@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
-using Domain.Domain;
+using Domain.Company;
+using Domain.Interfaces;
+using Domain.Persons;
 using Domain.Privileges;
 using InterfaceActions.Actions;
 
@@ -15,15 +17,15 @@ namespace Factories.Factories
         }
 
         public Intern CreateIntern(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
-            IList<Privileges> privilegeList, Address address, Company company, double avmark)
+            Address address, Company company, double avmark)
         {
             Logger.Logger.AddToLog("InternFactory|CreateIntern Intern");
-            var intern = new Intern(fName, lName, bdate, skillsDictionary, privilegeList, address, company, avmark);
+            var intern = new Intern(fName, lName, bdate, skillsDictionary, address, company, avmark);
             OnInternCreation(intern);
-//IPrivileges a = intern;
-//            IPrivileges b = new HollidayPrivilege(a);
-//            IPrivileges d = new SalaryBonusPrivilege(b);
-//            d.AddPrivilege();
+            //IPrivileges a = intern;
+            //IPrivileges b = new HollidayPrivilege(a);
+            //IPrivileges d = new SalaryBonusPrivilege(b);
+            //d.AddPrivilege();
             //var salaryCalculator = new SalaryCalculator();
             //intern.Salary = salaryCalculator.Calculate(intern.Salary, new InternSalaryCalculator());
             return intern;
@@ -31,6 +33,9 @@ namespace Factories.Factories
 
         public void OnInternCreation(Intern intern)
         {
+            var a = intern;
+            var b = new HollidayPrivilege(a);
+            b.AddPrivilege();
             _displayInfoAction.DisplayInfo(intern);
             //intern.DisplayAll();
         }

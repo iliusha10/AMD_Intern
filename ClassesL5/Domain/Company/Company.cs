@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Domain.Persons;
 
-namespace Domain.Domain
+namespace Domain.Company
 {
     public class Company : Entity
     {

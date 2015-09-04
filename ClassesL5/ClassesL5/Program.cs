@@ -2,44 +2,52 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Domain;
-using Domain.Domain;
+using Domain.Company;
+using Domain.Persons;
 using Domain.Privileges;
 using Factories.Factories;
 using HibernatingRhinos.Profiler.Appender.NHibernate;
 using Infrastructure.IoC;
+using Repository;
 using Repository.Interfaces;
 
 namespace ClassesL5
 {
     internal class Program
     {
-        private static readonly CompanyFactory CompanyFactory;
-        private static readonly ContractorFactory ContractorFactory;
+        private static  CompanyFactory CompanyFactory;
+        private static  ContractorFactory ContractorFactory;
         private static PersonFactory PersonFactory;
-        private static readonly IPersonRepository PersonRepository;
-        private static readonly ICompanyRepository CompanyRepository;
-        private static readonly InternFactory InternFactory;
-        private static readonly EmployeeFactory EmployeeFactory;
+        private static  IPersonRepository PersonRepository;
+        private static  IPersonSkillsRepository PersonSkillsRepository;
+        private static  ICompanyRepository CompanyRepository;
+        private static  InternFactory InternFactory;
+        private static  EmployeeFactory EmployeeFactory;
         private static ProjectFactory ProjectFactory;
+
+
+
 
         static Program()
         {
             ServiceLocator.RegisterAll();
-            EmployeeFactory = ServiceLocator.Get<EmployeeFactory>();
-            ProjectFactory = ServiceLocator.Get<ProjectFactory>();
-            InternFactory = ServiceLocator.Get<InternFactory>();
-            CompanyFactory = ServiceLocator.Get<CompanyFactory>();
-            ContractorFactory = ServiceLocator.Get<ContractorFactory>();
-            PersonFactory = ServiceLocator.Get<PersonFactory>();
-            PersonRepository = ServiceLocator.Get<IPersonRepository>();
-            CompanyRepository = ServiceLocator.Get<ICompanyRepository>();
+           
             NHibernateProfiler.Initialize();
         }
 
         public static void PopulatingDb(int number)
         {
+            var employeelist = new List<Employee>();
+            var contractorlist = new List<Contractor>();
+            var internlist = new List<Intern>();
             var personsList = new List<Person>();
+            var companylist = new List<Company>();
+            
             var newAddress = new Address("Monumentul Stefan cel Mare", "Chisinau");
+            var newAddress2 = new Address("Aleco Ruso", "Chisinau");
+            var newAddress3 = new Address("bd Decebal", "Chisinau");
+            var newAddress4 = new Address("bd Miorita", "Chisinau");
+            
             var projects = new Dictionary<string, string>
             {
                 {"Vien", "Project nr 1"},
@@ -49,8 +57,15 @@ namespace ClassesL5
             var company = CompanyFactory.CreateCompany("Amdaris", FieldOfActivity.IT, "Chisinau", projects);
             CompanyRepository.AddCompany(company);
 
-            var project2 = new Dictionary<string, string>
-            {
+            var project2 = new Dictionary<string, string> {
+                {"Nima", "Project nr 1"},
+                {"BJH", "Project nr 2"},
+                {"XAF", "Project nr 3"}
+            };
+            
+            var company3 = CompanyFactory.CreateCompany("Amdaris", FieldOfActivity.IT, "Chisinau", projects);
+            CompanyRepository.AddCompany(company);
+            var project3 = new Dictionary<string, string> {
                 {"Nima", "Project nr 1"},
                 {"BJH", "Project nr 2"},
                 {"XAF", "Project nr 3"}
@@ -58,7 +73,7 @@ namespace ClassesL5
             var company2 = CompanyFactory.CreateCompany("Google", FieldOfActivity.IT, "Roma", project2);
             CompanyRepository.AddCompany(company2);
 
-            var privilegelist = new List<Privileges>();
+            var privilegelist = new List<string>();
 
             //IPrivileges a = contractor;
             //IPrivileges b = new HollidayPrivilege(a);
@@ -69,7 +84,8 @@ namespace ClassesL5
             {
                 var skills = new Dictionary<string, int> {{"C#", 80 + i}, {"SQL", 90 + i}};
                 var person = InternFactory.CreateIntern(string.Format("Person {0}", i + 1), "Smith", "1990-12-13",
-                    skills, privilegelist, newAddress, company, 8 + i/10);
+                    skills, newAddress, company, 8 + i/10);
+                person.AddPrivilege();
                 personsList.Add(person);
             }
             //PersonRepository.AddPerson(personsList);
@@ -79,7 +95,7 @@ namespace ClassesL5
                 var skills = new Dictionary<string, int> {{"C#", 80 + i}, {"SQL", 90 + i}};
                 var person = ContractorFactory.CreateContractor(string.Format("Person {0}", i + 1), "Smith",
                     "1990-12-13",
-                    skills, privilegelist, newAddress, company, 2 + i, 1000 + i*10);
+                    skills, newAddress, company, 2 + i, 1000 + i*10);
                 personsList.Add(person);
             }
             //PersonRepository.AddPerson(personsList);
@@ -88,7 +104,7 @@ namespace ClassesL5
             {
                 var skills = new Dictionary<string, int> {{"C#", 80 + i}, {"SQL", 90 + i}};
                 var person = EmployeeFactory.CreateEmployee(string.Format("Person {0}", i + 1), "Smith", "1990-12-13",
-                    skills, privilegelist, newAddress, company, 2 + i, 1000 + i*10, "Software Inginiering",
+                    skills, newAddress, company, 2 + i, 1000 + i*10, "Software Inginiering",
                     "Software developer");
                 personsList.Add(person);
             }
@@ -128,11 +144,97 @@ namespace ClassesL5
             persons.PrintToConsole();
         }
 
+        //JoinQueryOver + Where
+        private static void ShowPersonSkillsByFirstname(string firstname)
+        {
+            var persons = PersonRepository.GetPersonSkillsByFirstname(firstname);
+            //var persons = PersonSkillsRepository.GetPersonSkillsByFirstname(firstname);
+            persons.PrintToConsole();
+        }
+
+        //JoinAlias + Where
+        private static void ShowPersonByTaskname(string taskname)
+        {
+            var persons = PersonRepository.GetPersonByTaskName(taskname);
+            persons.PrintToConsole();
+        }
+
+        //JoinAlias + SelectList + AliasToBean
+        private static void ShowEmployeeDetails1()
+        {
+            var employee = PersonRepository.GetEmployeeDetails1();
+            Console.WriteLine("{0, -10} {1, -10} {2, -10} {3, -10} {4, -10}", "FirstName", "LastName", 
+                "DateOfBirth", "Department", "Role");
+            foreach (var em in employee)
+            {
+                Console.WriteLine(em);
+            }
+        }
+
+        //SingleOrDefault + where
+        private static void ShowPersonLastnameById(long id)
+        {
+            var lastname = PersonRepository.GetPersonLastnameById(id);
+            Console.WriteLine(lastname);
+            //persons.PrintToConsole();
+        }
+
+        //Future + SelectProjectionList
+        private static void ShowAllPersonsFirstAndLastNames_ProjectionList()
+        {
+            var persons = PersonRepository.GetAllFirstAndLastNames_ProjectionList();
+            foreach (var p in persons)
+            {
+                Console.WriteLine("{0} {1}", p[0], p[1]);
+            }
+        }
+
+        //JoinAlias + SelectGroup+SelectCount + Where(Restrictions) + AliasToBean
+        private static void ShowPersonRowsHavingMoreThanOneSkill()
+        {
+            const string template = "{0, -15} {1, -15} {2, -15} {3, -15}";
+            var clients = PersonRepository.GetPersonRowsHavingMoreThanOneSkill();
+
+            Console.WriteLine(template, "PersonID", "Firstname", "Lastname", "Tasks");
+
+            foreach (var row in clients)
+            {
+                Console.WriteLine(row);
+            }
+        }
+
+        //DistinctRootEntity
+        private static void ShowAllPersonsWithSkills()
+        {
+            var persons = PersonRepository.GetAllPersonsWithSkills();
+
+            Console.WriteLine("There are {0} persons records with skills", persons.Count);
+        }
+
+        //private static void ShowPersonByLNameOrByFName(name)
+        //{
+        //    var persons = PersonRepository.GetPersonByLNameOrByFName(Emma);
+        //}
+
+
 
         private static void Main(string[] args)
         {
+            EmployeeFactory = ServiceLocator.Get<EmployeeFactory>();
+            ProjectFactory = ServiceLocator.Get<ProjectFactory>();
+            InternFactory = ServiceLocator.Get<InternFactory>();
+            CompanyFactory = ServiceLocator.Get<CompanyFactory>();
+            ContractorFactory = ServiceLocator.Get<ContractorFactory>();
+            PersonFactory = ServiceLocator.Get<PersonFactory>();
+            PersonRepository = ServiceLocator.Get<IPersonRepository>();
+            PersonSkillsRepository = ServiceLocator.Get<IPersonSkillsRepository>();
+            CompanyRepository = ServiceLocator.Get<ICompanyRepository>();
+
+           
             try
             {
+
+              
                 //decorator pattern
                 Logger.Logger.AddToLog("----Begining of the program-----");
 
@@ -144,7 +246,21 @@ namespace ClassesL5
                 //PopulatingDb(5);
 
 
-                
+                //ShowAllPersons();
+                //ShowPersonSkillsByFirstname("Person 1");
+                //ShowPersonByTaskname("Task 1");
+                //ShowPersonLastnameById(3003);
+                // ShowEmployeeDetails1();
+                //ShowPersonRowsHavingMoreThanOneSkill();
+                //ShowAllPersonsWithSkills();
+                //ShowAllPersonsFirstAndLastNames_ProjectionList();
+
+                //ShowPersonByLNameOrByFName;
+
+                TestPrivelesAdd();
+
+
+
                 Console.ReadLine();
 
 ////Proxy
@@ -190,6 +306,30 @@ namespace ClassesL5
                 Logger.Logger.AddToLog("-------The End-------");
                 Debug.WriteLine("Debug: Good luck!");
             }
+        }
+
+        private static void TestPrivelesAdd()
+        {
+            var newAddress = new Address("Monumentul Stefan cel Mare", "Chisinau");
+            var skills = new Dictionary<string, int> {{"C#", 80}, {"SQL", 90}};
+            var project2 = new Dictionary<string, string>
+            {
+                {"Nima", "Project nr 1"},
+                {"BJH", "Project nr 2"},
+                {"XAF", "Project nr 3"}
+            };
+
+
+            var emp = EmployeeFactory.CreateEmployee("John", "Doe", "1980-04-01", skills, newAddress,
+                CompanyFactory.CreateCompany("Imea", FieldOfActivity.IT, "Chisinau", project2), 20, 1300, "Test",
+                "Testing Ingineer");
+            var salary= new Salary(emp, "2015.02.02", 1200);
+            PersonRepository.AddPerson(new List<Person>() {emp});
+            foreach (var variable in emp.PrivilegeList)
+            {
+                Console.WriteLine(variable);
+            }
+            ;
         }
     }
 

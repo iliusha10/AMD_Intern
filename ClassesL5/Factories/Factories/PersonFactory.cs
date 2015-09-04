@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Domain.Domain;
+using Domain.Company;
+using Domain.Persons;
 using InterfaceActions.Actions;
 
 namespace Factories.Factories
@@ -21,9 +22,9 @@ namespace Factories.Factories
         //    return person;
         //}
 
-        public Person CreatePersonWSkills(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary, IList<Domain.Privileges.Privileges> privilegeList, Address address, Company company)
+        public Person CreatePersonWSkills(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary, Address address, Company company)
         {
-            var person = new Person(fName, lName, bdate, skillsDictionary, privilegeList, address, company);
+            var person = new Person(fName, lName, bdate, skillsDictionary,  address, company);
             OnInternCreation(person);
             return person;
         }

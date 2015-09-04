@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Domain.Domain;
+using Domain.Company;
+using Domain.Persons;
 using Factories.Factories;
 using Infrastructure.IoC;
 

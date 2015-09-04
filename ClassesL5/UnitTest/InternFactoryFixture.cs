@@ -1,5 +1,4 @@
 ﻿using Domain;
-using Domain.Domain;
 using Factories.Factories;
 using InterfaceActions.Actions;
 using Moq;

@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Domain.Company;
+using Domain.Interfaces;
+using Domain.Privileges;
 
-namespace Domain.Domain
+namespace Domain.Persons
 {
-    public class Person : Entity
+    public class Person : Entity, IPrivileges
     {
         //public Person(string fName, string lName, string bdate)
         //{
@@ -28,7 +31,7 @@ namespace Domain.Domain
         //}
 
         public Person(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
-            IList<Privileges.Privileges> privilegeList, Address address, Company company)
+            Address address, Company.Company company)
         {
             if (string.IsNullOrWhiteSpace(fName))
                 throw new ArgumentException("First name is required.");
@@ -47,7 +50,7 @@ namespace Domain.Domain
             }
 
             SkillsList = skillsDictionary.Select(x => new PersonSkills(this, x.Key, x.Value)).ToList();
-            PrivilegeList = privilegeList;
+            PrivilegeList = new List<PersonPrivilege>();
             Address = address;
             Company = company;
         }
@@ -62,13 +65,18 @@ namespace Domain.Domain
         public virtual string LName { get; protected set; }
         public virtual DateTime DateOfBirth { get; protected set; }
         public virtual IList<PersonSkills> SkillsList { get; protected set; }
-        public virtual IList<Privileges.Privileges> PrivilegeList { get; protected set; }
+        public virtual IList<PersonPrivilege> PrivilegeList { get; protected set; }
         public virtual Address Address { get; protected set; }
-        public virtual Company Company { get; protected set; }
+        public virtual Company.Company Company { get; protected set; }
 
         public override string ToString()
         {
-            return string.Format("{0,-15} {1.-15} {2.-15} {3.-15} {4.-15}", FName, LName, DateOfBirth, Address, Company);
+            return string.Format("{0, -15} {1, -15} {2, -15}", FName, LName, DateOfBirth);
+        }
+
+        public virtual void AddPrivilege()
+        {
+            
         }
 
         public virtual bool HasAcces()

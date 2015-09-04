@@ -1,12 +1,10 @@
-﻿using Domain.Domain;
-
-namespace Domain.Mapping
+﻿namespace Domain.Mapping
 {
-    public class CompanyMap : EntityMap<Company>
+    public class CompanyMap : EntityMap<Company.Company>
     {
         public CompanyMap()
         {
-            References(x => x.Person).Unique();
+            References(x => x.Person);
             Map(x => x.CompanyName).Not.Nullable();
             Map(x => x.Activity).Not.Nullable();
             Map(x => x.Address);

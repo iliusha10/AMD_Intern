@@ -1,6 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Domain.Domain;
+using System.Linq;
+using Domain.Company;
+using Domain.Persons;
+using Domain.Row;
+using NHibernate.Criterion;
+using NHibernate.Transform;
 using Repository.Interfaces;
 
 namespace Repository
@@ -72,8 +77,221 @@ namespace Repository
 
         public IList<Person> GetAll()
         {
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    return _session.QueryOver<Person>().List();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("PersonRepository | AddPerson | {0}", ex);
+                    tran.Rollback();
+                    return null;
+                }
+            }
+        }
 
-            return _session.QueryOver<Person>().List();
+        public IList<Person> GetPersonSkillsByFirstname(string firstname)
+        {
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    return _session.QueryOver<PersonSkills>()
+                        .JoinQueryOver(skl => skl.Person)
+                        .Where(p => p.FName == firstname)
+                        .Select(skl => skl.Person)
+                        .List<Person>();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("PersonRepository | AddPerson | {0}", ex);
+                    tran.Rollback();
+                    return null;
+                }
+            }
+        }
+
+        public IList<Person> GetPersonByTaskName(string taskname)
+        {
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    Person pers = null;
+
+                    return _session.QueryOver<Task>()
+                        .JoinAlias(t => t.Person, () => pers)
+                        .Where(t => t.TaskName == taskname)
+                        .Select(t => t.Person)
+                        .List<Person>();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("PersonRepository | AddPerson | {0}", ex);
+                    tran.Rollback();
+                    return null;
+                }
+            }
+        }
+
+        public IList<EmployeDetails> GetEmployeeDetails1()
+        {
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    Person pers = null;
+                    Contractor cont = null;
+                    Employee emp = null;
+                    PersonSkills skl = null;
+                    EmployeDetails row = null;
+
+                    return _session.QueryOver(() => emp)
+                        //.JoinAlias(() => pers.Id, () => emp)
+                        .JoinAlias(() => emp.SkillsList, () => skl)
+                        .SelectList(list => list
+                            .Select(() => emp.FName).WithAlias(() => row.Firstname)
+                            .Select(() => emp.LName).WithAlias(() => row.Lastname)
+                            .Select(() => emp.DateOfBirth).WithAlias(() => row.BirthDate)
+                            .Select(() => emp.Department).WithAlias(() => row.Department)
+                            .Select(() => emp.Role).WithAlias(() => row.Role)
+                            .Select(() => skl.Name).WithAlias(() => row.SkillName)
+                            .Select(() => skl.Level).WithAlias(() => row.SkillLevel))
+                        .TransformUsing(Transformers.AliasToBean<EmployeDetails>())
+                        .List<EmployeDetails>();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("PersonRepository | AddPerson | {0}", ex);
+                    tran.Rollback();
+                    return null;
+                }
+            }
+        }
+
+        public string GetPersonLastnameById(long id)
+        {
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    return _session.QueryOver<Person>()
+                        .Where(p => p.Id == id)
+                        .Select(p => p.LName)
+                        .SingleOrDefault<string>();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("PersonRepository | AddPerson | {0}", ex);
+                    tran.Rollback();
+                    return null;
+                }
+            }
+        }
+
+        public IList<object[]> GetAllFirstAndLastNames_ProjectionList()
+        {
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    Person person = null;
+
+                    var res = _session.QueryOver(() => person)
+                        .Select(Projections.ProjectionList()
+                            .Add(Projections.Property(() => person.FName))
+                            .Add(Projections.Property(() => person.LName)))
+                        .Future<object[]>();
+                    return res.ToList();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("PersonRepository | AddPerson | {0}", ex);
+                    tran.Rollback();
+                    return null;
+                }
+            }
+        }
+
+        public IList<PersonWithSkillsCount> GetPersonRowsHavingMoreThanOneSkill()
+        {
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    PersonSkills skills = null;
+                    Person person = null;
+                    PersonWithSkillsCount row = null;
+
+                    var res = _session.QueryOver(() => person)
+                        .JoinAlias(() => person.SkillsList, () => skills)
+                        .SelectList(list => list
+                            .SelectGroup(() => person.Id).WithAlias(() => row.PersonId)
+                            .SelectGroup(() => person.FName).WithAlias(() => row.Firstname)
+                            .SelectGroup(() => person.LName).WithAlias(() => row.Lastname)
+                            .SelectCount(() => skills.Person).WithAlias(() => row.SkillsCount))
+                        .Where(Restrictions.Gt(Projections.Count(Projections.Property(() => skills.Person)), 1))
+                        .TransformUsing(Transformers.AliasToBean<PersonWithSkillsCount>())
+                        .List<PersonWithSkillsCount>();
+
+                    tran.Commit();
+                    return res;
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("PersonRepository | AddPerson | {0}", ex);
+                    tran.Rollback();
+                    return null;
+                }
+            }
+        }
+
+        public IList<Person> GetAllPersonsWithSkills()
+        {
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    Person person = null;
+                    PersonSkills skills = null;
+
+                    return _session.QueryOver(() => person)
+                        .JoinAlias(() => person.SkillsList, () => skills)
+                        .TransformUsing(Transformers.DistinctRootEntity)
+                        .List<Person>();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("PersonRepository | AddPerson | {0}", ex);
+                    tran.Rollback();
+                    return null;
+                }
+            }
+        }
+
+        public IList<Person> GetPersonByLNameOrByFName(string lastname, string firstname)
+        {
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    var persons = _session.QueryOver<Person>()
+                        .Where(new Disjunction()
+                            .Add(Restrictions.Where<Person>(x => x.LName == lastname))
+                            .Add(Restrictions.Where<Person>(x => x.FName == firstname)))
+                        .List();
+                    tran.Commit();
+                    return persons;
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("PersonRepository | AddPerson | {0}", ex);
+                    tran.Rollback();
+                    return null;
+                }
+            }
         }
     }
 }

@@ -41,7 +41,7 @@ namespace Repository
                         .TrustedConnection()))
                 .Mappings(x => x.FluentMappings.AddFromAssembly(typeof (PersonMap).Assembly))
                 .ExposeConfiguration(
-                    cfg => new SchemaUpdate(cfg).Execute(false, true));
+                    cfg => new SchemaUpdate(cfg).Execute(true, true));
 
 
 
