@@ -1,4 +1,4 @@
-﻿using Bl.SalaryCalculator;
+﻿using BL.SalaryCalculator;
 using NUnit.Framework;
 
 namespace UnitTest

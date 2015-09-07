@@ -33,18 +33,18 @@ namespace Domain.Persons
             Console.WriteLine("Privileges:");
         }
 
-        public virtual double calcBonus(double salary)
-        {
-            return salary + (salary*0.04);
-        }
+        //public virtual double calcBonus(double salary)
+        //{
+        //    return salary + (salary*0.04);
+        //}
 
         public virtual void DisplayAll()
         {
             Console.WriteLine("Employee:");
             DisplayPersonInfo();
             Console.WriteLine("Work Experience: {0}", WorkExp);
-            Console.WriteLine("Salary: {0}", Salary);
-            Console.WriteLine("Salary + Bonus: {0}", calcBonus(Salary));
+            //Console.WriteLine("Salary: {0}", Salary);
+            //Console.WriteLine("Salary + Bonus: {0}", calcBonus(Salary));
             //Console.WriteLine("Department: {0}", Department);
             Console.WriteLine();
         }

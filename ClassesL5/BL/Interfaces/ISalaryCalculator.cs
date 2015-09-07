@@ -1,4 +1,4 @@
-﻿namespace Bl.Interfaces
+﻿namespace BL.Interfaces
 {
     public interface ISalaryCalculator
     {

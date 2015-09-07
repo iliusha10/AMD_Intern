@@ -4,34 +4,29 @@ using System.Diagnostics;
 using Domain;
 using Domain.Company;
 using Domain.Persons;
-using Domain.Privileges;
-using Factories.Factories;
+using Factories;
 using HibernatingRhinos.Profiler.Appender.NHibernate;
 using Infrastructure.IoC;
-using Repository;
 using Repository.Interfaces;
 
 namespace ClassesL5
 {
     internal class Program
     {
-        private static  CompanyFactory CompanyFactory;
-        private static  ContractorFactory ContractorFactory;
+        private static CompanyFactory CompanyFactory;
+        private static ContractorFactory ContractorFactory;
         private static PersonFactory PersonFactory;
-        private static  IPersonRepository PersonRepository;
-        private static  IPersonSkillsRepository PersonSkillsRepository;
-        private static  ICompanyRepository CompanyRepository;
-        private static  InternFactory InternFactory;
-        private static  EmployeeFactory EmployeeFactory;
+        private static IPersonRepository PersonRepository;
+        private static IPersonSkillsRepository PersonSkillsRepository;
+        private static ICompanyRepository CompanyRepository;
+        private static InternFactory InternFactory;
+        private static EmployeeFactory EmployeeFactory;
         private static ProjectFactory ProjectFactory;
-
-
-
 
         static Program()
         {
             ServiceLocator.RegisterAll();
-           
+
             NHibernateProfiler.Initialize();
         }
 
@@ -42,12 +37,12 @@ namespace ClassesL5
             var internlist = new List<Intern>();
             var personsList = new List<Person>();
             var companylist = new List<Company>();
-            
+
             var newAddress = new Address("Monumentul Stefan cel Mare", "Chisinau");
             var newAddress2 = new Address("Aleco Ruso", "Chisinau");
             var newAddress3 = new Address("bd Decebal", "Chisinau");
             var newAddress4 = new Address("bd Miorita", "Chisinau");
-            
+
             var projects = new Dictionary<string, string>
             {
                 {"Vien", "Project nr 1"},
@@ -57,15 +52,17 @@ namespace ClassesL5
             var company = CompanyFactory.CreateCompany("Amdaris", FieldOfActivity.IT, "Chisinau", projects);
             CompanyRepository.AddCompany(company);
 
-            var project2 = new Dictionary<string, string> {
+            var project2 = new Dictionary<string, string>
+            {
                 {"Nima", "Project nr 1"},
                 {"BJH", "Project nr 2"},
                 {"XAF", "Project nr 3"}
             };
-            
+
             var company3 = CompanyFactory.CreateCompany("Amdaris", FieldOfActivity.IT, "Chisinau", projects);
             CompanyRepository.AddCompany(company);
-            var project3 = new Dictionary<string, string> {
+            var project3 = new Dictionary<string, string>
+            {
                 {"Nima", "Project nr 1"},
                 {"BJH", "Project nr 2"},
                 {"XAF", "Project nr 3"}
@@ -80,37 +77,36 @@ namespace ClassesL5
             //IPrivileges d = new SalaryBonusPrivilege(b);
             //d.AddPrivilege();
 
-            for (var i = 0; i < number; i++)
-            {
-                var skills = new Dictionary<string, int> {{"C#", 80 + i}, {"SQL", 90 + i}};
-                var person = InternFactory.CreateIntern(string.Format("Person {0}", i + 1), "Smith", "1990-12-13",
-                    skills, newAddress, company, 8 + i/10);
-                person.AddPrivilege();
-                personsList.Add(person);
-            }
+            //for (var i = 0; i < number; i++)
+            //{
+            //    var skills = new Dictionary<string, int> {{"C#", 80 + i}, {"SQL", 90 + i}};
+            //    var person = InternFactory.CreateIntern(string.Format("Person {0}", i + 1), "Smith", "1990-12-13",
+            //        skills, newAddress, company, 8 + i/10);
+            //    person.AddPrivilege();
+            //    personsList.Add(person);
+            //}
             //PersonRepository.AddPerson(personsList);
 
-            for (var i = 0; i < number; i++)
-            {
-                var skills = new Dictionary<string, int> {{"C#", 80 + i}, {"SQL", 90 + i}};
-                var person = ContractorFactory.CreateContractor(string.Format("Person {0}", i + 1), "Smith",
-                    "1990-12-13",
-                    skills, newAddress, company, 2 + i, 1000 + i*10);
-                personsList.Add(person);
-            }
+            //for (var i = 0; i < number; i++)
+            //{
+            //    var skills = new Dictionary<string, int> {{"C#", 80 + i}, {"SQL", 90 + i}};
+            //    var person = ContractorFactory.CreateContractor(string.Format("Person {0}", i + 1), "Smith",
+            //        "1990-12-13",
+            //        skills, newAddress, company, 2 + i, 1000 + i*10);
+            //    personsList.Add(person);
+            //}
             //PersonRepository.AddPerson(personsList);
 
-            for (var i = 0; i < number; i++)
-            {
-                var skills = new Dictionary<string, int> {{"C#", 80 + i}, {"SQL", 90 + i}};
-                var person = EmployeeFactory.CreateEmployee(string.Format("Person {0}", i + 1), "Smith", "1990-12-13",
-                    skills, newAddress, company, 2 + i, 1000 + i*10, "Software Inginiering",
-                    "Software developer");
-                personsList.Add(person);
-            }
+            //for (var i = 0; i < number; i++)
+            //{
+            //    var skills = new Dictionary<string, int> {{"C#", 80 + i}, {"SQL", 90 + i}};
+            //    var person = EmployeeFactory.CreateEmployee(string.Format("Person {0}", i + 1), "Smith", "1990-12-13",
+            //        skills, newAddress, company, 2 + i, 1000 + i*10, "Software Inginiering",
+            //        "Software developer");
+            //    personsList.Add(person);
+            //}
             PersonRepository.AddPerson(personsList);
         }
-
 
         //public static void AddNewPersons(int number)
         //{
@@ -163,7 +159,7 @@ namespace ClassesL5
         private static void ShowEmployeeDetails1()
         {
             var employee = PersonRepository.GetEmployeeDetails1();
-            Console.WriteLine("{0, -10} {1, -10} {2, -10} {3, -10} {4, -10}", "FirstName", "LastName", 
+            Console.WriteLine("{0, -10} {1, -10} {2, -10} {3, -10} {4, -10}", "FirstName", "LastName",
                 "DateOfBirth", "Department", "Role");
             foreach (var em in employee)
             {
@@ -217,7 +213,6 @@ namespace ClassesL5
         //}
 
 
-
         private static void Main(string[] args)
         {
             EmployeeFactory = ServiceLocator.Get<EmployeeFactory>();
@@ -230,11 +225,9 @@ namespace ClassesL5
             PersonSkillsRepository = ServiceLocator.Get<IPersonSkillsRepository>();
             CompanyRepository = ServiceLocator.Get<ICompanyRepository>();
 
-           
+
             try
             {
-
-              
                 //decorator pattern
                 Logger.Logger.AddToLog("----Begining of the program-----");
 
@@ -258,7 +251,6 @@ namespace ClassesL5
                 //ShowPersonByLNameOrByFName;
 
                 TestPrivelesAdd();
-
 
 
                 Console.ReadLine();
@@ -310,26 +302,77 @@ namespace ClassesL5
 
         private static void TestPrivelesAdd()
         {
+            var employeelist = new List<Employee>();
+            var contractorlist = new List<Contractor>();
+            var internlist = new List<Intern>();
+            //var personsList = new List<Person>();
+            var companylist = new List<Company>();
+
             var newAddress = new Address("Monumentul Stefan cel Mare", "Chisinau");
+            var newAddress2 = new Address("Aleco Ruso", "Chisinau");
+            var newAddress3 = new Address("bd Decebal", "Chisinau");
+            var newAddress4 = new Address("bd Miorita", "Chisinau");
+            
             var skills = new Dictionary<string, int> {{"C#", 80}, {"SQL", 90}};
-            var project2 = new Dictionary<string, string>
+            var skills2 = new Dictionary<string, int> { { "CSS", 80 }, { "PHP", 90 }, { "HTML", 90 } };
+            var skills3 = new Dictionary<string, int> { { "JavaScript", 80 }, { "HTML", 90 } };
+            var skills4 = new Dictionary<string, int> { { "C++", 80 } };
+
+            var project1 = new Dictionary<string, string>
             {
                 {"Nima", "Project nr 1"},
                 {"BJH", "Project nr 2"},
                 {"XAF", "Project nr 3"}
             };
-
-
-            var emp = EmployeeFactory.CreateEmployee("John", "Doe", "1980-04-01", skills, newAddress,
-                CompanyFactory.CreateCompany("Imea", FieldOfActivity.IT, "Chisinau", project2), 20, 1300, "Test",
-                "Testing Ingineer");
-            var salary= new Salary(emp, "2015.02.02", 1200);
-            PersonRepository.AddPerson(new List<Person>() {emp});
-            foreach (var variable in emp.PrivilegeList)
+            var project2 = new Dictionary<string, string>
             {
-                Console.WriteLine(variable);
-            }
-            ;
+                {"P1", "Project nr 1"},
+                {"P2", "Project nr 2"},
+                {"P3", "Project nr 3"},
+                {"P4", "Project nr 4"},
+                {"P5", "Project nr 5"},
+            };
+            var project3 = new Dictionary<string, string>
+            {
+                {"1Pr", "Project nr 1"},
+                {"2Pr", "Project nr 2"},
+                {"3Pr", "Project nr 3"},
+                {"4Pr", "Project nr 4"},
+                {"5Pr", "Project nr 5"},
+                {"6Pr", "Project nr 6"}
+            };
+
+
+            var emp = EmployeeFactory.CreateEmployee("John", "Doe", "1980-04-01", skills2, newAddress,
+                CompanyFactory.CreateCompany("Imea", FieldOfActivity.IT, "Chisinau", project2), 20, 1400, "Test",
+                "Testing Ingineer");
+            employeelist.Add(emp);
+
+            emp = EmployeeFactory.CreateEmployee("Jim", "Dole", "1990-05-10", skills, newAddress2,
+                CompanyFactory.CreateCompany("WIKER", FieldOfActivity.IT, "Balti", project1), 30, 1500, "Softwer Development",
+                "Software developer");
+            employeelist.Add(emp);
+
+            emp = EmployeeFactory.CreateEmployee("Anne", "Fireman", "1995-12-12", skills3, newAddress3,
+                CompanyFactory.CreateCompany("Bones", FieldOfActivity.IT, "Cahul", project3), 60, 1600, "Test",
+                "Testing Ingineer");
+            employeelist.Add(emp);
+
+            emp = EmployeeFactory.CreateEmployee("Vanessa", "Ginger", "1996-11-01", skills4, newAddress4,
+                CompanyFactory.CreateCompany("XQT", FieldOfActivity.IT, "Chisinau", project1), 70, 1700, "Softwer Development",
+                "Software developer");
+            employeelist.Add(emp);
+
+
+
+
+
+            PersonRepository.AddPerson(new List<Person> {emp});
+            //foreach (var variable in emp.PrivilegeList)
+            //{
+            //    Console.WriteLine(variable);
+            //}
+            //;
         }
     }
 

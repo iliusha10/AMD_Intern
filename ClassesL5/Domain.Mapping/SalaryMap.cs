@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain.Company;
+﻿using Domain.Company;
 
 namespace Domain.Mapping
 {
-    class SalaryMap: EntityMap<Salary>
+    internal class SalaryMap : EntityMap<Salary>
     {
         #region Public members
 
         public SalaryMap()
         {
-            References(x => x.Contractor);
-            Map(x => x.GetDate).Not.Nullable();
+            References(x => x.Contractor).Unique();
+            Map(x => x.Bonus);
             Map(x => x.Amount).Not.Nullable();
         }
 

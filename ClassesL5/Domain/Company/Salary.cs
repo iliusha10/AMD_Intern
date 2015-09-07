@@ -5,10 +5,10 @@ namespace Domain.Company
 {
     public class Salary : Entity
     {
-        public Salary(Contractor contractor, string date, double amount)
+        public Salary(Contractor contractor, double amount, double bonus)
         {
             Contractor = contractor; 
-            GetDate = DateTime.Parse(date);
+            Bonus = bonus;
             Amount = amount;
         }
 
@@ -17,7 +17,7 @@ namespace Domain.Company
         {
         }
         public virtual Contractor Contractor { get; protected set; }
-        public virtual DateTime GetDate { get; protected set; }
+        public virtual double Bonus { get; protected set; }
         public virtual double Amount { get; protected set; }
     }
 }

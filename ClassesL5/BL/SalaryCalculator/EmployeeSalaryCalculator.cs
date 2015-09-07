@@ -1,6 +1,6 @@
-﻿using Bl.Interfaces;
+﻿using BL.Interfaces;
 
-namespace Bl.SalaryCalculator
+namespace BL.SalaryCalculator
 {
     public class EmployeeSalaryCalculator : ISalaryCalculator
     {

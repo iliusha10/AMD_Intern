@@ -36,8 +36,8 @@ namespace Repository
             FluentConfiguration configuration = Fluently.Configure()
                 .Database(MsSqlConfiguration.MsSql2008
                     .ConnectionString(builder => builder.Database("Person")
-                        .Server(@"MDDSK40107")
-                        //.Server(@"SHADHOME-PC")
+                        //.Server(@"MDDSK40107")
+                        .Server(@"SHADHOME-PC")
                         .TrustedConnection()))
                 .Mappings(x => x.FluentMappings.AddFromAssembly(typeof (PersonMap).Assembly))
                 .ExposeConfiguration(

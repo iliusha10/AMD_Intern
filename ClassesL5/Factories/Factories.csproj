@@ -39,12 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Factories\CompanyFactory.cs" />
-    <Compile Include="Factories\ContractorFactory.cs" />
-    <Compile Include="Factories\EmployeeFactory.cs" />
-    <Compile Include="Factories\PersonFactory.cs" />
-    <Compile Include="Factories\InternFactory.cs" />
-    <Compile Include="Factories\ProjectFactory.cs" />
+    <Compile Include="CompanyFactory.cs" />
+    <Compile Include="ContractorFactory.cs" />
+    <Compile Include="EmployeeFactory.cs" />
+    <Compile Include="PersonFactory.cs" />
+    <Compile Include="InternFactory.cs" />
+    <Compile Include="ProjectFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

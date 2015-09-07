@@ -13,10 +13,9 @@ namespace Domain.Persons
         {
             if (workexp <= 0)
                 throw new ArgumentException("Work expirience must be positive.");
-            if (salary <= 0)
-                throw new ArgumentException("Salary must be positive.");
+
             WorkExp = workexp;
-            Salary = salary;
+            Salary = new Salary(this, salary, 0.0);
         }
 
         [Obsolete]
@@ -24,7 +23,7 @@ namespace Domain.Persons
         {
         }
 
-        public virtual double Salary { get; protected set; }
+        public virtual Salary Salary { get; protected set; }
         public virtual double WorkExp { get; protected set; }
 
         public virtual void AddPrivilege()
@@ -32,21 +31,21 @@ namespace Domain.Persons
             Console.WriteLine("Privileges:");
         }
 
-        public virtual double calcBonus(double salary)
-        {
-            double calcbonus;
-            //Console.WriteLine("Salary = {0}", salary);
-            //Console.WriteLine("Salary + Bonus = {0}", salary + (salary * 0.2));
-            return calcbonus = salary + (salary*0.02);
-        }
+        //public virtual double calcBonus(double salary)
+        //{
+        //    double calcbonus;
+        //    //Console.WriteLine("Salary = {0}", salary);
+        //    //Console.WriteLine("Salary + Bonus = {0}", salary + (salary * 0.2));
+        //    return calcbonus = salary + (salary*0.02);
+        //}
 
         public new virtual void DisplayAll()
         {
             Console.WriteLine("Contractor:");
             DisplayPersonInfo();
             //Console.WriteLine("Company: {0}", GetCompanyName());
-            Console.WriteLine("Salary: {0}", Salary);
-            Console.WriteLine("Salary + Bonus: {0}", calcBonus(Salary));
+            //Console.WriteLine("Salary: {0}", Salary);
+            //Console.WriteLine("Salary + Bonus: {0}", calcBonus(Salary));
             Console.WriteLine();
         }
 

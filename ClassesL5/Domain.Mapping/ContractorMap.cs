@@ -8,9 +8,9 @@ namespace Domain.Mapping
     {
         public ContractorMap()
         {
-            Map(x => x.Salary).Not.Nullable();
+            //Map(x => x.Salary).Not.Nullable();
             Map(x => x.WorkExp).Not.Nullable();
-            HasMany<Salary>(x => x.Salary);
+            HasMany<Salary>(x => x.Salary).Cascade.All().Inverse();
         }
     }
 }
