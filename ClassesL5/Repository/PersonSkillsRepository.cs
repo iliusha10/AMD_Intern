@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Domain.Company;
+using Domain.CompanyAssets;
 using NHibernate.Criterion;
 using Repository.Interfaces;
 

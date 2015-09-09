@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Domain.Company
+namespace Domain.CompanyAssets
 {
     public class Project : Entity
     {
@@ -32,19 +32,13 @@ namespace Domain.Company
         public virtual void DisplayAll()
         {
             Console.WriteLine();
-            Console.WriteLine("{1} {2}", ProjectName, ProjectDescription);
+            Console.WriteLine("{0} {1}", ProjectName, ProjectDescription);
         }
 
-        public virtual void AddTask(int taskid)
+        public virtual void AddTask(Task task)
         {
-            var taskId = taskid;
-            Console.WriteLine("Added a task with {0} id number", taskId);
+            TaskList.Add(task);
         }
 
-        public virtual void AddTask(string tasksubj)
-        {
-            var taskSubj = tasksubj;
-            Console.WriteLine("Added a task with subject: {0} ", taskSubj);
-        }
     }
 }

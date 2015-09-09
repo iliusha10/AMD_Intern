@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Domain.Company;
+using Domain.CompanyAssets;
 using Domain.Interfaces;
 using Domain.Persons;
 using Domain.Privileges;

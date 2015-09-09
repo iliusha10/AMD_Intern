@@ -2,8 +2,8 @@
 
 namespace InterfaceActions.Actions
 {
-    public interface ICompany
+    public interface ITask
     {
-        void ShowCpmpanyInfo(Company company);
+        void ShowTaskInfo(Task task);
     }
 }

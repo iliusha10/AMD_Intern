@@ -11,9 +11,8 @@ namespace Domain.Mapping
             Map(x => x.DateOfBirth).Not.Nullable();
             HasMany(x => x.SkillsList).Cascade.All().Inverse();
             HasMany(x => x.PrivilegeList).Cascade.All();
-            HasOne(x => x.Address).PropertyRef(x => x.Id).Fetch.Join();
-            HasOne(x => x.Company).PropertyRef(x => x.Id).Fetch.Join();
-
+            References(x => x.Address).Cascade.SaveUpdate();
+            HasOne(x => x.Company);
         }
     }
 }

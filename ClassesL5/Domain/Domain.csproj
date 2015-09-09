@@ -39,24 +39,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Company\Address.cs" />
-    <Compile Include="Company\Company.cs" />
+    <Compile Include="CompanyAssets\Address.cs" />
+    <Compile Include="CompanyAssets\Company.cs" />
     <Compile Include="Persons\Contractor.cs" />
     <Compile Include="Persons\Director.cs" />
     <Compile Include="Persons\Employee.cs" />
     <Compile Include="Entity.cs" />
-    <Compile Include="Company\HumanResources.cs" />
-    <Compile Include="Company\PersonSkills.cs" />
+    <Compile Include="CompanyAssets\HumanResources.cs" />
+    <Compile Include="CompanyAssets\PersonSkills.cs" />
     <Compile Include="Privileges\PersonPrivilege.cs" />
     <Compile Include="Privileges\PersonPrivileges.cs" />
     <Compile Include="Row\EmployeDetails.cs" />
     <Compile Include="Row\PersonWithSkillsCount.cs" />
-    <Compile Include="Company\Salary.cs" />
-    <Compile Include="Company\Task.cs" />
+    <Compile Include="CompanyAssets\Salary.cs" />
+    <Compile Include="CompanyAssets\Task.cs" />
     <Compile Include="EnumFieldofActivity.cs" />
     <Compile Include="Persons\Intern.cs" />
     <Compile Include="Persons\Person.cs" />
-    <Compile Include="Company\Project.cs" />
+    <Compile Include="CompanyAssets\Project.cs" />
     <Compile Include="Exceptions\InternValidationException.cs" />
     <Compile Include="Interfaces\IAppointment.cs" />
     <Compile Include="Interfaces\INotify.cs" />

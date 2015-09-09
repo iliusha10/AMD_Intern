@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Domain.Company;
+using Domain.CompanyAssets;
 using Domain.Persons;
 using Domain.Row;
 using NHibernate.Criterion;
@@ -122,9 +122,9 @@ namespace Repository
                     Person pers = null;
 
                     return _session.QueryOver<Task>()
-                        .JoinAlias(t => t.Person, () => pers)
+                        .JoinAlias(t => t.Contractor, () => pers)
                         .Where(t => t.TaskName == taskname)
-                        .Select(t => t.Person)
+                        .Select(t => t.Contractor)
                         .List<Person>();
                 }
                 catch (Exception ex)

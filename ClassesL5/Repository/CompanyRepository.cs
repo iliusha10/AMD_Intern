@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Domain;
-using Domain.Company;
+using Domain.CompanyAssets;
 using Repository.Interfaces;
 
 namespace Repository
@@ -9,14 +9,16 @@ namespace Repository
     public class CompanyRepository : Repository, ICompanyRepository
     {
 
-        public void AddCompany(Company company)
+        public void AddCompany(IEnumerable<Company> companyList)
         {
             using (var transaction = _session.BeginTransaction())
             {
                 try
                 {
-
-                    _session.SaveOrUpdate((company));
+                    foreach (var company in companyList)
+                    {
+                        _session.SaveOrUpdate(company);
+                    }
                     transaction.Commit();
                     Console.WriteLine("Inserting Company in DB Successfull ");
                 }

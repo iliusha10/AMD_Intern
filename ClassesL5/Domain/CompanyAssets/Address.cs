@@ -1,7 +1,7 @@
 ﻿using System;
 using Domain.Persons;
 
-namespace Domain.Company
+namespace Domain.CompanyAssets
 {
     public class Address:Entity
     {
@@ -24,5 +24,6 @@ namespace Domain.Company
         public virtual string Street { get; protected set; }
         public virtual string City { get; protected set; }
         public virtual Person Person { get; protected set; }
+        public virtual Company Company { get; protected set; }
     }
 }

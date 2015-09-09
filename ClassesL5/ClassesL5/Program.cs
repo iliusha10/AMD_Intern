@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Domain;
-using Domain.Company;
+using Domain.CompanyAssets;
 using Domain.Persons;
 using Factories;
 using HibernatingRhinos.Profiler.Appender.NHibernate;
@@ -22,6 +22,7 @@ namespace ClassesL5
         private static InternFactory InternFactory;
         private static EmployeeFactory EmployeeFactory;
         private static ProjectFactory ProjectFactory;
+        private static TaskFactory TaskFactory;
 
         static Program()
         {
@@ -30,47 +31,47 @@ namespace ClassesL5
             NHibernateProfiler.Initialize();
         }
 
-        public static void PopulatingDb(int number)
-        {
-            var employeelist = new List<Employee>();
-            var contractorlist = new List<Contractor>();
-            var internlist = new List<Intern>();
-            var personsList = new List<Person>();
-            var companylist = new List<Company>();
+        //public static void PopulatingDb(int number)
+        //{
+        //    var employeelist = new List<Employee>();
+        //    var contractorlist = new List<Contractor>();
+        //    var internlist = new List<Intern>();
+        //    var personsList = new List<Person>();
+        //    var companylist = new List<Company>();
 
-            var newAddress = new Address("Monumentul Stefan cel Mare", "Chisinau");
-            var newAddress2 = new Address("Aleco Ruso", "Chisinau");
-            var newAddress3 = new Address("bd Decebal", "Chisinau");
-            var newAddress4 = new Address("bd Miorita", "Chisinau");
+        //    var newAddress = new Address("Monumentul Stefan cel Mare", "Chisinau");
+        //    var newAddress2 = new Address("Aleco Ruso", "Chisinau");
+        //    var newAddress3 = new Address("bd Decebal", "Chisinau");
+        //    var newAddress4 = new Address("bd Miorita", "Chisinau");
 
-            var projects = new Dictionary<string, string>
-            {
-                {"Vien", "Project nr 1"},
-                {"Ginger", "Project nr 2"},
-                {"Fist", "Project nr 3"}
-            };
-            var company = CompanyFactory.CreateCompany("Amdaris", FieldOfActivity.IT, "Chisinau", projects);
-            CompanyRepository.AddCompany(company);
+        //    var projects = new Dictionary<string, string>
+        //    {
+        //        {"Vien", "Project nr 1"},
+        //        {"Ginger", "Project nr 2"},
+        //        {"Fist", "Project nr 3"}
+        //    };
+        //    var company = CompanyFactory.CreateCompany("Amdaris", FieldOfActivity.IT, "Chisinau", projects);
+        //    CompanyRepository.AddCompany(company);
 
-            var project2 = new Dictionary<string, string>
-            {
-                {"Nima", "Project nr 1"},
-                {"BJH", "Project nr 2"},
-                {"XAF", "Project nr 3"}
-            };
+        //    var project2 = new Dictionary<string, string>
+        //    {
+        //        {"Nima", "Project nr 1"},
+        //        {"BJH", "Project nr 2"},
+        //        {"XAF", "Project nr 3"}
+        //    };
 
-            var company3 = CompanyFactory.CreateCompany("Amdaris", FieldOfActivity.IT, "Chisinau", projects);
-            CompanyRepository.AddCompany(company);
-            var project3 = new Dictionary<string, string>
-            {
-                {"Nima", "Project nr 1"},
-                {"BJH", "Project nr 2"},
-                {"XAF", "Project nr 3"}
-            };
-            var company2 = CompanyFactory.CreateCompany("Google", FieldOfActivity.IT, "Roma", project2);
-            CompanyRepository.AddCompany(company2);
+        //    var company3 = CompanyFactory.CreateCompany("Amdaris", FieldOfActivity.IT, "Chisinau", projects);
+        //    CompanyRepository.AddCompany(company);
+        //    var project3 = new Dictionary<string, string>
+        //    {
+        //        {"Nima", "Project nr 1"},
+        //        {"BJH", "Project nr 2"},
+        //        {"XAF", "Project nr 3"}
+        //    };
+        //    var company2 = CompanyFactory.CreateCompany("Google", FieldOfActivity.IT, "Roma", project2);
+        //    CompanyRepository.AddCompany(company2);
 
-            var privilegelist = new List<string>();
+        //    var privilegelist = new List<string>();
 
             //IPrivileges a = contractor;
             //IPrivileges b = new HollidayPrivilege(a);
@@ -105,8 +106,8 @@ namespace ClassesL5
             //        "Software developer");
             //    personsList.Add(person);
             //}
-            PersonRepository.AddPerson(personsList);
-        }
+            //PersonRepository.AddPerson(personsList);
+        //}
 
         //public static void AddNewPersons(int number)
         //{
@@ -224,6 +225,7 @@ namespace ClassesL5
             PersonRepository = ServiceLocator.Get<IPersonRepository>();
             PersonSkillsRepository = ServiceLocator.Get<IPersonSkillsRepository>();
             CompanyRepository = ServiceLocator.Get<ICompanyRepository>();
+            TaskFactory = ServiceLocator.Get<TaskFactory>();
 
 
             try
@@ -302,10 +304,10 @@ namespace ClassesL5
 
         private static void TestPrivelesAdd()
         {
-            var employeelist = new List<Employee>();
-            var contractorlist = new List<Contractor>();
-            var internlist = new List<Intern>();
-            //var personsList = new List<Person>();
+            //var employeelist = new List<Employee>();
+           // var contractorlist = new List<Contractor>();
+            var projectList = new List<Project>();
+            var personsList = new List<Person>();
             var companylist = new List<Company>();
 
             var newAddress = new Address("Monumentul Stefan cel Mare", "Chisinau");
@@ -318,61 +320,111 @@ namespace ClassesL5
             var skills3 = new Dictionary<string, int> { { "JavaScript", 80 }, { "HTML", 90 } };
             var skills4 = new Dictionary<string, int> { { "C++", 80 } };
 
-            var project1 = new Dictionary<string, string>
-            {
-                {"Nima", "Project nr 1"},
-                {"BJH", "Project nr 2"},
-                {"XAF", "Project nr 3"}
-            };
-            var project2 = new Dictionary<string, string>
-            {
-                {"P1", "Project nr 1"},
-                {"P2", "Project nr 2"},
-                {"P3", "Project nr 3"},
-                {"P4", "Project nr 4"},
-                {"P5", "Project nr 5"},
-            };
-            var project3 = new Dictionary<string, string>
-            {
-                {"1Pr", "Project nr 1"},
-                {"2Pr", "Project nr 2"},
-                {"3Pr", "Project nr 3"},
-                {"4Pr", "Project nr 4"},
-                {"5Pr", "Project nr 5"},
-                {"6Pr", "Project nr 6"}
-            };
+
+            var comp = CompanyFactory.CreateCompany("Imea", FieldOfActivity.IT, newAddress2);
+            var comp2 = CompanyFactory.CreateCompany("WIKER", FieldOfActivity.IT, newAddress);
+            var comp3 = CompanyFactory.CreateCompany("Bones", FieldOfActivity.IT, newAddress3);
+            var comp4 = CompanyFactory.CreateCompany("XQT", FieldOfActivity.IT, newAddress4);
+            companylist.Add(comp);
+            companylist.Add(comp2);
+            companylist.Add(comp3);
+            companylist.Add(comp4);
+
+            var proj = ProjectFactory.CreateProject(comp, "Nima", "Project nr 1");
+            var proj2 = ProjectFactory.CreateProject(comp, "BJH", "Project nr 2");
+            var proj3 = ProjectFactory.CreateProject(comp, "XAF", "Project nr 3");
+            comp.AddProject(proj);
+            comp.AddProject(proj2);
+            comp.AddProject(proj3);
+
+            var proj4 = ProjectFactory.CreateProject(comp2, "P1", "Project nr 1");
+            var proj5 = ProjectFactory.CreateProject(comp2, "P2", "Project nr 2");
+            var proj6 = ProjectFactory.CreateProject(comp2, "P3", "Project nr 3");
+            var proj7 = ProjectFactory.CreateProject(comp2, "P4", "Project nr 4");
+            var proj8 = ProjectFactory.CreateProject(comp2, "P5", "Project nr 5");
+            comp2.AddProject(proj4);
+            comp2.AddProject(proj5);
+            comp2.AddProject(proj6);
+            comp2.AddProject(proj7);
+            comp2.AddProject(proj8);
+
+            var proj9 = ProjectFactory.CreateProject(comp3, "1Pr", "Project nr 1");
+            var proj10 = ProjectFactory.CreateProject(comp3, "2Pr", "Project nr 2");
+            var proj11 = ProjectFactory.CreateProject(comp3, "3Pr", "Project nr 3");
+            var proj12 = ProjectFactory.CreateProject(comp3, "4Pr", "Project nr 4");
+            var proj13 = ProjectFactory.CreateProject(comp3, "5Pr", "Project nr 5");
+            var proj14 = ProjectFactory.CreateProject(comp3, "6Pr", "Project nr 6");
+            comp3.AddProject(proj9);
+            comp3.AddProject(proj10);
+            comp3.AddProject(proj11);
+            comp3.AddProject(proj12);
+            comp3.AddProject(proj13);
+            comp3.AddProject(proj14);
 
 
-            var emp = EmployeeFactory.CreateEmployee("John", "Doe", "1980-04-01", skills2, newAddress,
-                CompanyFactory.CreateCompany("Imea", FieldOfActivity.IT, "Chisinau", project2), 20, 1400, "Test",
+            var task1 = TaskFactory.CreateTask(proj, "Task1", "Description", "12.12.2016");
+            var task2 = TaskFactory.CreateTask(proj2, "Task1", "Description", "12.12.2016");
+            var task3 = TaskFactory.CreateTask(proj3, "Task1", "Description", "12.12.2016");
+            var task4 = TaskFactory.CreateTask(proj4, "Task1", "Description", "12.12.2016");
+            var task5 = TaskFactory.CreateTask(proj5, "Task1", "Description", "12.12.2016");
+            var task6 = TaskFactory.CreateTask(proj6, "Task1", "Description", "12.12.2016");
+            var task7 = TaskFactory.CreateTask(proj7, "Task1", "Description", "12.12.2016");
+            var task8 = TaskFactory.CreateTask(proj8, "Task1", "Description", "12.12.2016");
+            var task9 = TaskFactory.CreateTask(proj9, "Task1", "Description", "12.12.2016");
+            var task10 = TaskFactory.CreateTask(proj10, "Task1", "Description", "12.12.2016");
+            var task11 = TaskFactory.CreateTask(proj11, "Task1", "Description", "12.12.2016");
+            var task12 = TaskFactory.CreateTask(proj12, "Task1", "Description", "12.12.2016");
+            var task13 = TaskFactory.CreateTask(proj13, "Task1", "Description", "12.12.2016");
+            var task14 = TaskFactory.CreateTask(proj14, "Task1", "Description", "12.12.2016");
+            var task15 = TaskFactory.CreateTask(proj, "Task2", "Description", "12.12.2016");
+            var task16 = TaskFactory.CreateTask(proj2, "Task2", "Description", "12.12.2016");
+            var task17 = TaskFactory.CreateTask(proj3, "Task2", "Description", "12.12.2016");
+            var task18 = TaskFactory.CreateTask(proj4, "Task2", "Description", "12.12.2016");
+            var task19 = TaskFactory.CreateTask(proj, "Task3", "Description", "12.12.2016");
+            var task20 = TaskFactory.CreateTask(proj2, "Task3", "Description", "12.12.2016");
+            proj.AddTask(task1);
+            proj.AddTask(task15);
+            proj.AddTask(task19);
+            proj2.AddTask(task2);
+            proj2.AddTask(task16);
+            proj2.AddTask(task20);
+            proj3.AddTask(task3);
+            proj3.AddTask(task17);
+            proj4.AddTask(task4);
+            proj4.AddTask(task18);
+            proj5.AddTask(task5);
+            proj6.AddTask(task6);
+            proj7.AddTask(task7);
+            proj8.AddTask(task8);
+            proj9.AddTask(task9);
+            proj10.AddTask(task10);
+            proj11.AddTask(task11);
+            proj12.AddTask(task12);
+            proj13.AddTask(task13);
+            proj14.AddTask(task14);
+
+            var intern = InternFactory.CreateIntern("Vasile", "Ion", "1990-12-13", skills, newAddress, comp, 80);
+            personsList.Add(intern);
+
+            var emp = EmployeeFactory.CreateEmployee("John", "Doe", "1980-04-01", skills2, newAddress, comp, 20, 1400, "Test",
                 "Testing Ingineer");
-            employeelist.Add(emp);
+            personsList.Add(emp);
 
-            emp = EmployeeFactory.CreateEmployee("Jim", "Dole", "1990-05-10", skills, newAddress2,
-                CompanyFactory.CreateCompany("WIKER", FieldOfActivity.IT, "Balti", project1), 30, 1500, "Softwer Development",
+            emp = EmployeeFactory.CreateEmployee("Jim", "Dole", "1990-05-10", skills, newAddress2, comp2, 30, 1500, "Softwer Development",
                 "Software developer");
-            employeelist.Add(emp);
+            personsList.Add(emp);
 
-            emp = EmployeeFactory.CreateEmployee("Anne", "Fireman", "1995-12-12", skills3, newAddress3,
-                CompanyFactory.CreateCompany("Bones", FieldOfActivity.IT, "Cahul", project3), 60, 1600, "Test",
-                "Testing Ingineer");
-            employeelist.Add(emp);
+            emp = EmployeeFactory.CreateEmployee("Anne", "Fireman", "1995-12-12", skills3, newAddress3, comp3, 60, 1600, "Test", "Testing Ingineer");
+            personsList.Add(emp);
 
-            emp = EmployeeFactory.CreateEmployee("Vanessa", "Ginger", "1996-11-01", skills4, newAddress4,
-                CompanyFactory.CreateCompany("XQT", FieldOfActivity.IT, "Chisinau", project1), 70, 1700, "Softwer Development",
-                "Software developer");
-            employeelist.Add(emp);
+            emp = EmployeeFactory.CreateEmployee("Vanessa", "Ginger", "1996-11-01", skills4, newAddress4, comp4, 70, 1700, "Softwer Development", "Software developer");
+            personsList.Add(emp);
+            
 
 
+            CompanyRepository.AddCompany(companylist);
+            PersonRepository.AddPerson(personsList);
 
-
-
-            PersonRepository.AddPerson(new List<Person> {emp});
-            //foreach (var variable in emp.PrivilegeList)
-            //{
-            //    Console.WriteLine(variable);
-            //}
-            //;
         }
     }
 

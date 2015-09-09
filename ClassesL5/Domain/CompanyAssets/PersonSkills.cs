@@ -1,7 +1,7 @@
 ﻿using System;
 using Domain.Persons;
 
-namespace Domain.Company
+namespace Domain.CompanyAssets
 {
     public class PersonSkills : Entity
     {

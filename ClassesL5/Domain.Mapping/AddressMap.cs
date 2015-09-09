@@ -1,4 +1,5 @@
-﻿using Domain.Company;
+﻿using Domain.CompanyAssets;
+using Domain.Persons;
 
 namespace Domain.Mapping
 {
@@ -8,11 +9,10 @@ namespace Domain.Mapping
 
         public AddressMap()
         {
-            References(x => x.Person).Unique();
             Map(x => x.City).Not.Nullable();
             Map(x => x.Street).Not.Nullable();
-            //HasOne(x => x.Person).PropertyRef(x => x.Id);
-            //Map(x => x.Person).Unique();
+            HasOne(x => x.Person).PropertyRef(x => x.Id).Fetch.Join();
+            HasOne(x => x.Company).PropertyRef(x => x.Id).Fetch.Join();
         }
 
         #endregion

@@ -1,4 +1,4 @@
-﻿using Domain.Company;
+﻿using Domain.CompanyAssets;
 
 namespace Domain.Mapping
 {
@@ -9,8 +9,9 @@ namespace Domain.Mapping
         public SalaryMap()
         {
             References(x => x.Contractor).Unique();
-            Map(x => x.Bonus);
             Map(x => x.Amount).Not.Nullable();
+            Map(x => x.Bonus);
+            
         }
 
         #endregion

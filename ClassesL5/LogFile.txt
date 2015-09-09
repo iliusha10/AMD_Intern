@@ -1723,3 +1723,900 @@ The statement has been terminated.
 9/4/2015 2:28:25 PM, Added SalaryBonusPrivilege 
 9/4/2015 2:28:25 PM, EmployeeFactory|CreateEmployee Employee 
 9/4/2015 2:28:27 PM, -------The End------- 
+9/9/2015 12:39:50 PM, ----Begining of the program----- 
+9/9/2015 12:39:53 PM, Creating new project 
+9/9/2015 12:39:53 PM, Creating new project 
+9/9/2015 12:39:53 PM, Creating new project 
+9/9/2015 12:39:53 PM, Creating new project 
+9/9/2015 12:39:53 PM, Creating new project 
+9/9/2015 12:39:53 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 12:39:53 PM, InternFactory|CreateIntern Intern 
+9/9/2015 12:39:53 PM, Added HollidayPrivilege 
+9/9/2015 1:38:04 PM, ----Begining of the program----- 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, Creating new project 
+9/9/2015 1:38:04 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 1:38:04 PM, InternFactory|CreateIntern Intern 
+9/9/2015 1:38:04 PM, Added HollidayPrivilege 
+9/9/2015 1:38:04 PM, Added HollidayPrivilege 
+9/9/2015 1:38:04 PM, Added LunchTichetsPrivilege 
+9/9/2015 1:38:04 PM, Added SalaryBonusPrivilege 
+9/9/2015 1:38:04 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 1:38:04 PM, Added HollidayPrivilege 
+9/9/2015 1:38:04 PM, Added LunchTichetsPrivilege 
+9/9/2015 1:38:04 PM, Added SalaryBonusPrivilege 
+9/9/2015 1:38:04 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 1:38:04 PM, Added HollidayPrivilege 
+9/9/2015 1:38:04 PM, Added LunchTichetsPrivilege 
+9/9/2015 1:38:04 PM, Added SalaryBonusPrivilege 
+9/9/2015 1:38:04 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 1:38:04 PM, Added HollidayPrivilege 
+9/9/2015 1:38:04 PM, Added LunchTichetsPrivilege 
+9/9/2015 1:38:04 PM, Added SalaryBonusPrivilege 
+9/9/2015 1:38:04 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 1:40:18 PM, -------The End------- 
+9/9/2015 1:43:58 PM, ----Begining of the program----- 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, Creating new project 
+9/9/2015 1:43:58 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 1:43:58 PM, InternFactory|CreateIntern Intern 
+9/9/2015 1:43:58 PM, Added HollidayPrivilege 
+9/9/2015 1:43:58 PM, Added HollidayPrivilege 
+9/9/2015 1:43:58 PM, Added LunchTichetsPrivilege 
+9/9/2015 1:43:58 PM, Added SalaryBonusPrivilege 
+9/9/2015 1:43:58 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 1:43:58 PM, Added HollidayPrivilege 
+9/9/2015 1:43:58 PM, Added LunchTichetsPrivilege 
+9/9/2015 1:43:58 PM, Added SalaryBonusPrivilege 
+9/9/2015 1:43:58 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 1:43:58 PM, Added HollidayPrivilege 
+9/9/2015 1:43:58 PM, Added LunchTichetsPrivilege 
+9/9/2015 1:43:58 PM, Added SalaryBonusPrivilege 
+9/9/2015 1:43:58 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 1:43:58 PM, Added HollidayPrivilege 
+9/9/2015 1:43:58 PM, Added LunchTichetsPrivilege 
+9/9/2015 1:43:58 PM, Added SalaryBonusPrivilege 
+9/9/2015 1:43:58 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 1:44:05 PM, -------The End------- 
+9/9/2015 3:04:53 PM, ----Begining of the program----- 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:53 PM, Creating new project 
+9/9/2015 3:04:54 PM, Creating new project 
+9/9/2015 3:04:54 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:04:54 PM, InternFactory|CreateIntern Intern 
+9/9/2015 3:04:54 PM, Added HollidayPrivilege 
+9/9/2015 3:04:54 PM, Added HollidayPrivilege 
+9/9/2015 3:04:54 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:04:54 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:04:54 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:04:54 PM, Added HollidayPrivilege 
+9/9/2015 3:04:54 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:04:54 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:04:54 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:04:54 PM, Added HollidayPrivilege 
+9/9/2015 3:04:54 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:04:54 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:04:54 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:04:54 PM, Added HollidayPrivilege 
+9/9/2015 3:04:54 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:04:54 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:04:54 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:05:06 PM, -------The End------- 
+9/9/2015 3:22:36 PM, ----Begining of the program----- 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, Creating new project 
+9/9/2015 3:22:36 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:22:36 PM, InternFactory|CreateIntern Intern 
+9/9/2015 3:22:36 PM, Added HollidayPrivilege 
+9/9/2015 3:22:36 PM, Added HollidayPrivilege 
+9/9/2015 3:22:36 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:22:36 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:22:36 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:22:36 PM, Added HollidayPrivilege 
+9/9/2015 3:22:36 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:22:36 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:22:36 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:22:36 PM, Added HollidayPrivilege 
+9/9/2015 3:22:36 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:22:36 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:22:36 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:22:36 PM, Added HollidayPrivilege 
+9/9/2015 3:22:36 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:22:36 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:22:36 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:22:38 PM, -------The End------- 
+9/9/2015 3:24:19 PM, ----Begining of the program----- 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, Creating new project 
+9/9/2015 3:24:19 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:24:19 PM, InternFactory|CreateIntern Intern 
+9/9/2015 3:24:19 PM, Added HollidayPrivilege 
+9/9/2015 3:24:19 PM, Added HollidayPrivilege 
+9/9/2015 3:24:19 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:24:19 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:24:19 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:24:19 PM, Added HollidayPrivilege 
+9/9/2015 3:24:19 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:24:19 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:24:19 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:24:19 PM, Added HollidayPrivilege 
+9/9/2015 3:24:19 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:24:19 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:24:19 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:24:19 PM, Added HollidayPrivilege 
+9/9/2015 3:24:19 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:24:19 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:24:19 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:24:24 PM, -------The End------- 
+9/9/2015 3:28:23 PM, ----Begining of the program----- 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, Creating new project 
+9/9/2015 3:28:23 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 3:28:23 PM, InternFactory|CreateIntern Intern 
+9/9/2015 3:28:23 PM, Added HollidayPrivilege 
+9/9/2015 3:28:23 PM, Added HollidayPrivilege 
+9/9/2015 3:28:23 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:28:23 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:28:23 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:28:23 PM, Added HollidayPrivilege 
+9/9/2015 3:28:23 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:28:23 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:28:23 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:28:23 PM, Added HollidayPrivilege 
+9/9/2015 3:28:23 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:28:23 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:28:23 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:28:23 PM, Added HollidayPrivilege 
+9/9/2015 3:28:23 PM, Added LunchTichetsPrivilege 
+9/9/2015 3:28:23 PM, Added SalaryBonusPrivilege 
+9/9/2015 3:28:23 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 3:28:23 PM, CompanyRepository | AddCompany | {0} , NHibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing or set cascade action for the property to something that would make it autosave. Type: Domain.CompanyAssets.Address, Entity: Domain.CompanyAssets.Address
+   at NHibernate.Engine.ForeignKeys.GetEntityIdentifierIfNotUnsaved(String entityName, Object entity, ISessionImplementor session)
+   at NHibernate.Type.EntityType.GetIdentifier(Object value, ISessionImplementor session)
+   at NHibernate.Type.ManyToOneType.IsDirty(Object old, Object current, Boolean[] checkable, ISessionImplementor session)
+   at NHibernate.Type.TypeHelper.Dirty(StandardProperty[] properties, Object[] currentState, Object[] previousState, Boolean[][] includeColumns, Boolean anyUninitializedProperties, ISessionImplementor session, Int32 i)
+   at NHibernate.Type.TypeHelper.FindDirty(StandardProperty[] properties, Object[] currentState, Object[] previousState, Boolean[][] includeColumns, Boolean anyUninitializedProperties, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.FindDirty(Object[] currentState, Object[] previousState, Object entity, ISessionImplementor session)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.DirtyCheck(FlushEntityEvent event)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.IsUpdateNecessary(FlushEntityEvent event, Boolean mightBeDirty)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event)
+   at NHibernate.Impl.SessionImpl.Flush()
+   at NHibernate.Transaction.AdoTransaction.Commit()
+   at Repository.CompanyRepository.AddCompany(IEnumerable`1 companyList) in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 22 
+9/9/2015 3:31:14 PM, -------The End------- 
+9/9/2015 5:02:03 PM, ----Begining of the program----- 
+9/9/2015 5:02:03 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:02:03 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:02:03 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:02:03 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:02:03 PM, Creating new project 
+9/9/2015 5:02:03 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, ----Begining of the program----- 
+9/9/2015 5:02:56 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:02:56 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:02:56 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:02:56 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:02:56 PM, Creating new project 
+9/9/2015 5:02:56 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, Creating new project 
+9/9/2015 5:02:56 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, Creating new project 
+9/9/2015 5:02:56 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, Creating new project 
+9/9/2015 5:02:56 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, Creating new project 
+9/9/2015 5:02:56 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, Creating new project 
+9/9/2015 5:02:56 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, Creating new project 
+9/9/2015 5:02:56 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, Creating new project 
+9/9/2015 5:02:56 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, Creating new project 
+9/9/2015 5:02:56 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, Creating new project 
+9/9/2015 5:02:56 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, Creating new project 
+9/9/2015 5:02:56 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, Creating new project 
+9/9/2015 5:02:56 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, Creating new project 
+9/9/2015 5:02:56 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, Creating new project 
+9/9/2015 5:02:56 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:02:56 PM, InternFactory|CreateIntern Intern 
+9/9/2015 5:02:56 PM, Added HollidayPrivilege 
+9/9/2015 5:02:56 PM, Added HollidayPrivilege 
+9/9/2015 5:02:56 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:02:56 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:02:56 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:02:56 PM, Added HollidayPrivilege 
+9/9/2015 5:02:56 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:02:56 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:02:56 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:02:56 PM, Added HollidayPrivilege 
+9/9/2015 5:02:56 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:02:56 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:02:56 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:02:56 PM, Added HollidayPrivilege 
+9/9/2015 5:02:56 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:02:56 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:02:56 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:02:56 PM, CompanyRepository | AddCompany | {0} , NHibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing or set cascade action for the property to something that would make it autosave. Type: Domain.CompanyAssets.Address, Entity: Domain.CompanyAssets.Address
+   at NHibernate.Engine.ForeignKeys.GetEntityIdentifierIfNotUnsaved(String entityName, Object entity, ISessionImplementor session)
+   at NHibernate.Type.EntityType.GetIdentifier(Object value, ISessionImplementor session)
+   at NHibernate.Type.ManyToOneType.IsDirty(Object old, Object current, Boolean[] checkable, ISessionImplementor session)
+   at NHibernate.Type.TypeHelper.Dirty(StandardProperty[] properties, Object[] currentState, Object[] previousState, Boolean[][] includeColumns, Boolean anyUninitializedProperties, ISessionImplementor session, Int32 i)
+   at NHibernate.Type.TypeHelper.FindDirty(StandardProperty[] properties, Object[] currentState, Object[] previousState, Boolean[][] includeColumns, Boolean anyUninitializedProperties, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.FindDirty(Object[] currentState, Object[] previousState, Object entity, ISessionImplementor session)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.DirtyCheck(FlushEntityEvent event)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.IsUpdateNecessary(FlushEntityEvent event, Boolean mightBeDirty)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event)
+   at NHibernate.Impl.SessionImpl.Flush()
+   at NHibernate.Transaction.AdoTransaction.Commit()
+   at Repository.CompanyRepository.AddCompany(IEnumerable`1 companyList) in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 22 
+9/9/2015 5:02:58 PM, -------The End------- 
+9/9/2015 5:11:07 PM, ----Begining of the program----- 
+9/9/2015 5:11:07 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:11:07 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:11:07 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:11:07 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:11:07 PM, Creating new project 
+9/9/2015 5:11:07 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:11:07 PM, Creating new project 
+9/9/2015 5:11:07 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:11:07 PM, Creating new project 
+9/9/2015 5:11:07 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:11:07 PM, Creating new project 
+9/9/2015 5:11:07 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:11:07 PM, Creating new project 
+9/9/2015 5:11:07 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:11:07 PM, Creating new project 
+9/9/2015 5:11:07 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:11:07 PM, Creating new project 
+9/9/2015 5:11:07 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:11:07 PM, Creating new project 
+9/9/2015 5:11:07 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:11:07 PM, Creating new project 
+9/9/2015 5:11:07 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:11:07 PM, Creating new project 
+9/9/2015 5:11:07 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:11:07 PM, Creating new project 
+9/9/2015 5:11:07 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:11:07 PM, Creating new project 
+9/9/2015 5:11:07 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:11:07 PM, Creating new project 
+9/9/2015 5:11:07 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:11:07 PM, Creating new project 
+9/9/2015 5:11:07 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:11:07 PM, InternFactory|CreateIntern Intern 
+9/9/2015 5:11:07 PM, Added HollidayPrivilege 
+9/9/2015 5:11:07 PM, Added HollidayPrivilege 
+9/9/2015 5:11:07 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:11:07 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:11:07 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:11:07 PM, Added HollidayPrivilege 
+9/9/2015 5:11:07 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:11:07 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:11:07 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:11:07 PM, Added HollidayPrivilege 
+9/9/2015 5:11:07 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:11:07 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:11:07 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:11:07 PM, Added HollidayPrivilege 
+9/9/2015 5:11:07 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:11:07 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:11:07 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:11:07 PM, CompanyRepository | AddCompany | {0} , NHibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing or set cascade action for the property to something that would make it autosave. Type: Domain.CompanyAssets.Address, Entity: Domain.CompanyAssets.Address
+   at NHibernate.Engine.ForeignKeys.GetEntityIdentifierIfNotUnsaved(String entityName, Object entity, ISessionImplementor session)
+   at NHibernate.Type.EntityType.GetIdentifier(Object value, ISessionImplementor session)
+   at NHibernate.Type.ManyToOneType.IsDirty(Object old, Object current, Boolean[] checkable, ISessionImplementor session)
+   at NHibernate.Type.TypeHelper.Dirty(StandardProperty[] properties, Object[] currentState, Object[] previousState, Boolean[][] includeColumns, Boolean anyUninitializedProperties, ISessionImplementor session, Int32 i)
+   at NHibernate.Type.TypeHelper.FindDirty(StandardProperty[] properties, Object[] currentState, Object[] previousState, Boolean[][] includeColumns, Boolean anyUninitializedProperties, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.FindDirty(Object[] currentState, Object[] previousState, Object entity, ISessionImplementor session)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.DirtyCheck(FlushEntityEvent event)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.IsUpdateNecessary(FlushEntityEvent event, Boolean mightBeDirty)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event)
+   at NHibernate.Impl.SessionImpl.Flush()
+   at NHibernate.Transaction.AdoTransaction.Commit()
+   at Repository.CompanyRepository.AddCompany(IEnumerable`1 companyList) in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 22 
+9/9/2015 5:13:08 PM, ----Begining of the program----- 
+9/9/2015 5:13:08 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:13:08 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:13:08 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:13:08 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:13:08 PM, Creating new project 
+9/9/2015 5:13:08 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:13:08 PM, Creating new project 
+9/9/2015 5:13:08 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:13:08 PM, Creating new project 
+9/9/2015 5:13:08 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:13:08 PM, Creating new project 
+9/9/2015 5:13:08 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:13:08 PM, Creating new project 
+9/9/2015 5:13:08 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:13:08 PM, Creating new project 
+9/9/2015 5:13:08 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:13:08 PM, Creating new project 
+9/9/2015 5:13:08 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:13:08 PM, Creating new project 
+9/9/2015 5:13:08 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:13:08 PM, Creating new project 
+9/9/2015 5:13:08 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:13:08 PM, Creating new project 
+9/9/2015 5:13:08 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:13:08 PM, Creating new project 
+9/9/2015 5:13:08 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:13:08 PM, Creating new project 
+9/9/2015 5:13:08 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:13:08 PM, Creating new project 
+9/9/2015 5:13:08 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:13:08 PM, Creating new project 
+9/9/2015 5:13:08 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:13:08 PM, InternFactory|CreateIntern Intern 
+9/9/2015 5:13:08 PM, Added HollidayPrivilege 
+9/9/2015 5:13:08 PM, Added HollidayPrivilege 
+9/9/2015 5:13:08 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:13:08 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:13:08 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:13:08 PM, Added HollidayPrivilege 
+9/9/2015 5:13:08 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:13:08 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:13:08 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:13:08 PM, Added HollidayPrivilege 
+9/9/2015 5:13:08 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:13:08 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:13:08 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:13:08 PM, Added HollidayPrivilege 
+9/9/2015 5:13:08 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:13:08 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:13:08 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:13:32 PM, CompanyRepository | AddCompany | {0} , NHibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing or set cascade action for the property to something that would make it autosave. Type: Domain.CompanyAssets.Address, Entity: Domain.CompanyAssets.Address
+   at NHibernate.Engine.ForeignKeys.GetEntityIdentifierIfNotUnsaved(String entityName, Object entity, ISessionImplementor session)
+   at NHibernate.Type.EntityType.GetIdentifier(Object value, ISessionImplementor session)
+   at NHibernate.Type.ManyToOneType.IsDirty(Object old, Object current, Boolean[] checkable, ISessionImplementor session)
+   at NHibernate.Type.TypeHelper.Dirty(StandardProperty[] properties, Object[] currentState, Object[] previousState, Boolean[][] includeColumns, Boolean anyUninitializedProperties, ISessionImplementor session, Int32 i)
+   at NHibernate.Type.TypeHelper.FindDirty(StandardProperty[] properties, Object[] currentState, Object[] previousState, Boolean[][] includeColumns, Boolean anyUninitializedProperties, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.FindDirty(Object[] currentState, Object[] previousState, Object entity, ISessionImplementor session)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.DirtyCheck(FlushEntityEvent event)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.IsUpdateNecessary(FlushEntityEvent event, Boolean mightBeDirty)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event)
+   at NHibernate.Impl.SessionImpl.Flush()
+   at NHibernate.Transaction.AdoTransaction.Commit()
+   at Repository.CompanyRepository.AddCompany(IEnumerable`1 companyList) in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 22 
+9/9/2015 5:18:45 PM, ----Begining of the program----- 
+9/9/2015 5:18:45 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:18:45 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:18:45 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:18:45 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:18:45 PM, Creating new project 
+9/9/2015 5:18:45 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:18:45 PM, Creating new project 
+9/9/2015 5:18:45 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:18:45 PM, Creating new project 
+9/9/2015 5:18:45 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:18:45 PM, Creating new project 
+9/9/2015 5:18:45 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:18:45 PM, Creating new project 
+9/9/2015 5:18:45 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:18:45 PM, Creating new project 
+9/9/2015 5:18:45 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:18:45 PM, Creating new project 
+9/9/2015 5:18:45 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:18:45 PM, Creating new project 
+9/9/2015 5:18:45 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:18:45 PM, Creating new project 
+9/9/2015 5:18:45 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:18:45 PM, Creating new project 
+9/9/2015 5:18:45 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:18:45 PM, Creating new project 
+9/9/2015 5:18:45 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:18:45 PM, Creating new project 
+9/9/2015 5:18:45 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:18:45 PM, Creating new project 
+9/9/2015 5:18:45 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:18:45 PM, Creating new project 
+9/9/2015 5:18:45 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:18:45 PM, InternFactory|CreateIntern Intern 
+9/9/2015 5:18:45 PM, Added HollidayPrivilege 
+9/9/2015 5:18:45 PM, Added HollidayPrivilege 
+9/9/2015 5:18:45 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:18:45 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:18:45 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:18:45 PM, Added HollidayPrivilege 
+9/9/2015 5:18:45 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:18:45 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:18:45 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:18:45 PM, Added HollidayPrivilege 
+9/9/2015 5:18:45 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:18:45 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:18:45 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:18:45 PM, Added HollidayPrivilege 
+9/9/2015 5:18:45 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:18:45 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:18:45 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:19:15 PM, CompanyRepository | AddCompany | {0} , NHibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing or set cascade action for the property to something that would make it autosave. Type: Domain.CompanyAssets.Address, Entity: Domain.CompanyAssets.Address
+   at NHibernate.Engine.ForeignKeys.GetEntityIdentifierIfNotUnsaved(String entityName, Object entity, ISessionImplementor session)
+   at NHibernate.Type.EntityType.GetIdentifier(Object value, ISessionImplementor session)
+   at NHibernate.Type.ManyToOneType.IsDirty(Object old, Object current, Boolean[] checkable, ISessionImplementor session)
+   at NHibernate.Type.TypeHelper.Dirty(StandardProperty[] properties, Object[] currentState, Object[] previousState, Boolean[][] includeColumns, Boolean anyUninitializedProperties, ISessionImplementor session, Int32 i)
+   at NHibernate.Type.TypeHelper.FindDirty(StandardProperty[] properties, Object[] currentState, Object[] previousState, Boolean[][] includeColumns, Boolean anyUninitializedProperties, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.FindDirty(Object[] currentState, Object[] previousState, Object entity, ISessionImplementor session)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.DirtyCheck(FlushEntityEvent event)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.IsUpdateNecessary(FlushEntityEvent event, Boolean mightBeDirty)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultFlushEventListener.OnFlush(FlushEvent event)
+   at NHibernate.Impl.SessionImpl.Flush()
+   at NHibernate.Transaction.AdoTransaction.Commit()
+   at Repository.CompanyRepository.AddCompany(IEnumerable`1 companyList) in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 22 
+9/9/2015 5:19:51 PM, -------The End------- 
+9/9/2015 5:22:25 PM, ----Begining of the program----- 
+9/9/2015 5:22:25 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:22:25 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:22:25 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:22:25 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:22:25 PM, Creating new project 
+9/9/2015 5:22:25 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:22:25 PM, Creating new project 
+9/9/2015 5:22:25 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:22:25 PM, Creating new project 
+9/9/2015 5:22:25 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:22:25 PM, Creating new project 
+9/9/2015 5:22:25 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:22:25 PM, Creating new project 
+9/9/2015 5:22:25 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:22:25 PM, Creating new project 
+9/9/2015 5:22:25 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:22:25 PM, Creating new project 
+9/9/2015 5:22:25 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:22:25 PM, Creating new project 
+9/9/2015 5:22:25 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:22:25 PM, Creating new project 
+9/9/2015 5:22:25 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:22:25 PM, Creating new project 
+9/9/2015 5:22:25 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:22:25 PM, Creating new project 
+9/9/2015 5:22:25 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:22:25 PM, Creating new project 
+9/9/2015 5:22:25 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:22:25 PM, Creating new project 
+9/9/2015 5:22:25 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:22:25 PM, Creating new project 
+9/9/2015 5:22:25 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:22:25 PM, InternFactory|CreateIntern Intern 
+9/9/2015 5:22:25 PM, Added HollidayPrivilege 
+9/9/2015 5:22:25 PM, Added HollidayPrivilege 
+9/9/2015 5:22:25 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:22:25 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:22:25 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:22:25 PM, Added HollidayPrivilege 
+9/9/2015 5:22:25 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:22:25 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:22:25 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:22:25 PM, Added HollidayPrivilege 
+9/9/2015 5:22:25 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:22:25 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:22:25 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:22:25 PM, Added HollidayPrivilege 
+9/9/2015 5:22:25 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:22:25 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:22:25 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:29:02 PM, ----Begining of the program----- 
+9/9/2015 5:29:02 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:29:02 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:29:02 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:29:02 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:29:02 PM, Creating new project 
+9/9/2015 5:29:02 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:29:02 PM, Creating new project 
+9/9/2015 5:29:02 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:29:02 PM, Creating new project 
+9/9/2015 5:29:02 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:29:02 PM, Creating new project 
+9/9/2015 5:29:02 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:29:02 PM, Creating new project 
+9/9/2015 5:29:02 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:29:02 PM, Creating new project 
+9/9/2015 5:29:02 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:29:02 PM, Creating new project 
+9/9/2015 5:29:02 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:29:02 PM, Creating new project 
+9/9/2015 5:29:02 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:29:02 PM, Creating new project 
+9/9/2015 5:29:02 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:29:02 PM, Creating new project 
+9/9/2015 5:29:02 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:29:02 PM, Creating new project 
+9/9/2015 5:29:02 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:29:02 PM, Creating new project 
+9/9/2015 5:29:02 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:29:02 PM, Creating new project 
+9/9/2015 5:29:02 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:29:02 PM, Creating new project 
+9/9/2015 5:29:02 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:29:02 PM, InternFactory|CreateIntern Intern 
+9/9/2015 5:29:02 PM, Added HollidayPrivilege 
+9/9/2015 5:29:02 PM, Added HollidayPrivilege 
+9/9/2015 5:29:02 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:29:02 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:29:02 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:29:02 PM, Added HollidayPrivilege 
+9/9/2015 5:29:02 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:29:02 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:29:02 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:29:02 PM, Added HollidayPrivilege 
+9/9/2015 5:29:02 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:29:02 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:29:02 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:29:02 PM, Added HollidayPrivilege 
+9/9/2015 5:29:02 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:29:02 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:29:02 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:29:39 PM, -------The End------- 
+9/9/2015 5:34:04 PM, ----Begining of the program----- 
+9/9/2015 5:34:04 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:34:04 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:34:04 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:34:04 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:34:04 PM, Creating new project 
+9/9/2015 5:34:04 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:34:04 PM, Creating new project 
+9/9/2015 5:34:04 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:34:04 PM, Creating new project 
+9/9/2015 5:34:04 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:34:04 PM, Creating new project 
+9/9/2015 5:34:04 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:34:04 PM, Creating new project 
+9/9/2015 5:34:04 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:34:04 PM, Creating new project 
+9/9/2015 5:34:04 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:34:04 PM, Creating new project 
+9/9/2015 5:34:04 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:34:04 PM, Creating new project 
+9/9/2015 5:34:04 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:34:04 PM, Creating new project 
+9/9/2015 5:34:04 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:34:04 PM, Creating new project 
+9/9/2015 5:34:04 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:34:04 PM, Creating new project 
+9/9/2015 5:34:04 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:34:04 PM, Creating new project 
+9/9/2015 5:34:04 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:34:04 PM, Creating new project 
+9/9/2015 5:34:04 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:34:04 PM, Creating new project 
+9/9/2015 5:34:04 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:34:04 PM, InternFactory|CreateIntern Intern 
+9/9/2015 5:34:04 PM, Added HollidayPrivilege 
+9/9/2015 5:34:04 PM, Added HollidayPrivilege 
+9/9/2015 5:34:04 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:34:04 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:34:04 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:34:04 PM, Added HollidayPrivilege 
+9/9/2015 5:34:04 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:34:04 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:34:04 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:34:04 PM, Added HollidayPrivilege 
+9/9/2015 5:34:04 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:34:04 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:34:04 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:34:04 PM, Added HollidayPrivilege 
+9/9/2015 5:34:04 PM, Added LunchTichetsPrivilege 
+9/9/2015 5:34:04 PM, Added SalaryBonusPrivilege 
+9/9/2015 5:34:04 PM, EmployeeFactory|CreateEmployee Employee 
+9/9/2015 5:34:07 PM, -------The End------- 
+9/9/2015 5:54:20 PM, ----Begining of the program----- 
+9/9/2015 5:54:20 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:54:20 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:54:20 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:54:20 PM, CompanyFactory|CreateCompany Company 
+9/9/2015 5:54:20 PM, Creating new project 
+9/9/2015 5:54:20 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:54:20 PM, Creating new project 
+9/9/2015 5:54:20 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:54:20 PM, Creating new project 
+9/9/2015 5:54:20 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:54:20 PM, Creating new project 
+9/9/2015 5:54:20 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:54:20 PM, Creating new project 
+9/9/2015 5:54:20 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:54:20 PM, Creating new project 
+9/9/2015 5:54:20 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:54:20 PM, Creating new project 
+9/9/2015 5:54:20 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:54:20 PM, Creating new project 
+9/9/2015 5:54:20 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:54:20 PM, Creating new project 
+9/9/2015 5:54:20 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:54:20 PM, Creating new project 
+9/9/2015 5:54:20 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:54:20 PM, Creating new project 
+9/9/2015 5:54:20 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:54:20 PM, Creating new project 
+9/9/2015 5:54:20 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:54:20 PM, Creating new project 
+9/9/2015 5:54:20 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:54:20 PM, Creating new project 
+9/9/2015 5:54:20 PM, ProjectFactory|CreateProject Project 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:20 PM, TaskFactory|CreateTask Task 
+9/9/2015 5:54:37 PM, -------The End------- 

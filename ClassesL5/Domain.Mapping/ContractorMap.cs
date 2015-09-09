@@ -1,4 +1,4 @@
-﻿using Domain.Company;
+﻿using Domain.CompanyAssets;
 using Domain.Persons;
 using FluentNHibernate.Mapping;
 
@@ -8,9 +8,9 @@ namespace Domain.Mapping
     {
         public ContractorMap()
         {
-            //Map(x => x.Salary).Not.Nullable();
             Map(x => x.WorkExp).Not.Nullable();
-            HasMany<Salary>(x => x.Salary).Cascade.All().Inverse();
+            HasOne(x => x.Salary).Cascade.SaveUpdate();
+            HasMany(x => x.taskList).Cascade.SaveUpdate();
         }
     }
 }

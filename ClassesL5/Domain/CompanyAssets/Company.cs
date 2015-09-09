@@ -3,28 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using Domain.Persons;
 
-namespace Domain.Company
+namespace Domain.CompanyAssets
 {
     public class Company : Entity
     {
-        public Company(string name, FieldOfActivity activity, string address,
-            Dictionary<string, string> projectDictionary)
+        public Company(string name, FieldOfActivity activity, Address address)
         {
             CompanyName = name;
             Activity = activity;
             Address = address;
-            ProjectList = projectDictionary.Select(x => new Project(this, x.Key, x.Value)).ToList();
+            ProjectList = new List<Project>();
+            PersonList = new List<Person>();
 
         }
 
-        public virtual int CompanyId { get; protected set; }
         public virtual FieldOfActivity Activity { get; protected set; }
         public virtual string CompanyName { get; protected set; }
-        public virtual string Address { get; protected set; }
+        public virtual Address Address { get; protected set; }
         public virtual IList<Project> ProjectList { get; protected set; }
-        public virtual Person Person { get; protected set; }
-
-        [Obsolete]
+        public virtual IList<Person> PersonList { get; protected set; }
+            
+            [Obsolete]
         protected Company()
         {
         }
@@ -32,6 +31,17 @@ namespace Domain.Company
         public virtual string ToString()
         {
             return CompanyName;
+        }
+
+        public virtual void AddProject(Project project)
+        {
+            ProjectList.Add(project);
+        }
+
+
+        public virtual void AddPerson(Person person)
+        {
+            PersonList.Add(person);
         }
 
         //public static void JobValidation(Intern intern)

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Domain;
-using Domain.Company;
+using Domain.CompanyAssets;
 using Domain.Persons;
 using InterfaceActions.Actions;
 using Moq;

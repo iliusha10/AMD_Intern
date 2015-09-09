@@ -1,4 +1,4 @@
-﻿using Domain.Company;
+﻿using Domain.CompanyAssets;
 
 namespace Domain.Mapping
 {

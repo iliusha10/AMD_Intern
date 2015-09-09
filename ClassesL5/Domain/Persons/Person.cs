@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Domain.Company;
+using Domain.CompanyAssets;
 using Domain.Interfaces;
 using Domain.Privileges;
 
@@ -9,29 +9,9 @@ namespace Domain.Persons
 {
     public class Person : Entity, IPrivileges
     {
-        //public Person(string fName, string lName, string bdate)
-        //{
-        //    if (string.IsNullOrWhiteSpace(fName))
-        //        throw new ArgumentException("First name is required.");
-        //    if (string.IsNullOrWhiteSpace(lName))
-        //        throw new ArgumentException("Last name is required.");
-
-        //    FName = fName;
-        //    LName = lName;
-
-        //    try
-        //    {
-        //        DateOfBirth = DateTime.Parse(bdate);
-        //    }
-        //    catch (ArgumentOutOfRangeException e)
-        //    {
-        //        Console.Write(LName);
-        //        throw new ArgumentOutOfRangeException("Birthdate is out of range.", e);
-        //    }
-        //}
 
         public Person(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
-            Address address, Company.Company company)
+            Address address, Company company)
         {
             if (string.IsNullOrWhiteSpace(fName))
                 throw new ArgumentException("First name is required.");
@@ -67,7 +47,7 @@ namespace Domain.Persons
         public virtual IList<PersonSkills> SkillsList { get; protected set; }
         public virtual IList<PersonPrivilege> PrivilegeList { get; protected set; }
         public virtual Address Address { get; protected set; }
-        public virtual Company.Company Company { get; protected set; }
+        public virtual Company Company { get; protected set; }
 
         public override string ToString()
         {

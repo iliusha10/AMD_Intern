@@ -4,7 +4,7 @@ using System.Linq;
 using Domain.Interfaces;
 using Domain.Persons;
 
-namespace Domain.Company
+namespace Domain.CompanyAssets
 {
     public class HumanResources : INotify
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Domain.Company;
+using Domain.CompanyAssets;
 using Domain.Interfaces;
 
 namespace Domain.Persons
@@ -8,7 +8,7 @@ namespace Domain.Persons
     public class Employee : Contractor, IPrivileges
     {
         public Employee(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
-            Address address, Company.Company company, double workexp, double salary,
+            Address address, Company company, double workexp, double salary,
             string department, string role)
             : base(fName, lName, bdate, skillsDictionary,  address, company, workexp, salary)
         {

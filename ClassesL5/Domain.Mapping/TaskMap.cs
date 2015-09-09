@@ -1,4 +1,4 @@
-﻿using Domain.Company;
+﻿using Domain.CompanyAssets;
 
 namespace Domain.Mapping
 {
@@ -8,7 +8,7 @@ namespace Domain.Mapping
 
         public TaskMap()
         {
-            References(x => x.Person);
+            References(x => x.Contractor);
             References(x => x.Project);
             Map(x => x.TaskName).Not.Nullable();
             Map(x => x.TaskDescription).Not.Nullable();

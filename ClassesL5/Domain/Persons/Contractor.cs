@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Domain.Company;
+using Domain.CompanyAssets;
 using Domain.Interfaces;
 
 namespace Domain.Persons
@@ -8,7 +8,7 @@ namespace Domain.Persons
     public class Contractor : Person, IPrivileges
     {
         public Contractor(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
-            Address address, Company.Company company, double workexp, double salary)
+            Address address, Company company, double workexp, double salary)
             : base(fName, lName, bdate, skillsDictionary, address, company)
         {
             if (workexp <= 0)
@@ -16,6 +16,7 @@ namespace Domain.Persons
 
             WorkExp = workexp;
             Salary = new Salary(this, salary, 0.0);
+            taskList = new List<Task>();
         }
 
         [Obsolete]
@@ -25,6 +26,7 @@ namespace Domain.Persons
 
         public virtual Salary Salary { get; protected set; }
         public virtual double WorkExp { get; protected set; }
+        public virtual IList<Task> taskList { get; protected set; }
 
         public virtual void AddPrivilege()
         {

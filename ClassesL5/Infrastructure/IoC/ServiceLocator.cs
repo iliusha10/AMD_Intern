@@ -4,7 +4,6 @@ using Ninject;
 using Repository;
 using Repository.Interfaces;
 
-
 namespace Infrastructure.IoC
 {
     internal static class ServiceLocator
@@ -17,6 +16,7 @@ namespace Infrastructure.IoC
             Kernel.Bind<ICompany>().To<ComapnyInfo>();
             Kernel.Bind<IContractorDisplay>().To<DisplayImportantInfo>();
             Kernel.Bind<IProject>().To<ProjectInfo>();
+            Kernel.Bind<ITask>().To<TaskInfo>();
             Kernel.Bind<IPersonRepository>().To<PersonRepository>();
             Kernel.Bind<IPersonSkillsRepository>().To<PersonSkillsRepository>();
             Kernel.Bind<ICompanyRepository>().To<CompanyRepository>();

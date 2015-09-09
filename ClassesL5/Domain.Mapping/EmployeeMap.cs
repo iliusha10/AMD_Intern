@@ -7,7 +7,6 @@ namespace Domain.Mapping
     {
         public EmployeeMap()
         {
-            //References(x=>x.)
             Map(x => x.Department).Not.Nullable();
             Map(x => x.Role).Not.Nullable();
         }
