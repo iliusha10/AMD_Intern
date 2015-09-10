@@ -9,7 +9,7 @@ namespace Domain.Privileges
         {
         }
 
-        public virtual string PrivilegeName { get; set; }
-        public virtual Person Person { get; set; }
+        //public virtual string PrivilegeName { get; set; }
+        //public virtual Person Person { get; set; }
     }
 }

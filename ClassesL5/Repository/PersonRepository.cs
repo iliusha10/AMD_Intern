@@ -142,8 +142,6 @@ namespace Repository
             {
                 try
                 {
-                    Person pers = null;
-                    Contractor cont = null;
                     Employee emp = null;
                     PersonSkills skl = null;
                     EmployeDetails row = null;

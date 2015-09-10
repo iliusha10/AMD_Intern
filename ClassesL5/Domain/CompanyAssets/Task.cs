@@ -31,8 +31,12 @@ namespace Domain.CompanyAssets
 
         public virtual void DisplayAll()
         {
-            Console.WriteLine();
             Console.WriteLine("{0} {1} {2} {3}", TaskName, TaskDescription, Deadline, Project);
+        }
+
+        public virtual void AddWorker(Contractor worker)
+        {
+            Contractor = worker;
         }
 
         

@@ -12,6 +12,7 @@ namespace Domain.CompanyAssets
             ProjectDescription = decription;
             Company = company;
             Logger.Logger.AddToLog("Creating new project");
+            TaskList = new List<Task>();
         }
 
         [Obsolete]
@@ -39,6 +40,5 @@ namespace Domain.CompanyAssets
         {
             TaskList.Add(task);
         }
-
     }
 }

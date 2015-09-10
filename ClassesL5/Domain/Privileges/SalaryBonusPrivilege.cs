@@ -13,13 +13,10 @@ namespace Domain.Privileges
 
         public override void AddPrivilege()
         {
-
             Input.PrivilegeList.Add(new PersonPrivilege("Salary Bonus", Input));
-         
             Input.AddPrivilege();
-
-            Console.WriteLine("Added SalaryBonusPrivilege");
             
+            Console.WriteLine("Added SalaryBonusPrivilege");
             Logger.Logger.AddToLog("Added SalaryBonusPrivilege");
         }
     }

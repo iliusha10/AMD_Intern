@@ -6,7 +6,7 @@ namespace BL.SalaryCalculator
     {
         public double Calculate(double salary)
         {
-            return salary;
+            return salary + salary * 0.4;
         }
     }
 }

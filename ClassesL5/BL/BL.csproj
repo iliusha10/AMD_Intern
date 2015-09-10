@@ -42,7 +42,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\ISalaryCalculator.cs" />
     <Compile Include="SalaryCalculator\ContractorSalaryCalculator.cs" />
-    <Compile Include="SalaryCalculator\InternSalaryCalculator.cs" />
     <Compile Include="SalaryCalculator\EmployeeSalaryCalculator.cs" />
     <Compile Include="SalaryCalculator\SalaryCalculator.cs" />
   </ItemGroup>
