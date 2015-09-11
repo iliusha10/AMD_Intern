@@ -49,6 +49,8 @@
     <Compile Include="CompanyAssets\PersonSkills.cs" />
     <Compile Include="Privileges\PersonPrivilege.cs" />
     <Compile Include="Privileges\PersonPrivileges.cs" />
+    <Compile Include="Row\CompanyAllInfo.cs" />
+    <Compile Include="Row\CompanyName.cs" />
     <Compile Include="Row\EmployeDetails.cs" />
     <Compile Include="Row\PersonWithSkillsCount.cs" />
     <Compile Include="CompanyAssets\Salary.cs" />

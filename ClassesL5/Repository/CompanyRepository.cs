@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Domain;
+using Domain.Row;
 using Domain.CompanyAssets;
+using NHibernate.Transform;
 using Repository.Interfaces;
 
 namespace Repository
@@ -67,6 +69,65 @@ namespace Repository
                 {
                     Logger.Logger.AddToLog("ComapnyRepository | DeleteCompany | {0}", ex);
                     transaction.Rollback();
+                }
+            }
+        }
+
+        public IList<CompanyName> GetAllCompanyNames()
+        {
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    CompanyName names = null;
+
+                    var result = _session.QueryOver<Company>()
+                        .SelectList(list => list
+                            .Select(c => c.Id).WithAlias(() => names.Id)
+                            .Select(c => c.CompanyName).WithAlias(() => names.CompanyNames))
+                        .TransformUsing(Transformers.AliasToBean<CompanyName>())
+                        .List<CompanyName>();
+                    return result;
+
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("ComapnyRepository | GetAllNames | {0}", ex);
+                    tran.Rollback();
+                    return null;
+                }
+            }
+        }
+
+        public IList<CompanyAllInfo> GetCompanyAllInfo(long id)
+        {
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    Address address = null;
+                    Company company = null;
+                    CompanyAllInfo all = null;
+
+                    var result = _session.QueryOver(() => company)
+                        .JoinAlias(()=> company.Address, ()=> address )
+                        .Where(()=> company.Id == id)
+                        .SelectList(list => list
+                            .Select(() => company.Id).WithAlias(() => all.Id)
+                            .Select(() => company.CompanyName).WithAlias(() => all.CompanyName)
+                            .Select(()=> company.Activity).WithAlias(()=>all.Activity)
+                            .Select(()=>address.City).WithAlias(()=>all.City)
+                            .Select(()=>address.Street).WithAlias(()=>all.Street))
+                        .TransformUsing(Transformers.AliasToBean<CompanyAllInfo>())
+                        .List<CompanyAllInfo>();
+                    return result;
+
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("ComapnyRepository | GetCompanyAllInfo | {0}", ex);
+                    tran.Rollback();
+                    return null;
                 }
             }
         }
