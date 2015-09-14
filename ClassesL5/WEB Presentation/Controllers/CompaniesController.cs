@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Domain;
 using Domain.CompanyAssets;
-using Repository.Interfaces;
-using Infrastructure.IoC;
 using Factories;
-
+using Infrastructure.IoC;
+using Repository.Interfaces;
+using WEB_Presentation.Models;
 
 namespace Web.Controllers
 {
@@ -19,7 +16,7 @@ namespace Web.Controllers
         private static readonly ICompanyRepository CompanyRepository = ServiceLocator.Get<ICompanyRepository>();
         private static readonly CompanyFactory CompanyFactory = ServiceLocator.Get<CompanyFactory>();
 
-        public ActionResult CompanyNames()
+        public ActionResult Index()
         {
             var companyNames = CompanyRepository.GetAllCompanyNames();
             return View(companyNames);
@@ -32,7 +29,7 @@ namespace Web.Controllers
         {
             var result = CompanyRepository.GetCompanyAllInfo(id);
 
-            return View(result.First());
+            return View(result);
         }
 
         //
@@ -40,7 +37,6 @@ namespace Web.Controllers
 
         public ActionResult Create()
         {
-
             return View();
         }
 
@@ -48,11 +44,12 @@ namespace Web.Controllers
         // POST: /Company/Create
 
         [HttpPost]
-        public ActionResult Create(string name, FieldOfActivity activity)
+        public ActionResult Create(CompanyModel model)
         {
             try
             {
-                var company = CompanyFactory.CreateCompany(name, activity, new Address("Centru", "Chisinau"));
+                var company = CompanyFactory.CreateCompany(model.CompanyName, model.Activity,
+                    new Address(model.City, model.Street));
                 CompanyRepository.AddCompany(company);
                 return RedirectToAction("Index");
             }
@@ -93,7 +90,13 @@ namespace Web.Controllers
 
         public ActionResult Delete(int id)
         {
-            return View();
+            var company = CompanyRepository.GetCompanyAllInfo(id);
+            CompanyModel comp = new CompanyModel();
+            comp.CompanyName = company.CompanyName;
+            comp.Activity = company.Activity;
+            comp.City = company.City;
+            comp.Street = company.Street;
+            return View(comp);
         }
 
         //
@@ -104,7 +107,7 @@ namespace Web.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                CompanyRepository.DeleteCompany(id);
 
                 return RedirectToAction("Index");
             }

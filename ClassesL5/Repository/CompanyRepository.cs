@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Domain;
-using Domain.Row;
 using Domain.CompanyAssets;
+using Domain.Row;
 using NHibernate.Transform;
 using Repository.Interfaces;
 
@@ -10,17 +11,13 @@ namespace Repository
 {
     public class CompanyRepository : Repository, ICompanyRepository
     {
-
-        public void AddCompany(IEnumerable<Company> companyList)
+        public void AddCompany(Company company)
         {
             using (var transaction = _session.BeginTransaction())
             {
                 try
                 {
-                    foreach (var company in companyList)
-                    {
-                        _session.SaveOrUpdate(company);
-                    }
+                    _session.SaveOrUpdate(company);
                     transaction.Commit();
                     Console.WriteLine("Inserting Company in DB Successfull ");
                 }
@@ -63,7 +60,6 @@ namespace Repository
                     var company = _session.Load<Company>(id);
                     _session.Delete(company);
                     transaction.Commit();
-                    Console.WriteLine("Deleted company");
                 }
                 catch (Exception ex)
                 {
@@ -88,7 +84,6 @@ namespace Repository
                         .TransformUsing(Transformers.AliasToBean<CompanyName>())
                         .List<CompanyName>();
                     return result;
-
                 }
                 catch (Exception ex)
                 {
@@ -99,7 +94,7 @@ namespace Repository
             }
         }
 
-        public IList<CompanyAllInfo> GetCompanyAllInfo(long id)
+        public CompanyAllInfo GetCompanyAllInfo(long id)
         {
             using (var tran = _session.BeginTransaction())
             {
@@ -110,18 +105,17 @@ namespace Repository
                     CompanyAllInfo all = null;
 
                     var result = _session.QueryOver(() => company)
-                        .JoinAlias(()=> company.Address, ()=> address )
-                        .Where(()=> company.Id == id)
+                        .JoinAlias(() => company.Address, () => address)
+                        .Where(() => company.Id == id)
                         .SelectList(list => list
                             .Select(() => company.Id).WithAlias(() => all.Id)
                             .Select(() => company.CompanyName).WithAlias(() => all.CompanyName)
-                            .Select(()=> company.Activity).WithAlias(()=>all.Activity)
-                            .Select(()=>address.City).WithAlias(()=>all.City)
-                            .Select(()=>address.Street).WithAlias(()=>all.Street))
+                            .Select(() => company.Activity).WithAlias(() => all.Activity)
+                            .Select(() => address.City).WithAlias(() => all.City)
+                            .Select(() => address.Street).WithAlias(() => all.Street))
                         .TransformUsing(Transformers.AliasToBean<CompanyAllInfo>())
                         .List<CompanyAllInfo>();
-                    return result;
-
+                    return result.FirstOrDefault();
                 }
                 catch (Exception ex)
                 {

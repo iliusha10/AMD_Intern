@@ -263,8 +263,8 @@ namespace ClassesL5
             personsList.Add(emp5);
 
 
-            CompanyRepository.AddCompany(companylist);
-            PersonRepository.AddPerson(personsList);
+            //CompanyRepository.AddCompany(companylist);
+            //PersonRepository.AddPerson(personsList);
         }
 
         private static void ShowAllPersons()

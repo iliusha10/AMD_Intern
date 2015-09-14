@@ -25,5 +25,11 @@ namespace Domain.CompanyAssets
         public virtual string City { get; protected set; }
         public virtual Person Person { get; protected set; }
         public virtual Company Company { get; protected set; }
+
+        public virtual void ChangeAddress(string street, string city)
+        {
+            Street = street;
+            City = city;
+        }
     }
 }
