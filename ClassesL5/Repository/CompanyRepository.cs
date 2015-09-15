@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Domain;
 using Domain.CompanyAssets;
 using Domain.Row;
 using NHibernate.Transform;
@@ -13,6 +12,7 @@ namespace Repository
     {
         public void AddCompany(Company company)
         {
+            using (var _session = SessionGenerator.Instance.GetSession())
             using (var transaction = _session.BeginTransaction())
             {
                 try
@@ -29,18 +29,28 @@ namespace Repository
             }
         }
 
-        public void UpdateCompany(long id, string name = null, FieldOfActivity activity = FieldOfActivity.None)
+        public void UpdateCompany(Company oldcompany, Company newcompany)
         {
+            using (var _session = SessionGenerator.Instance.GetSession())
             using (var transaction = _session.BeginTransaction())
             {
                 try
                 {
-                    var company = _session.Load<Company>(id);
-                    if (name != null)
-                        company.Rename(name);
+                    //Company comp = null;
+                    //Address addr = null;
+                    //CompanyAllInfo row = null;
 
-                    if (activity != FieldOfActivity.None)
-                        company.ChangeFieldofActivity(activity);
+                    //var company = _session.QueryOver(() => comp)
+                    //    .JoinAlias(() => comp.Address, () => addr)
+                    //    .SelectList(list => list
+                    //        .Select(() => comp.CompanyName).WithAlias(() => row.CompanyName)
+                    //        .Select(() => comp.Activity).WithAlias(() => row.Activity)
+                    //        .Select(() => addr.City).WithAlias(() => row.City)
+                    //        .Select(() => addr.Street).WithAlias(() => row.Street))
+                    //    .TransformUsing(Transformers.AliasToBean<CompanyAllInfo>())
+                    //    .List<CompanyAllInfo>();
+
+//                    company.ChangeData(company, name, activity, city, street);
                     transaction.Commit();
                 }
                 catch (Exception ex)
@@ -53,24 +63,25 @@ namespace Repository
 
         public void DeleteCompany(long id)
         {
+            using (var _session = SessionGenerator.Instance.GetSession())
             using (var transaction = _session.BeginTransaction())
             {
-                try
-                {
-                    var company = _session.Load<Company>(id);
-                    _session.Delete(company);
-                    transaction.Commit();
-                }
-                catch (Exception ex)
-                {
-                    Logger.Logger.AddToLog("ComapnyRepository | DeleteCompany | {0}", ex);
-                    transaction.Rollback();
-                }
+                var comp = _session.Get<Company>(id);
+                _session.Delete(comp);
+
+                //var queryString = string.Format("delete {0} where id = :id", typeof (Company));
+                //session.CreateQuery(queryString)
+                //    .SetParameter("id", id)
+                //    .ExecuteUpdate();
+
+                transaction.Commit();
             }
         }
 
+
         public IList<CompanyName> GetAllCompanyNames()
         {
+            using (var _session = SessionGenerator.Instance.GetSession())
             using (var tran = _session.BeginTransaction())
             {
                 try
@@ -87,7 +98,7 @@ namespace Repository
                 }
                 catch (Exception ex)
                 {
-                    Logger.Logger.AddToLog("ComapnyRepository | GetAllNames | {0}", ex);
+                    Logger.Logger.AddToLog("ComapnyRepository | GetCompanyAllInfo | {0}", ex);
                     tran.Rollback();
                     return null;
                 }
@@ -96,6 +107,7 @@ namespace Repository
 
         public CompanyAllInfo GetCompanyAllInfo(long id)
         {
+            using (var _session = SessionGenerator.Instance.GetSession())
             using (var tran = _session.BeginTransaction())
             {
                 try
@@ -111,11 +123,31 @@ namespace Repository
                             .Select(() => company.Id).WithAlias(() => all.Id)
                             .Select(() => company.CompanyName).WithAlias(() => all.CompanyName)
                             .Select(() => company.Activity).WithAlias(() => all.Activity)
+                            .Select(() => company.Address.Id).WithAlias(() => all.AddressId)
                             .Select(() => address.City).WithAlias(() => all.City)
                             .Select(() => address.Street).WithAlias(() => all.Street))
                         .TransformUsing(Transformers.AliasToBean<CompanyAllInfo>())
                         .List<CompanyAllInfo>();
                     return result.FirstOrDefault();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("ComapnyRepository | GetCompanyAllInfo | {0}", ex);
+                    tran.Rollback();
+                    return null;
+                }
+            }
+        }
+
+        public Company GetCompanyById(long id)
+        {
+            using (var _session = SessionGenerator.Instance.GetSession())
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    var company = _session.Get<Company>(id);
+                    return company;
                 }
                 catch (Exception ex)
                 {

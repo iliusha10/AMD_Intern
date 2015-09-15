@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Domain.Persons;
 
 namespace Domain.CompanyAssets
@@ -14,7 +13,11 @@ namespace Domain.CompanyAssets
             Address = address;
             ProjectList = new List<Project>();
             PersonList = new List<Person>();
+        }
 
+        [Obsolete]
+        protected Company()
+        {
         }
 
         public virtual FieldOfActivity Activity { get; protected set; }
@@ -22,11 +25,6 @@ namespace Domain.CompanyAssets
         public virtual Address Address { get; protected set; }
         public virtual IList<Project> ProjectList { get; protected set; }
         public virtual IList<Person> PersonList { get; protected set; }
-            
-            [Obsolete]
-        protected Company()
-        {
-        }
 
         public virtual string ToString()
         {
@@ -75,16 +73,21 @@ namespace Domain.CompanyAssets
             //    adress.City);
         }
 
-        public virtual void Rename(string name)
+        public virtual void ChangeData(Company company, string name, FieldOfActivity activity, string city,
+            string street)
         {
-            CompanyName = name;
-            Console.WriteLine("Renaming company");
+            company.CompanyName = name;
+            company.Activity = activity;
+            if ((company.Address.City != city) || (company.Address.Street != street))
+            {
+                var address = new Address(street, city);
+                company.Address = address;
+            }
         }
 
         public virtual void ChangeFieldofActivity(FieldOfActivity activity)
         {
             Activity = activity;
-            Console.WriteLine("Changing Field of Activity");
         }
     }
 }

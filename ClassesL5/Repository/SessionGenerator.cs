@@ -38,7 +38,8 @@ namespace Repository
                     .ConnectionString(builder => builder.Database("Person")
                         .Server(@"MDDSK40107")
                         //.Server(@"SHADHOME-PC")
-                        .TrustedConnection()))
+                        .Username("ShaD").Password("1234")
+                        ))
                 .Mappings(x => x.FluentMappings.AddFromAssembly(typeof (PersonMap).Assembly))
                 .ExposeConfiguration(
                     cfg => new SchemaUpdate(cfg).Execute(true, true));

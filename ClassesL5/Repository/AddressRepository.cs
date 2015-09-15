@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Domain.CompanyAssets;
 using Repository.Interfaces;
 
 namespace Repository
 {
-    class AddressRepository: Repository, IAddressRepository
+    public class AddressRepository : Repository, IAddressRepository
     {
         public void AddAddress(Address address)
         {
@@ -27,14 +23,14 @@ namespace Repository
             }
         }
 
-        public void UpdateAddress(long id, string street, string city)
+        public void UpdateAddress(Address oldaddress, Address newaddress)
         {
             using (var transaction = _session.BeginTransaction())
             {
                 try
                 {
-                    var address = _session.Load<Address>(id);
-                    address.ChangeAddress(street, city);
+                    //var address = _session.Load<Address>(id);
+                   // address.ChangeAddress(street, city);
                     transaction.Commit();
                 }
                 catch (Exception ex)
@@ -74,10 +70,15 @@ namespace Repository
                 }
                 catch (Exception)
                 {
-                    
                     throw;
                 }
             }
+        }
+
+        public Address GetAddressById(long id)
+        {
+            var address = _session.Get<Address>(id);
+            return address;
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Domain.Row
         public long Id { get; protected set; }
         public string CompanyName { get; protected set; }
         public FieldOfActivity Activity { get; protected set; }
+        public long AddressId { get; protected set; }
         public string Street { get; protected set; }
         public string City { get; protected set; }
     }

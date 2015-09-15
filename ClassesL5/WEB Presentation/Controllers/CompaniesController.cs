@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 using Domain.CompanyAssets;
+using Domain.Row;
 using Factories;
 using Infrastructure.IoC;
 using Repository.Interfaces;
@@ -15,6 +16,7 @@ namespace Web.Controllers
         // GET: /Company/
         private static readonly ICompanyRepository CompanyRepository = ServiceLocator.Get<ICompanyRepository>();
         private static readonly CompanyFactory CompanyFactory = ServiceLocator.Get<CompanyFactory>();
+        private static readonly IAddressRepository AddressRepository = ServiceLocator.Get<IAddressRepository>();
 
         public ActionResult Index()
         {
@@ -46,48 +48,50 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Create(CompanyModel model)
         {
-            try
-            {
                 var company = CompanyFactory.CreateCompany(model.CompanyName, model.Activity,
                     new Address(model.City, model.Street));
                 CompanyRepository.AddCompany(company);
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
 
         //
         // GET: /Company/Edit/5
-
-        public ActionResult Edit(int id)
+        [HttpGet]
+        public ActionResult Edit(long id)
         {
-            return View();
+            var company = CompanyRepository.GetCompanyAllInfo(id);
+            CompanyModel comp = new CompanyModel
+            {
+                CompanyName = company.CompanyName,
+                Activity = company.Activity,
+                City = company.City,
+                Street = company.Street,
+             //   AddressId= company.
+            };
+            return View(comp);
         }
 
         //
         // POST: /Company/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(long id, CompanyModel company)
         {
-            try
-            {
-                // TODO: Add update logic here
+                //var newaddress = new Address(company.Street, company.City);
+                
+                //var oldcompany = CompanyRepository.GetCompanyById(id);
+                //var newcompany = CompanyFactory.CreateCompany(company.CompanyName, company.Activity, newaddress );
+
+                //var oldaddress = AddressRepository.GetAddressById(oldcompany.Address.Id)
+                //AddressRepository.UpdateAddress(oldaddress, newaddress);
+                //CompanyRepository.UpdateCompany(oldcompany, newcompany);
 
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
 
         //
         // GET: /Company/Delete/5
-
+        [HttpGet]
         public ActionResult Delete(int id)
         {
             var company = CompanyRepository.GetCompanyAllInfo(id);
@@ -102,19 +106,17 @@ namespace Web.Controllers
         //
         // POST: /Company/Delete/5
 
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpGet]
+        public ActionResult ApplyDelete(int id)
         {
-            try
-            {
-                CompanyRepository.DeleteCompany(id);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            CompanyRepository.DeleteCompany(id);
+            //var comp = CompanyRepository.GetCompanyById(id);
+            //    CompanyRepository.Delete(comp);
+
+
+            return RedirectToAction("Index");
+
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Domain.Mapping
 
         public ProjectMap()
         {
-            References(x => x.Company);
+            References(x => x.Company).Cascade.All();
             Map(x => x.ProjectName).Not.Nullable();
             Map(x => x.ProjectDescription).Not.Nullable();
             HasMany(x => x.TaskList).Cascade.All().Inverse().AsBag();

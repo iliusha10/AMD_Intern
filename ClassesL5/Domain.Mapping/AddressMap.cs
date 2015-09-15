@@ -11,8 +11,8 @@ namespace Domain.Mapping
         {
             Map(x => x.City).Not.Nullable();
             Map(x => x.Street).Not.Nullable();
-            HasOne(x => x.Person).PropertyRef(x => x.Id).Fetch.Join();
-            HasOne(x => x.Company).PropertyRef(x => x.Id).Fetch.Join();
+            HasOne(x => x.Person);//.PropertyRef(x => x.Id);
+            HasOne(x => x.Company); //.PropertyRef(x => x.Id);
         }
 
         #endregion

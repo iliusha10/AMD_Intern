@@ -4350,3 +4350,638 @@ The statement has been terminated.
    at NHibernate.Impl.SessionImpl.FireDelete(DeleteEvent event)
    at NHibernate.Impl.SessionImpl.Delete(Object obj)
    at Repository.CompanyRepository.DeleteCompany(Int64 id) in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 61 
+9/15/2015 9:06:32 AM, ComapnyRepository | UpdateCompany | {0} , NHibernate.Exceptions.GenericADOException: Error performing LoadByUniqueKey[SQL: SQL not available] ---> System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.GetAppropriateUniqueKeyLoader(String propertyName, IDictionary`2 enabledFilters)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.LoadByUniqueKey(String propertyName, Object uniqueKey, ISessionImplementor session)
+   at NHibernate.Type.EntityType.LoadByUniqueKey(String entityName, String uniqueKeyPropertyName, Object key, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Type.EntityType.LoadByUniqueKey(String entityName, String uniqueKeyPropertyName, Object key, ISessionImplementor session)
+   at NHibernate.Type.EntityType.ResolveIdentifier(Object value, ISessionImplementor session, Object owner)
+   at NHibernate.Engine.TwoPhaseLoad.InitializeEntity(Object entity, Boolean readOnly, ISessionImplementor session, PreLoadEvent preLoadEvent, PostLoadEvent postLoadEvent)
+   at NHibernate.Loader.Loader.InitializeEntitiesAndCollections(IList hydratedObjects, Object resultSetId, ISessionImplementor session, Boolean readOnly)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   at NHibernate.Loader.Entity.AbstractEntityLoader.Load(ISessionImplementor session, Object id, Object optionalObject, Object optionalId)
+   at NHibernate.Loader.Entity.AbstractEntityLoader.Load(Object id, Object optionalObject, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Load(Object id, Object optionalObject, LockMode lockMode, ISessionImplementor session)
+   at NHibernate.Event.Default.DefaultLoadEventListener.LoadFromDatasource(LoadEvent event, IEntityPersister persister, EntityKey keyToLoad, LoadType options)
+   at NHibernate.Event.Default.DefaultLoadEventListener.DoLoad(LoadEvent event, IEntityPersister persister, EntityKey keyToLoad, LoadType options)
+   at NHibernate.Event.Default.DefaultLoadEventListener.Load(LoadEvent event, IEntityPersister persister, EntityKey keyToLoad, LoadType options)
+   at NHibernate.Event.Default.DefaultLoadEventListener.ProxyOrLoad(LoadEvent event, IEntityPersister persister, EntityKey keyToLoad, LoadType options)
+   at NHibernate.Event.Default.DefaultLoadEventListener.OnLoad(LoadEvent event, LoadType loadType)
+   at NHibernate.Impl.SessionImpl.FireLoad(LoadEvent event, LoadType loadType)
+   at NHibernate.Impl.SessionImpl.Get(String entityName, Object id)
+   at NHibernate.Impl.SessionImpl.Get(Type entityClass, Object id)
+   at NHibernate.Impl.SessionImpl.Get[T](Object id)
+   at Repository.CompanyRepository.UpdateCompany(Int64 id, String name, FieldOfActivity activity, String city, String street) in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 38 
+9/15/2015 12:23:35 PM, ComapnyRepository | DeleteCompany | {0} , NHibernate.Exceptions.GenericADOException: Error performing LoadByUniqueKey[SQL: SQL not available] ---> System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.GetAppropriateUniqueKeyLoader(String propertyName, IDictionary`2 enabledFilters)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.LoadByUniqueKey(String propertyName, Object uniqueKey, ISessionImplementor session)
+   at NHibernate.Type.EntityType.LoadByUniqueKey(String entityName, String uniqueKeyPropertyName, Object key, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Type.EntityType.LoadByUniqueKey(String entityName, String uniqueKeyPropertyName, Object key, ISessionImplementor session)
+   at NHibernate.Type.EntityType.ResolveIdentifier(Object value, ISessionImplementor session, Object owner)
+   at NHibernate.Engine.TwoPhaseLoad.InitializeEntity(Object entity, Boolean readOnly, ISessionImplementor session, PreLoadEvent preLoadEvent, PostLoadEvent postLoadEvent)
+   at NHibernate.Loader.Loader.InitializeEntitiesAndCollections(IList hydratedObjects, Object resultSetId, ISessionImplementor session, Boolean readOnly)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   at NHibernate.Loader.Entity.AbstractEntityLoader.Load(ISessionImplementor session, Object id, Object optionalObject, Object optionalId)
+   at NHibernate.Loader.Entity.AbstractEntityLoader.Load(Object id, Object optionalObject, ISessionImplementor session)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Load(Object id, Object optionalObject, LockMode lockMode, ISessionImplementor session)
+   at NHibernate.Event.Default.DefaultLoadEventListener.LoadFromDatasource(LoadEvent event, IEntityPersister persister, EntityKey keyToLoad, LoadType options)
+   at NHibernate.Event.Default.DefaultLoadEventListener.DoLoad(LoadEvent event, IEntityPersister persister, EntityKey keyToLoad, LoadType options)
+   at NHibernate.Event.Default.DefaultLoadEventListener.Load(LoadEvent event, IEntityPersister persister, EntityKey keyToLoad, LoadType options)
+   at NHibernate.Event.Default.DefaultLoadEventListener.OnLoad(LoadEvent event, LoadType loadType)
+   at NHibernate.Impl.SessionImpl.FireLoad(LoadEvent event, LoadType loadType)
+   at NHibernate.Impl.SessionImpl.ImmediateLoad(String entityName, Object id)
+   at NHibernate.Proxy.AbstractLazyInitializer.Initialize()
+   at NHibernate.Proxy.AbstractLazyInitializer.GetImplementation()
+   at NHibernate.Engine.StatefulPersistenceContext.UnproxyAndReassociate(Object maybeProxy)
+   at NHibernate.Event.Default.DefaultDeleteEventListener.OnDelete(DeleteEvent event, ISet`1 transientEntities)
+   at NHibernate.Event.Default.DefaultDeleteEventListener.OnDelete(DeleteEvent event)
+   at NHibernate.Impl.SessionImpl.FireDelete(DeleteEvent event)
+   at NHibernate.Impl.SessionImpl.Delete(Object obj)
+   at Repository.CompanyRepository.DeleteCompany(Int64 id) in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 72 
+9/15/2015 12:29:50 PM, ComapnyRepository | DeleteCompany | {0} , NHibernate.Exceptions.GenericADOException: Error performing LoadByUniqueKey[SQL: SQL not available] ---> System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.LoadByUniqueKey(String propertyName, Object uniqueKey, ISessionImplementor session)
+   at NHibernate.Type.EntityType.LoadByUniqueKey(String entityName, String uniqueKeyPropertyName, Object key, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Type.EntityType.LoadByUniqueKey(String entityName, String uniqueKeyPropertyName, Object key, ISessionImplementor session)
+   at NHibernate.Type.EntityType.ResolveIdentifier(Object value, ISessionImplementor session, Object owner)
+   at NHibernate.Engine.TwoPhaseLoad.InitializeEntity(Object entity, Boolean readOnly, ISessionImplementor session, PreLoadEvent preLoadEvent, PostLoadEvent postLoadEvent)
+   at NHibernate.Loader.Loader.InitializeEntitiesAndCollections(IList hydratedObjects, Object resultSetId, ISessionImplementor session, Boolean readOnly)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   at NHibernate.Loader.Entity.AbstractEntityLoader.Load(ISessionImplementor session, Object id, Object optionalObject, Object optionalId)
+   at NHibernate.Loader.Entity.AbstractEntityLoader.Load(Object id, Object optionalObject, ISessionImplementor session)
+   at NHibernate.Event.Default.DefaultLoadEventListener.LoadFromDatasource(LoadEvent event, IEntityPersister persister, EntityKey keyToLoad, LoadType options)
+   at NHibernate.Event.Default.DefaultLoadEventListener.Load(LoadEvent event, IEntityPersister persister, EntityKey keyToLoad, LoadType options)
+   at NHibernate.Event.Default.DefaultLoadEventListener.OnLoad(LoadEvent event, LoadType loadType)
+   at NHibernate.Impl.SessionImpl.FireLoad(LoadEvent event, LoadType loadType)
+   at NHibernate.Impl.SessionImpl.Get(String entityName, Object id)
+   at NHibernate.Impl.SessionImpl.Get(Type entityClass, Object id)
+   at NHibernate.Impl.SessionImpl.Get[T](Object id)
+   at Repository.CompanyRepository.DeleteCompany(Int64 id) in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 71 
+9/15/2015 12:32:53 PM, ComapnyRepository | DeleteCompany | {0} , NHibernate.PropertyAccessException: Exception occurred getter of Domain.Entity.Id ---> System.Reflection.TargetException: Object does not match target type.
+   at System.Reflection.RuntimeMethodInfo.CheckConsistency(Object target)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, Object[] index)
+   at NHibernate.Properties.BasicPropertyAccessor.BasicGetter.Get(Object target)
+   --- End of inner exception stack trace ---
+   at NHibernate.Properties.BasicPropertyAccessor.BasicGetter.Get(Object target)
+   at NHibernate.Tuple.Entity.AbstractEntityTuplizer.GetIdentifier(Object entity)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.IsTransient(Object entity, ISessionImplementor session)
+   at NHibernate.Engine.ForeignKeys.IsTransient(String entityName, Object entity, Nullable`1 assumed, ISessionImplementor session)
+   at NHibernate.Engine.ForeignKeys.Nullifier.IsNullifiable(String entityName, Object obj)
+   at NHibernate.Engine.ForeignKeys.Nullifier.NullifyTransientReferences(Object value, IType type)
+   at NHibernate.Engine.ForeignKeys.Nullifier.NullifyTransientReferences(Object[] values, IType[] types)
+   at NHibernate.Event.Default.DefaultDeleteEventListener.DeleteEntity(IEventSource session, Object entity, EntityEntry entityEntry, Boolean isCascadeDeleteEnabled, IEntityPersister persister, ISet`1 transientEntities)
+   at NHibernate.Event.Default.DefaultDeleteEventListener.OnDelete(DeleteEvent event, ISet`1 transientEntities)
+   at NHibernate.Impl.SessionImpl.FireDelete(DeleteEvent event)
+   at NHibernate.Impl.SessionImpl.Delete(Object obj)
+   at Repository.CompanyRepository.DeleteCompany(Int64 id) in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 72 
+9/15/2015 12:32:53 PM, ComapnyRepository | GetAllNames | {0} , System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.Collections.Generic.IEnumerable`1[Domain.CompanyAssets.Project]'.
+   at NHibernate.Type.GenericBagType`1.Wrap(ISessionImplementor session, Object collection)
+   at NHibernate.Event.Default.WrapVisitor.ProcessArrayOrNewCollection(Object collection, CollectionType collectionType)
+   at NHibernate.Event.Default.WrapVisitor.ProcessValue(Int32 i, Object[] values, IType[] types)
+   at NHibernate.Event.Default.AbstractVisitor.ProcessEntityPropertyValues(Object[] values, IType[] types)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 91 
+9/15/2015 12:35:19 PM, ComapnyRepository | DeleteCompany | {0} , NHibernate.PropertyAccessException: Exception occurred getter of Domain.Entity.Id ---> System.Reflection.TargetException: Object does not match target type.
+   at System.Reflection.RuntimeMethodInfo.CheckConsistency(Object target)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, Object[] index)
+   at NHibernate.Properties.BasicPropertyAccessor.BasicGetter.Get(Object target)
+   --- End of inner exception stack trace ---
+   at NHibernate.Properties.BasicPropertyAccessor.BasicGetter.Get(Object target)
+   at NHibernate.Tuple.Entity.AbstractEntityTuplizer.GetIdentifier(Object entity)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.IsTransient(Object entity, ISessionImplementor session)
+   at NHibernate.Engine.ForeignKeys.IsTransient(String entityName, Object entity, Nullable`1 assumed, ISessionImplementor session)
+   at NHibernate.Engine.ForeignKeys.Nullifier.IsNullifiable(String entityName, Object obj)
+   at NHibernate.Engine.ForeignKeys.Nullifier.NullifyTransientReferences(Object value, IType type)
+   at NHibernate.Engine.ForeignKeys.Nullifier.NullifyTransientReferences(Object[] values, IType[] types)
+   at NHibernate.Event.Default.DefaultDeleteEventListener.DeleteEntity(IEventSource session, Object entity, EntityEntry entityEntry, Boolean isCascadeDeleteEnabled, IEntityPersister persister, ISet`1 transientEntities)
+   at NHibernate.Event.Default.DefaultDeleteEventListener.OnDelete(DeleteEvent event, ISet`1 transientEntities)
+   at NHibernate.Impl.SessionImpl.FireDelete(DeleteEvent event)
+   at NHibernate.Impl.SessionImpl.Delete(Object obj)
+   at Repository.CompanyRepository.DeleteCompany(Int64 id) in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 72 
+9/15/2015 12:35:19 PM, ComapnyRepository | GetAllNames | {0} , System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.Collections.Generic.IEnumerable`1[Domain.CompanyAssets.Project]'.
+   at NHibernate.Type.GenericBagType`1.Wrap(ISessionImplementor session, Object collection)
+   at NHibernate.Event.Default.WrapVisitor.ProcessArrayOrNewCollection(Object collection, CollectionType collectionType)
+   at NHibernate.Event.Default.WrapVisitor.ProcessValue(Int32 i, Object[] values, IType[] types)
+   at NHibernate.Event.Default.AbstractVisitor.ProcessEntityPropertyValues(Object[] values, IType[] types)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 91 
+9/15/2015 12:46:13 PM, ComapnyRepository | GetAllNames | {0} , System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.Collections.Generic.IEnumerable`1[Domain.CompanyAssets.Project]'.
+   at NHibernate.Type.GenericBagType`1.Wrap(ISessionImplementor session, Object collection)
+   at NHibernate.Event.Default.WrapVisitor.ProcessArrayOrNewCollection(Object collection, CollectionType collectionType)
+   at NHibernate.Event.Default.WrapVisitor.ProcessValue(Int32 i, Object[] values, IType[] types)
+   at NHibernate.Event.Default.AbstractVisitor.ProcessEntityPropertyValues(Object[] values, IType[] types)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 91 
+9/15/2015 12:46:19 PM, ComapnyRepository | GetAllNames | {0} , System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.Collections.Generic.IEnumerable`1[Domain.CompanyAssets.Project]'.
+   at NHibernate.Type.GenericBagType`1.Wrap(ISessionImplementor session, Object collection)
+   at NHibernate.Event.Default.WrapVisitor.ProcessArrayOrNewCollection(Object collection, CollectionType collectionType)
+   at NHibernate.Event.Default.WrapVisitor.ProcessValue(Int32 i, Object[] values, IType[] types)
+   at NHibernate.Event.Default.AbstractVisitor.ProcessEntityPropertyValues(Object[] values, IType[] types)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 91 
+9/15/2015 2:18:26 PM, ComapnyRepository | DeleteCompany | {0} , NHibernate.Exceptions.GenericADOException: Error performing LoadByUniqueKey[SQL: SQL not available] ---> System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.LoadByUniqueKey(String propertyName, Object uniqueKey, ISessionImplementor session)
+   at NHibernate.Type.EntityType.LoadByUniqueKey(String entityName, String uniqueKeyPropertyName, Object key, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Type.EntityType.LoadByUniqueKey(String entityName, String uniqueKeyPropertyName, Object key, ISessionImplementor session)
+   at NHibernate.Type.EntityType.ResolveIdentifier(Object value, ISessionImplementor session, Object owner)
+   at NHibernate.Engine.TwoPhaseLoad.InitializeEntity(Object entity, Boolean readOnly, ISessionImplementor session, PreLoadEvent preLoadEvent, PostLoadEvent postLoadEvent)
+   at NHibernate.Loader.Loader.InitializeEntitiesAndCollections(IList hydratedObjects, Object resultSetId, ISessionImplementor session, Boolean readOnly)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   at NHibernate.Loader.Entity.AbstractEntityLoader.Load(ISessionImplementor session, Object id, Object optionalObject, Object optionalId)
+   at NHibernate.Loader.Entity.AbstractEntityLoader.Load(Object id, Object optionalObject, ISessionImplementor session)
+   at NHibernate.Event.Default.DefaultLoadEventListener.LoadFromDatasource(LoadEvent event, IEntityPersister persister, EntityKey keyToLoad, LoadType options)
+   at NHibernate.Event.Default.DefaultLoadEventListener.Load(LoadEvent event, IEntityPersister persister, EntityKey keyToLoad, LoadType options)
+   at NHibernate.Event.Default.DefaultLoadEventListener.OnLoad(LoadEvent event, LoadType loadType)
+   at NHibernate.Impl.SessionImpl.FireLoad(LoadEvent event, LoadType loadType)
+   at NHibernate.Impl.SessionImpl.Get(String entityName, Object id)
+   at NHibernate.Impl.SessionImpl.Get(Type entityClass, Object id)
+   at NHibernate.Impl.SessionImpl.Get[T](Object id)
+   at Repository.CompanyRepository.DeleteCompany(Int64 id) in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 71 
+9/15/2015 2:21:26 PM, ComapnyRepository | DeleteCompany | {0} , NHibernate.Exceptions.GenericADOException: Error performing LoadByUniqueKey[SQL: SQL not available] ---> System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.LoadByUniqueKey(String propertyName, Object uniqueKey, ISessionImplementor session)
+   at NHibernate.Type.EntityType.LoadByUniqueKey(String entityName, String uniqueKeyPropertyName, Object key, ISessionImplementor session)
+   --- End of inner exception stack trace ---
+   at NHibernate.Type.EntityType.LoadByUniqueKey(String entityName, String uniqueKeyPropertyName, Object key, ISessionImplementor session)
+   at NHibernate.Type.EntityType.ResolveIdentifier(Object value, ISessionImplementor session, Object owner)
+   at NHibernate.Engine.TwoPhaseLoad.InitializeEntity(Object entity, Boolean readOnly, ISessionImplementor session, PreLoadEvent preLoadEvent, PostLoadEvent postLoadEvent)
+   at NHibernate.Loader.Loader.InitializeEntitiesAndCollections(IList hydratedObjects, Object resultSetId, ISessionImplementor session, Boolean readOnly)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.LoadEntity(ISessionImplementor session, Object id, IType identifierType, Object optionalObject, String optionalEntityName, Object optionalIdentifier, IEntityPersister persister)
+   at NHibernate.Loader.Entity.AbstractEntityLoader.Load(ISessionImplementor session, Object id, Object optionalObject, Object optionalId)
+   at NHibernate.Loader.Entity.AbstractEntityLoader.Load(Object id, Object optionalObject, ISessionImplementor session)
+   at NHibernate.Event.Default.DefaultLoadEventListener.LoadFromDatasource(LoadEvent event, IEntityPersister persister, EntityKey keyToLoad, LoadType options)
+   at NHibernate.Event.Default.DefaultLoadEventListener.Load(LoadEvent event, IEntityPersister persister, EntityKey keyToLoad, LoadType options)
+   at NHibernate.Event.Default.DefaultLoadEventListener.OnLoad(LoadEvent event, LoadType loadType)
+   at NHibernate.Impl.SessionImpl.FireLoad(LoadEvent event, LoadType loadType)
+   at NHibernate.Impl.SessionImpl.ImmediateLoad(String entityName, Object id)
+   at NHibernate.Proxy.AbstractLazyInitializer.Initialize()
+   at NHibernate.Proxy.AbstractLazyInitializer.GetImplementation()
+   at NHibernate.Event.Default.DefaultDeleteEventListener.OnDelete(DeleteEvent event, ISet`1 transientEntities)
+   at NHibernate.Impl.SessionImpl.FireDelete(DeleteEvent event)
+   at NHibernate.Impl.SessionImpl.Delete(Object obj)
+   at Repository.CompanyRepository.DeleteCompany(Int64 id) in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 72 
+9/15/2015 4:37:10 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 4:43:57 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:03:01 PM, ----Begining of the program----- 
+9/15/2015 5:03:01 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:03:01 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:03:01 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:03:01 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:03:01 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:03:01 PM, Creating new project 
+9/15/2015 5:03:01 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:01 PM, Creating new project 
+9/15/2015 5:03:01 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:01 PM, Creating new project 
+9/15/2015 5:03:01 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:01 PM, Creating new project 
+9/15/2015 5:03:01 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:01 PM, Creating new project 
+9/15/2015 5:03:01 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:01 PM, Creating new project 
+9/15/2015 5:03:01 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:01 PM, Creating new project 
+9/15/2015 5:03:01 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:01 PM, Creating new project 
+9/15/2015 5:03:01 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:01 PM, Creating new project 
+9/15/2015 5:03:01 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:01 PM, Creating new project 
+9/15/2015 5:03:01 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:01 PM, Creating new project 
+9/15/2015 5:03:01 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:01 PM, Creating new project 
+9/15/2015 5:03:01 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:01 PM, Creating new project 
+9/15/2015 5:03:01 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:01 PM, Creating new project 
+9/15/2015 5:03:01 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:01 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:01 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:01 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:01 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:01 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:01 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:03:01 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:01 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:03:01 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:01 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:03:01 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:01 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:03:01 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:01 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:03:01 PM, Added HollidayPrivilege 
+9/15/2015 5:03:01 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:03:01 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:01 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:03:05 PM, -------The End------- 
+9/15/2015 5:03:48 PM, ----Begining of the program----- 
+9/15/2015 5:03:48 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:03:48 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:03:48 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:03:48 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:03:48 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:03:48 PM, Creating new project 
+9/15/2015 5:03:48 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:48 PM, Creating new project 
+9/15/2015 5:03:48 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:48 PM, Creating new project 
+9/15/2015 5:03:48 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:48 PM, Creating new project 
+9/15/2015 5:03:48 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:48 PM, Creating new project 
+9/15/2015 5:03:48 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:48 PM, Creating new project 
+9/15/2015 5:03:48 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:48 PM, Creating new project 
+9/15/2015 5:03:48 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:48 PM, Creating new project 
+9/15/2015 5:03:48 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:48 PM, Creating new project 
+9/15/2015 5:03:48 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:48 PM, Creating new project 
+9/15/2015 5:03:48 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:48 PM, Creating new project 
+9/15/2015 5:03:48 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:48 PM, Creating new project 
+9/15/2015 5:03:48 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:48 PM, Creating new project 
+9/15/2015 5:03:48 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:48 PM, Creating new project 
+9/15/2015 5:03:48 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:03:48 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:48 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:48 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:48 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:48 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:48 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:03:48 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:48 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:03:48 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:48 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:03:48 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:48 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:03:48 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:48 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:03:48 PM, Added HollidayPrivilege 
+9/15/2015 5:03:48 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:03:48 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:03:48 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:03:49 PM, -------The End------- 
+9/15/2015 5:06:28 PM, ----Begining of the program----- 
+9/15/2015 5:06:28 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:06:28 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:06:28 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:06:28 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:06:28 PM, CompanyFactory|CreateCompany Company 
+9/15/2015 5:06:28 PM, Creating new project 
+9/15/2015 5:06:28 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:06:28 PM, Creating new project 
+9/15/2015 5:06:28 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:06:28 PM, Creating new project 
+9/15/2015 5:06:28 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:06:28 PM, Creating new project 
+9/15/2015 5:06:28 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:06:28 PM, Creating new project 
+9/15/2015 5:06:28 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:06:28 PM, Creating new project 
+9/15/2015 5:06:28 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:06:28 PM, Creating new project 
+9/15/2015 5:06:28 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:06:28 PM, Creating new project 
+9/15/2015 5:06:28 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:06:28 PM, Creating new project 
+9/15/2015 5:06:28 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:06:28 PM, Creating new project 
+9/15/2015 5:06:28 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:06:28 PM, Creating new project 
+9/15/2015 5:06:28 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:06:28 PM, Creating new project 
+9/15/2015 5:06:28 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:06:28 PM, Creating new project 
+9/15/2015 5:06:28 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:06:28 PM, Creating new project 
+9/15/2015 5:06:28 PM, ProjectFactory|CreateProject Project 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, TaskFactory|CreateTask Task 
+9/15/2015 5:06:28 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:06:28 PM, Added HollidayPrivilege 
+9/15/2015 5:06:28 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:06:28 PM, Added HollidayPrivilege 
+9/15/2015 5:06:28 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:06:28 PM, Added HollidayPrivilege 
+9/15/2015 5:06:28 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:06:28 PM, Added HollidayPrivilege 
+9/15/2015 5:06:28 PM, InternFactory|CreateIntern Intern 
+9/15/2015 5:06:28 PM, Added HollidayPrivilege 
+9/15/2015 5:06:28 PM, Added HollidayPrivilege 
+9/15/2015 5:06:28 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:06:28 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:06:28 PM, Added HollidayPrivilege 
+9/15/2015 5:06:28 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:06:28 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:06:28 PM, Added HollidayPrivilege 
+9/15/2015 5:06:28 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:06:28 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:06:28 PM, Added HollidayPrivilege 
+9/15/2015 5:06:28 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:06:28 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:06:28 PM, Added HollidayPrivilege 
+9/15/2015 5:06:28 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:06:28 PM, ContractorFactory|CreateContractor Contractor 
+9/15/2015 5:06:28 PM, Added HollidayPrivilege 
+9/15/2015 5:06:28 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:06:28 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:06:28 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:06:28 PM, Added HollidayPrivilege 
+9/15/2015 5:06:28 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:06:28 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:06:28 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:06:28 PM, Added HollidayPrivilege 
+9/15/2015 5:06:28 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:06:28 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:06:29 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:06:29 PM, Added HollidayPrivilege 
+9/15/2015 5:06:29 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:06:29 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:06:29 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:06:29 PM, Added HollidayPrivilege 
+9/15/2015 5:06:29 PM, Added LunchTichetsPrivilege 
+9/15/2015 5:06:29 PM, Added SalaryBonusPrivilege 
+9/15/2015 5:06:29 PM, EmployeeFactory|CreateEmployee Employee 
+9/15/2015 5:06:33 PM, -------The End------- 
+9/15/2015 5:19:48 PM, ComapnyRepository | GetAllNames | {0} , System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.Collections.Generic.IEnumerable`1[Domain.CompanyAssets.Project]'.
+   at NHibernate.Type.GenericBagType`1.Wrap(ISessionImplementor session, Object collection)
+   at NHibernate.Event.Default.WrapVisitor.ProcessArrayOrNewCollection(Object collection, CollectionType collectionType)
+   at NHibernate.Event.Default.WrapVisitor.ProcessValue(Int32 i, Object[] values, IType[] types)
+   at NHibernate.Event.Default.AbstractVisitor.ProcessEntityPropertyValues(Object[] values, IType[] types)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 90 
+9/15/2015 5:20:00 PM, ComapnyRepository | GetAllNames | {0} , System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.Collections.Generic.IEnumerable`1[Domain.CompanyAssets.Project]'.
+   at NHibernate.Type.GenericBagType`1.Wrap(ISessionImplementor session, Object collection)
+   at NHibernate.Event.Default.WrapVisitor.ProcessArrayOrNewCollection(Object collection, CollectionType collectionType)
+   at NHibernate.Event.Default.WrapVisitor.ProcessValue(Int32 i, Object[] values, IType[] types)
+   at NHibernate.Event.Default.AbstractVisitor.ProcessEntityPropertyValues(Object[] values, IType[] types)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 90 
+9/15/2015 5:20:08 PM, ComapnyRepository | GetAllNames | {0} , System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.Collections.Generic.IEnumerable`1[Domain.CompanyAssets.Project]'.
+   at NHibernate.Type.GenericBagType`1.Wrap(ISessionImplementor session, Object collection)
+   at NHibernate.Event.Default.WrapVisitor.ProcessArrayOrNewCollection(Object collection, CollectionType collectionType)
+   at NHibernate.Event.Default.WrapVisitor.ProcessValue(Int32 i, Object[] values, IType[] types)
+   at NHibernate.Event.Default.AbstractVisitor.ProcessEntityPropertyValues(Object[] values, IType[] types)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 90 
+9/15/2015 5:21:37 PM, ComapnyRepository | GetAllNames | {0} , System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.Collections.Generic.IEnumerable`1[Domain.CompanyAssets.Project]'.
+   at NHibernate.Type.GenericBagType`1.Wrap(ISessionImplementor session, Object collection)
+   at NHibernate.Event.Default.WrapVisitor.ProcessArrayOrNewCollection(Object collection, CollectionType collectionType)
+   at NHibernate.Event.Default.WrapVisitor.ProcessValue(Int32 i, Object[] values, IType[] types)
+   at NHibernate.Event.Default.AbstractVisitor.ProcessEntityPropertyValues(Object[] values, IType[] types)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 90 
+9/15/2015 5:21:48 PM, ComapnyRepository | GetAllNames | {0} , System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.Collections.Generic.IEnumerable`1[Domain.CompanyAssets.Project]'.
+   at NHibernate.Type.GenericBagType`1.Wrap(ISessionImplementor session, Object collection)
+   at NHibernate.Event.Default.WrapVisitor.ProcessArrayOrNewCollection(Object collection, CollectionType collectionType)
+   at NHibernate.Event.Default.WrapVisitor.ProcessValue(Int32 i, Object[] values, IType[] types)
+   at NHibernate.Event.Default.AbstractVisitor.ProcessEntityPropertyValues(Object[] values, IType[] types)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 90 
+9/15/2015 5:22:24 PM, ComapnyRepository | GetAllNames | {0} , System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.Collections.Generic.IEnumerable`1[Domain.CompanyAssets.Project]'.
+   at NHibernate.Type.GenericBagType`1.Wrap(ISessionImplementor session, Object collection)
+   at NHibernate.Event.Default.WrapVisitor.ProcessArrayOrNewCollection(Object collection, CollectionType collectionType)
+   at NHibernate.Event.Default.WrapVisitor.ProcessValue(Int32 i, Object[] values, IType[] types)
+   at NHibernate.Event.Default.AbstractVisitor.ProcessEntityPropertyValues(Object[] values, IType[] types)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 90 
+9/15/2015 5:22:35 PM, ComapnyRepository | GetAllNames | {0} , System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.Collections.Generic.IEnumerable`1[Domain.CompanyAssets.Project]'.
+   at NHibernate.Type.GenericBagType`1.Wrap(ISessionImplementor session, Object collection)
+   at NHibernate.Event.Default.WrapVisitor.ProcessArrayOrNewCollection(Object collection, CollectionType collectionType)
+   at NHibernate.Event.Default.WrapVisitor.ProcessValue(Int32 i, Object[] values, IType[] types)
+   at NHibernate.Event.Default.AbstractVisitor.ProcessEntityPropertyValues(Object[] values, IType[] types)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 90 
+9/15/2015 5:23:16 PM, ComapnyRepository | GetAllNames | {0} , System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.Collections.Generic.IEnumerable`1[Domain.CompanyAssets.Project]'.
+   at NHibernate.Type.GenericBagType`1.Wrap(ISessionImplementor session, Object collection)
+   at NHibernate.Event.Default.WrapVisitor.ProcessArrayOrNewCollection(Object collection, CollectionType collectionType)
+   at NHibernate.Event.Default.WrapVisitor.ProcessValue(Int32 i, Object[] values, IType[] types)
+   at NHibernate.Event.Default.AbstractVisitor.ProcessEntityPropertyValues(Object[] values, IType[] types)
+   at NHibernate.Event.Default.DefaultFlushEntityEventListener.OnFlushEntity(FlushEntityEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEntities(FlushEvent event)
+   at NHibernate.Event.Default.AbstractFlushingEventListener.FlushEverythingToExecutions(FlushEvent event)
+   at NHibernate.Event.Default.DefaultAutoFlushEventListener.OnAutoFlush(AutoFlushEvent event)
+   at NHibernate.Impl.SessionImpl.AutoFlushIfRequired(ISet`1 querySpaces)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 90 

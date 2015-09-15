@@ -6,8 +6,9 @@ namespace Repository.Interfaces
     public interface IAddressRepository : IRepository
     {
         void AddAddress(Address address);
-        void UpdateAddress(long id, string street, string city);
+        void UpdateAddress(Address oldaddress, Address newaddress);
         void DeleteAddress(long id);
         void CheckAdress(string street, string city);
+        Address GetAddressById(long id);
     }
 }

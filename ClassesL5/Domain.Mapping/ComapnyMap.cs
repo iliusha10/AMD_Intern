@@ -7,11 +7,11 @@ namespace Domain.Mapping
     {
         public CompanyMap()
         {
-            References(x => x.Address).Cascade.All();
+            References(x => x.Address).Cascade.SaveUpdate().Fetch.Join();
             Map(x => x.CompanyName).Not.Nullable();
             Map(x => x.Activity).Not.Nullable();
             HasMany(x => x.ProjectList).Cascade.All();
-            HasMany(x => x.PersonList);
+            HasMany(x => x.PersonList).Cascade.SaveUpdate();
 
 
         }

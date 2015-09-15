@@ -49,7 +49,7 @@ namespace ClassesL5
             {
                 Logger.Logger.AddToLog("----Begining of the program-----");
 
-                //PopulatingDb();
+                PopulatingDb();
 
                 //PersonRepository.UpdatePerson(15016, "White", "Dude", "1999-1-31");
                 //PersonRepository.UpdatePerson(19022, lname: "White", fname: "Dude");
@@ -263,8 +263,12 @@ namespace ClassesL5
             personsList.Add(emp5);
 
 
-            //CompanyRepository.AddCompany(companylist);
-            //PersonRepository.AddPerson(personsList);
+            CompanyRepository.AddCompany(companylist[0]);
+            CompanyRepository.AddCompany(companylist[1]);
+            CompanyRepository.AddCompany(companylist[2]);
+            CompanyRepository.AddCompany(companylist[3]);
+            CompanyRepository.AddCompany(companylist[4]);
+            PersonRepository.AddPerson(personsList);
         }
 
         private static void ShowAllPersons()
