@@ -7,8 +7,10 @@ using Domain.Privileges;
 
 namespace Domain.Persons
 {
-    public class Person : Entity, IPrivileges
+    public abstract class Person : Entity, IPrivileges
     {
+        //protected PersonType PersonTypeField;
+        public abstract PersonType PersonType { get; }
 
         public Person(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
             Address address, Company company)

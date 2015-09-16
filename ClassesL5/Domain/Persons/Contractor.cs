@@ -28,6 +28,11 @@ namespace Domain.Persons
         public virtual double WorkExp { get; protected set; }
         public virtual IList<Task> taskList { get; protected set; }
 
+        public override PersonType PersonType
+        {
+            get { return PersonType.Contractor; }
+        }
+
         public virtual void AddPrivilege()
         {
             Console.WriteLine("Privileges:");

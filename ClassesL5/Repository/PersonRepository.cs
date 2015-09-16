@@ -189,20 +189,34 @@ namespace Repository
             }
         }
 
-        public IList<object[]> GetAllFirstAndLastNames_ProjectionList()
+        public IList<PersonDto> GetAllFirstAndLastNames()
         {
             using (var tran = _session.BeginTransaction())
             {
                 try
                 {
                     Person person = null;
+                    PersonDto pdto = null;
 
-                    var res = _session.QueryOver(() => person)
-                        .Select(Projections.ProjectionList()
-                            .Add(Projections.Property(() => person.FName))
-                            .Add(Projections.Property(() => person.LName)))
-                        .Future<object[]>();
-                    return res.ToList();
+                    var test = _session.QueryOver(() => person).List();
+                    var res2 = test.Select(x => new PersonDto
+                    {
+                        Id = x.Id,
+                        Firstname = x.FName,
+                        Lastname = x.LName,
+                        Worker = x.PersonType
+                    }).ToList();
+
+                    //var res = _session.QueryOver(() => person)
+                    //    .SelectList(list => list
+                    //        .Select(()=>person.FName).WithAlias(()=> pdto.Firstname)
+                    //        .Select(()=>person.LName).WithAlias(()=> pdto.Lastname)
+                    //        .Select(()=>person.PersonType).WithAlias(()=>pdto.Worker)
+                    //        )
+                    //        .TransformUsing(Transformers.AliasToBean<PersonDto>())
+                    //    .List<PersonDto>();
+                   
+                    return res2;
                 }
                 catch (Exception ex)
                 {

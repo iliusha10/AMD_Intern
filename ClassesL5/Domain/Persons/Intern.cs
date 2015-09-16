@@ -21,6 +21,11 @@ namespace Domain.Persons
         public virtual double AverageMark { get; protected set; }
 
 
+        public override PersonType PersonType
+        {
+            get { return PersonType.Intern; }
+        }
+
         public virtual void DisplayAll()
         {
             Console.WriteLine("Intern:");

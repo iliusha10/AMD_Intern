@@ -1,32 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Repository.Interfaces;
-using Repository;
+﻿using System.Web.Mvc;
+using Domain.Persons;
 using Infrastructure.IoC;
-
+using Repository.Interfaces;
 
 namespace Web.Controllers
 {
     public class WorkersController : Controller
     {
+        private static readonly IPersonRepository PersonRepository = ServiceLocator.Get<IPersonRepository>();
 
-        private static IPersonRepository PersonRepository = ServiceLocator.Get<IPersonRepository>();
-        
 
-        public ActionResult Worker()
+        public ActionResult Index()
 
         {
-            return View();
-        }
-
-
-        public ActionResult ViewEmployee()
-        {
-            var emp = PersonRepository.GetEmployeeDetails1();
-            return View(emp);
+            var pers = PersonRepository.GetAllFirstAndLastNames();
+            return View(pers);
         }
 
 
@@ -34,10 +22,12 @@ namespace Web.Controllers
         // GET: /MyView/Details/5
 
         public
-            ActionResult Details
-            (int id)
+            ActionResult Details (long id)
         {
-            return View();
+
+            var result = PersonRepository.GetItemById<Person>(id);
+
+            return View(result);
         }
 
 //

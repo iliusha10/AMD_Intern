@@ -21,12 +21,12 @@ namespace Factories
         //    return person;
         //}
 
-        public Person CreatePersonWSkills(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary, Address address, Company company)
-        {
-            var person = new Person(fName, lName, bdate, skillsDictionary,  address, company);
-            OnInternCreation(person);
-            return person;
-        }
+        //public Person CreatePersonWSkills(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary, Address address, Company company)
+        //{
+        //    var person = new Person(fName, lName, bdate, skillsDictionary,  address, company);
+        //    OnInternCreation(person);
+        //    return person;
+        //}
 
         public void OnInternCreation(Person person)
         {

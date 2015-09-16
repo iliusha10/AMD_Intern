@@ -11,7 +11,7 @@ namespace Domain.Mapping
             Map(x => x.DateOfBirth).Not.Nullable();
             HasMany(x => x.SkillsList).Cascade.All().Inverse();
             HasMany(x => x.PrivilegeList).Cascade.All();
-            References(x => x.Address).Cascade.SaveUpdate();
+            References(x => x.Address).Cascade.All();
             HasOne(x => x.Company);
         }
     }

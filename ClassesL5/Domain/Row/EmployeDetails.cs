@@ -5,13 +5,9 @@ namespace Domain.Row
     public class EmployeDetails
     {
         public string Firstname { get; set; }
-
         public string Lastname { get; set; }
-
         public DateTime BirthDate { get; set; }
-
         public string Department { get; set; }
-
         public string Role { get; set; }
         public string SkillName { get; set; }
         public int SkillLevel { get; set; }

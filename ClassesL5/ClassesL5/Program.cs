@@ -312,15 +312,15 @@ namespace ClassesL5
             //persons.PrintToConsole();
         }
 
-        //Future + SelectProjectionList
-        private static void ShowAllPersonsFirstAndLastNames_ProjectionList()
-        {
-            var persons = PersonRepository.GetAllFirstAndLastNames_ProjectionList();
-            foreach (var p in persons)
-            {
-                Console.WriteLine("{0} {1}", p[0], p[1]);
-            }
-        }
+        ////Future + SelectProjectionList
+        //private static void ShowAllPersonsFirstAndLastNames_ProjectionList()
+        //{
+        //    var persons = PersonRepository.GetAllFirstAndLastNames_ProjectionList();
+        //    foreach (var p in persons)
+        //    {
+        //        Console.WriteLine("{0} {1}", p[0], p[1]);
+        //    }
+        //}
 
         //JoinAlias + SelectGroup+SelectCount + Where(Restrictions) + AliasToBean
         private static void ShowPersonRowsHavingMoreThanOneSkill()

@@ -25,6 +25,11 @@ namespace Domain.Persons
         {
         }
 
+        public override PersonType PersonType
+        {
+            get { return PersonType.Employee; }
+        }
+
         public virtual string Department { get; protected set; }
         public virtual string Role { get; protected set; }
 

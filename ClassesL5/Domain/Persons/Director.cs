@@ -12,6 +12,11 @@ namespace Domain.Persons
         {
         }
 
+        public override PersonType PersonType
+        {
+            get { return PersonType.Director; }
+        }
+
         public void AddPrivilege()
         {
             Console.WriteLine("I'm Director");
