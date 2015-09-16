@@ -7,7 +7,7 @@ namespace Domain.Mapping
     {
         public CompanyMap()
         {
-            References(x => x.Address).Cascade.SaveUpdate().Fetch.Join();
+            References(x => x.Address).Cascade.All();
             Map(x => x.CompanyName).Not.Nullable();
             Map(x => x.Activity).Not.Nullable();
             HasMany(x => x.ProjectList).Cascade.All();

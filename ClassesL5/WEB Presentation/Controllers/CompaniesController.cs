@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Domain.CompanyAssets;
 using Domain.Row;
 using Factories;
@@ -18,10 +16,11 @@ namespace Web.Controllers
         private static readonly CompanyFactory CompanyFactory = ServiceLocator.Get<CompanyFactory>();
         private static readonly IAddressRepository AddressRepository = ServiceLocator.Get<IAddressRepository>();
 
+
         public ActionResult Index()
         {
-            var companyNames = CompanyRepository.GetAllCompanyNames();
-            return View(companyNames);
+            var companyNamesActivity = CompanyRepository.GetAllCompanyNamesAndActivity();
+            return View(companyNamesActivity);
         }
 
         //
@@ -48,26 +47,20 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Create(CompanyModel model)
         {
-                var company = CompanyFactory.CreateCompany(model.CompanyName, model.Activity,
-                    new Address(model.City, model.Street));
-                CompanyRepository.AddCompany(company);
-                return RedirectToAction("Index");
+            //Address address= AddressRepository.CheckAdress(model.Street, model.City)
+            var company = CompanyFactory.CreateCompany(model.CompanyName, model.Activity,
+                new Address(model.City, model.Street));
+            CompanyRepository.AddCompany(company);
+            return RedirectToAction("Index");
         }
 
         //
         // GET: /Company/Edit/5
-        [HttpGet]
+
         public ActionResult Edit(long id)
         {
             var company = CompanyRepository.GetCompanyAllInfo(id);
-            CompanyModel comp = new CompanyModel
-            {
-                CompanyName = company.CompanyName,
-                Activity = company.Activity,
-                City = company.City,
-                Street = company.Street,
-             //   AddressId= company.
-            };
+            var comp = new CompanyModel(company);
             return View(comp);
         }
 
@@ -77,46 +70,33 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Edit(long id, CompanyModel company)
         {
-                //var newaddress = new Address(company.Street, company.City);
-                
-                //var oldcompany = CompanyRepository.GetCompanyById(id);
-                //var newcompany = CompanyFactory.CreateCompany(company.CompanyName, company.Activity, newaddress );
+            CompanyAllInfo newCompany = company.TransformToDto(id);
+            Company currentCompany = CompanyRepository.GetItemById<Company>(id);
+            Address currentAddress = AddressRepository.GetItemById<Address>(currentCompany.Address.Id);
+            AddressRepository.UpdateAddress(currentAddress, newCompany.City, newCompany.Street);
+            CompanyRepository.UpdateCompany(currentCompany, newCompany);
 
-                //var oldaddress = AddressRepository.GetAddressById(oldcompany.Address.Id)
-                //AddressRepository.UpdateAddress(oldaddress, newaddress);
-                //CompanyRepository.UpdateCompany(oldcompany, newcompany);
-
-                return RedirectToAction("Index");
+            return RedirectToAction("Index");
         }
 
         //
         // GET: /Company/Delete/5
-        [HttpGet]
-        public ActionResult Delete(int id)
+        //[HttpGet]
+        public ActionResult Delete(long id)
         {
             var company = CompanyRepository.GetCompanyAllInfo(id);
-            CompanyModel comp = new CompanyModel();
-            comp.CompanyName = company.CompanyName;
-            comp.Activity = company.Activity;
-            comp.City = company.City;
-            comp.Street = company.Street;
+            var comp = new CompanyModel(company);
             return View(comp);
         }
 
         //
         // POST: /Company/Delete/5
 
-        [HttpGet]
-        public ActionResult ApplyDelete(int id)
+        [HttpPost]
+        public ActionResult Delete(long id, FormCollection collection)
         {
-
             CompanyRepository.DeleteCompany(id);
-            //var comp = CompanyRepository.GetCompanyById(id);
-            //    CompanyRepository.Delete(comp);
-
-
             return RedirectToAction("Index");
-
         }
     }
 }

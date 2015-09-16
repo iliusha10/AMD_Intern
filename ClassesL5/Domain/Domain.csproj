@@ -50,6 +50,7 @@
     <Compile Include="Privileges\PersonPrivilege.cs" />
     <Compile Include="Privileges\PersonPrivileges.cs" />
     <Compile Include="Row\CompanyAllInfo.cs" />
+    <Compile Include="Row\CompanyNameAndActivity.cs" />
     <Compile Include="Row\CompanyName.cs" />
     <Compile Include="Row\EmployeDetails.cs" />
     <Compile Include="Row\PersonWithSkillsCount.cs" />

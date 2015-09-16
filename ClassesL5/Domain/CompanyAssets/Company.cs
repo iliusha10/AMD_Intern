@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Domain.Persons;
+using Domain.Row;
 
 namespace Domain.CompanyAssets
 {
@@ -73,21 +74,13 @@ namespace Domain.CompanyAssets
             //    adress.City);
         }
 
-        public virtual void ChangeData(Company company, string name, FieldOfActivity activity, string city,
-            string street)
+        public virtual void ChangeData( CompanyAllInfo newcompany)
         {
-            company.CompanyName = name;
-            company.Activity = activity;
-            if ((company.Address.City != city) || (company.Address.Street != street))
-            {
-                var address = new Address(street, city);
-                company.Address = address;
-            }
-        }
+            CompanyName = newcompany.CompanyName;
+            Activity = newcompany.Activity;
+            //Address.City = newcompany.City;
 
-        public virtual void ChangeFieldofActivity(FieldOfActivity activity)
-        {
-            Activity = activity;
+
         }
     }
 }

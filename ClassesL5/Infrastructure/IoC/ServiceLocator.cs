@@ -21,6 +21,7 @@ namespace Infrastructure.IoC
             Kernel.Bind<IPersonSkillsRepository>().To<PersonSkillsRepository>();
             Kernel.Bind<ICompanyRepository>().To<CompanyRepository>();
             Kernel.Bind<IAddressRepository>().To<AddressRepository>();
+
         }
 
         public static T Get<T>()

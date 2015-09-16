@@ -1,5 +1,4 @@
 ﻿using Domain.CompanyAssets;
-using Domain.Persons;
 
 namespace Domain.Mapping
 {
@@ -11,8 +10,8 @@ namespace Domain.Mapping
         {
             Map(x => x.City).Not.Nullable();
             Map(x => x.Street).Not.Nullable();
-            HasOne(x => x.Person);//.PropertyRef(x => x.Id);
-            HasOne(x => x.Company); //.PropertyRef(x => x.Id);
+            HasOne(x => x.Person); 
+            HasOne(x => x.Company);
         }
 
         #endregion

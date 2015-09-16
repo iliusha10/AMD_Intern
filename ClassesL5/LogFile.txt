@@ -4985,3 +4985,84 @@ The statement has been terminated.
    at NHibernate.Impl.CriteriaImpl.List(IList results)
    at NHibernate.Impl.CriteriaImpl.List[T]()
    at Repository.CompanyRepository.GetAllCompanyNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 90 
+9/16/2015 9:45:36 AM, CompanyFactory|CreateCompany Company 
+9/16/2015 9:47:30 AM, CompanyFactory|CreateCompany Company 
+9/16/2015 10:03:45 AM, ComapnyRepository | GetCompanyAllInfo | {0} , NHibernate.PropertyAccessException: The type Domain.FieldOfActivity can not be assigned to a property of type System.String setter of Domain.Row.CompanyNameAndActivity.CompanyNames ---> System.ArgumentException: Object of type 'Domain.FieldOfActivity' cannot be converted to type 'System.String'.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at NHibernate.Properties.BasicPropertyAccessor.BasicSetter.Set(Object target, Object value)
+   --- End of inner exception stack trace ---
+   at NHibernate.Properties.BasicPropertyAccessor.BasicSetter.Set(Object target, Object value)
+   at NHibernate.Transform.AliasToBeanResultTransformer.TransformTuple(Object[] tuple, String[] aliases)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Criteria.CriteriaLoader.List(ISessionImplementor session)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNamesAndActivity() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 117 
+9/16/2015 10:04:17 AM, ComapnyRepository | GetCompanyAllInfo | {0} , NHibernate.PropertyAccessException: The type Domain.FieldOfActivity can not be assigned to a property of type System.String setter of Domain.Row.CompanyNameAndActivity.CompanyNames ---> System.ArgumentException: Object of type 'Domain.FieldOfActivity' cannot be converted to type 'System.String'.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at NHibernate.Properties.BasicPropertyAccessor.BasicSetter.Set(Object target, Object value)
+   --- End of inner exception stack trace ---
+   at NHibernate.Properties.BasicPropertyAccessor.BasicSetter.Set(Object target, Object value)
+   at NHibernate.Transform.AliasToBeanResultTransformer.TransformTuple(Object[] tuple, String[] aliases)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Criteria.CriteriaLoader.List(ISessionImplementor session)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNamesAndActivity() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 117 
+9/16/2015 10:05:22 AM, ComapnyRepository | GetCompanyAllInfo | {0} , NHibernate.PropertyAccessException: The type Domain.FieldOfActivity can not be assigned to a property of type System.String setter of Domain.Row.CompanyNameAndActivity.CompanyNames ---> System.ArgumentException: Object of type 'Domain.FieldOfActivity' cannot be converted to type 'System.String'.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at NHibernate.Properties.BasicPropertyAccessor.BasicSetter.Set(Object target, Object value)
+   --- End of inner exception stack trace ---
+   at NHibernate.Properties.BasicPropertyAccessor.BasicSetter.Set(Object target, Object value)
+   at NHibernate.Transform.AliasToBeanResultTransformer.TransformTuple(Object[] tuple, String[] aliases)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Criteria.CriteriaLoader.List(ISessionImplementor session)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNamesAndActivity() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 117 
+9/16/2015 10:24:37 AM, ComapnyRepository | GetCompanyAllInfo | {0} , NHibernate.PropertyAccessException: The type Domain.FieldOfActivity can not be assigned to a property of type System.String setter of Domain.Row.CompanyNameAndActivity.CompanyNames ---> System.ArgumentException: Object of type 'Domain.FieldOfActivity' cannot be converted to type 'System.String'.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at NHibernate.Properties.BasicPropertyAccessor.BasicSetter.Set(Object target, Object value)
+   --- End of inner exception stack trace ---
+   at NHibernate.Properties.BasicPropertyAccessor.BasicSetter.Set(Object target, Object value)
+   at NHibernate.Transform.AliasToBeanResultTransformer.TransformTuple(Object[] tuple, String[] aliases)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters, IResultTransformer forcedResultTransformer)
+   at NHibernate.Loader.Loader.ListIgnoreQueryCache(ISessionImplementor session, QueryParameters queryParameters)
+   at NHibernate.Loader.Criteria.CriteriaLoader.List(ISessionImplementor session)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.CompanyRepository.GetAllCompanyNamesAndActivity() in d:\Assignment\AMD_Intern\ClassesL5\Repository\CompanyRepository.cs:line 117 
+9/16/2015 12:32:43 PM, CompanyFactory|CreateCompany Company 
+9/16/2015 12:34:24 PM, CompanyFactory|CreateCompany Company 
+9/16/2015 2:36:29 PM, CompanyFactory|CreateCompany Company 

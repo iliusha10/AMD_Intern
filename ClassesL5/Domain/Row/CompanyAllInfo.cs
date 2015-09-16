@@ -9,11 +9,11 @@ namespace Domain.Row
 {
     public class CompanyAllInfo
     {
-        public long Id { get; protected set; }
-        public string CompanyName { get; protected set; }
-        public FieldOfActivity Activity { get; protected set; }
-        public long AddressId { get; protected set; }
-        public string Street { get; protected set; }
-        public string City { get; protected set; }
+        public long Id { get;  set; }
+        public string CompanyName { get;  set; }
+        public FieldOfActivity Activity { get;  set; }
+        public long AddressId { get;  set; }
+        public string Street { get;  set; }
+        public string City { get;  set; }
     }
 }

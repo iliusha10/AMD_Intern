@@ -23,14 +23,14 @@ namespace Repository
             }
         }
 
-        public void UpdateAddress(Address oldaddress, Address newaddress)
+        public void UpdateAddress(Address currentAddress, string city, string street)
         {
             using (var transaction = _session.BeginTransaction())
             {
                 try
                 {
                     //var address = _session.Load<Address>(id);
-                   // address.ChangeAddress(street, city);
+                    currentAddress.ChangeAddress(street, city);
                     transaction.Commit();
                 }
                 catch (Exception ex)
@@ -59,26 +59,25 @@ namespace Repository
             }
         }
 
-        public void CheckAdress(string street, string city)
-        {
-            using (var tran = _session.BeginTransaction())
-            {
-                try
-                {
-                    //var address = _session.QueryOver<Address>()
-                    //    .Where()
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-            }
-        }
+        //public Address CheckAdress(string street, string city)
+        //{
+        //    using (var tran = _session.BeginTransaction())
+        //    {
+        //        try
+        //        {
+        //            var address = _session.QueryOver<Address>()
+        //                .Where(x => x.Street == street)
+        //                .Where(x => x.City == city)
+        //                .Select(x => x.Id)
+        //                .SingleOrDefault<Address>();
 
-        public Address GetAddressById(long id)
-        {
-            var address = _session.Get<Address>(id);
-            return address;
-        }
+        //            return address;
+        //        }
+        //        catch (Exception)
+        //        {
+        //            throw;
+        //        }
+        //    }
+        //}
     }
 }

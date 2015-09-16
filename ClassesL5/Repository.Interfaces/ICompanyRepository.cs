@@ -8,10 +8,10 @@ namespace Repository.Interfaces
     public interface ICompanyRepository : IRepository
     {
         void AddCompany(Company companyList);
-        void UpdateCompany(Company oldcompany, Company newcompany);
+        void UpdateCompany(Company currentcompany, CompanyAllInfo newcompany);
         void DeleteCompany(long id);
         IList<CompanyName> GetAllCompanyNames();
+        IList<CompanyNameAndActivity> GetAllCompanyNamesAndActivity();
         CompanyAllInfo GetCompanyAllInfo(long id);
-        Company GetCompanyById(long id);
     }
 }
