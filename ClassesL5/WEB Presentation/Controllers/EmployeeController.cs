@@ -6,7 +6,7 @@ namespace WEB_Presentation.Controllers
 {
     public class EmployeeController : Controller
     {
-        private static readonly IPersonRepository PersonRepository = ServiceLocator.Get<IPersonRepository>();
+        private readonly IPersonRepository PersonRepository = ServiceLocator.Get<IPersonRepository>();
 
         // GET: Employee
         public ActionResult Index()

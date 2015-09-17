@@ -9,9 +9,9 @@ namespace Web.Controllers
 {
     public class WorkersController : Controller
     {
-        private static readonly IPersonRepository PersonRepository = ServiceLocator.Get<IPersonRepository>();
+        private readonly IPersonRepository PersonRepository = ServiceLocator.Get<IPersonRepository>();
 
-
+        [HttpGet]
         public ActionResult Index()
 
         {
@@ -22,28 +22,30 @@ namespace Web.Controllers
 
         //
         // GET: /MyView/Details/5
-
-        public
-            ActionResult Details(long id)
+        [HttpGet]
+        public ActionResult Details(long id)
         {
-            var result = PersonRepository.GetItemById<Person>(id);
-            
-            var pers = new PersonModel
-            {
-                BirthDate = result.DateOfBirth,
-                Firstname = result.FName,
-                Id = result.Id,
-                Lastname = result.LName
-            };
+            var person = PersonRepository.GetItemById<Person>(id);
 
-            return View(pers);
+            if (person.PersonType == PersonType.Intern)
+            {
+                var intern = new InternModel((Intern) person);
+                return View(intern);
+            }
+            if (person.PersonType == PersonType.Contractor)
+            {
+                var contractor = new ContractorModel((Contractor) person);
+                return View(contractor);
+            }
+            var emp = new EmployeeModel(person as Employee);
+            return View(emp);
         }
 
 //
 // GET: /MyView/Create
-
+        [HttpGet]
         public
-            ActionResult Create
+        ActionResult Create
             ()
         {
             return
@@ -53,10 +55,8 @@ namespace Web.Controllers
         //
         // POST: /MyView/Create
 
-        [
-            HttpPost]
-        public
-        ActionResult Create
+        [HttpPost]
+        public ActionResult Create
             (FormCollection
                 collection)
         {
@@ -74,13 +74,23 @@ namespace Web.Controllers
 
         //
         // GET: /MyView/Edit/5
-
-        public
-            ActionResult Edit
-            (int
-                id)
+        [HttpGet]
+        public ActionResult Edit(long id)
         {
-            return View();
+            var person = PersonRepository.GetItemById<Person>(id);
+
+            if (person.PersonType == PersonType.Intern)
+            {
+                var intern = new InternModel(person as Intern);
+                return View(intern);
+            }
+            if (person.PersonType == PersonType.Contractor)
+            {
+                var contractor = new ContractorModel(person as Contractor);
+                return View(contractor);
+            }
+            var emp = new EmployeeModel(person as Employee);
+            return View(emp);
         }
 
         //
@@ -90,7 +100,7 @@ namespace Web.Controllers
             HttpPost]
         public
         ActionResult Edit
-            (int id, FormCollection collection)
+            (long id, FormCollection collection)
         {
             try
             {
@@ -107,33 +117,33 @@ namespace Web.Controllers
         //
         // GET: /MyView/Delete/5
 
-        public
-            ActionResult Delete
-            (int
-                id)
+        [HttpGet]
+        public ActionResult Delete(long id)
         {
-            return View();
+            var person = PersonRepository.GetItemById<Person>(id);
+
+            if (person.PersonType == PersonType.Intern)
+            {
+                var intern = new InternModel(person as Intern);
+                return View(intern);
+            }
+            if (person.PersonType == PersonType.Contractor)
+            {
+                var contractor = new ContractorModel(person as Contractor);
+                return View(contractor);
+            }
+            var emp = new EmployeeModel(person as Employee);
+            return View(emp);
         }
 
         //
         // POST: /MyView/Delete/5
 
-        [
-            HttpPost]
-        public
-        ActionResult Delete
-            (int id, FormCollection collection)
+        [HttpPost]
+        public ActionResult Delete(long id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            PersonRepository.DeletePerson(id);
+            return RedirectToAction("Index");
         }
     }
 }

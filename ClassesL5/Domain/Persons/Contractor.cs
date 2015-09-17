@@ -8,14 +8,14 @@ namespace Domain.Persons
     public class Contractor : Person, IPrivileges
     {
         public Contractor(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
-            Address address, Company company, double workexp, double salary)
+            Address address, Company company, double workexp, Salary salary)
             : base(fName, lName, bdate, skillsDictionary, address, company)
         {
             if (workexp <= 0)
                 throw new ArgumentException("Work expirience must be positive.");
 
             WorkExp = workexp;
-            Salary = new Salary(this, salary, 0.0);
+            Salary = salary;
             taskList = new List<Task>();
         }
 

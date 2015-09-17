@@ -8,7 +8,7 @@ namespace Domain.Mapping
 
         public SalaryMap()
         {
-            References(x => x.Contractor).Unique();
+            HasOne(x => x.Contractor);
             Map(x => x.Amount).Not.Nullable();
             Map(x => x.Bonus);
             

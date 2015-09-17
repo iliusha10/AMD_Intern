@@ -21,5 +21,6 @@ namespace Repository.Interfaces
         IList<EmployeeNamesDto> GetAllEmployeeFirstAndLastNames();
         IList<Person> GetAllPersonsWithSkills();
         IList<Person> GetPersonByLNameOrByFName(string lastname, string firstname);
+        Person GetPersonId(long id);
     }
 }

@@ -9,7 +9,7 @@ namespace Domain.Mapping
         public ContractorMap()
         {
             Map(x => x.WorkExp).Not.Nullable();
-            HasOne(x => x.Salary).Cascade.SaveUpdate();
+            References(x => x.Salary).Cascade.All().Unique();
             HasMany(x => x.taskList).Cascade.SaveUpdate();
         }
     }

@@ -1,14 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Domain.CompanyAssets;
+﻿using Domain.Persons;
 
 namespace WEB_Presentation.Models
 {
-    public class EmployeeModel :PersonModel
+    public class EmployeeModel : ContractorModel
     {
-        public virtual Salary Salary { get; set; }
+        public EmployeeModel(Employee emp):base (emp)
+        {
+            
+            Department = emp.Department;
+            Role = emp.Role;
+        }
 
-        [Display(Name = "Work Experience")]
-        public virtual double WorkExp { get; set; }
+        public EmployeeModel()
+        {
+        }
 
         public string Department { get; set; }
         public string Role { get; set; }

@@ -31,6 +31,7 @@ namespace Repository
                 try
                 {
                     var item = _session.Get<T>(id);
+                    tran.Commit();
                     return item;
                 }
                 catch (Exception ex)
@@ -41,5 +42,6 @@ namespace Repository
                 }
             }
         }
+
     }
 }

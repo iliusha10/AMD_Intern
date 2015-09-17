@@ -18,7 +18,7 @@ namespace Factories
 
         public Employee CreateEmployee(string fName, string lName, string bDate,
             Dictionary<string, int> skillsDictionary, Address address,
-            Company company, double workexp, double salary,
+            Company company, double workexp, Salary salary,
             string department, string function)
         {
             var employee = new Employee(fName, lName, bDate, skillsDictionary,  address, company, workexp,

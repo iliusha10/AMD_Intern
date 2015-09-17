@@ -239,7 +239,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Companies\Index.cshtml" />
     <Content Include="Views\Companies\Details.cshtml" />
-    <Content Include="Views\Workers\Index_old.cshtml" />
+    <Content Include="Views\Workers\Index.cshtml" />
     <Content Include="Views\Workers\Create.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TextEditor.cshtml" />
     <Content Include="Views\Companies\Create.cshtml" />
@@ -251,9 +251,14 @@
     <Content Include="Views\Shared\DisplayTemplates\EmployeeModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ContractorModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\PersonModel.cshtml" />
-    <Content Include="Views\Workers\Index.cshtml" />
+    <Content Include="Views\Workers\Index_exp.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Workers\Delete.cshtml" />
+    <Content Include="Views\Workers\Edit.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\InternModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ContractorModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmployeeModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Double.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

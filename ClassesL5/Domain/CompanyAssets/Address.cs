@@ -3,7 +3,7 @@ using Domain.Persons;
 
 namespace Domain.CompanyAssets
 {
-    public class Address:Entity
+    public class Address : Entity
     {
         public Address(string street, string city)
         {

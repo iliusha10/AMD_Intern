@@ -54,11 +54,6 @@ namespace Repository
                 var comp = _session.Load<Company>(id);
                 _session.Delete(comp);
 
-                //var queryString = string.Format("delete {0} where id = :id", typeof (Company));
-                //session.CreateQuery(queryString)
-                //    .SetParameter("id", id)
-                //    .ExecuteUpdate();
-
                 transaction.Commit();
             }
         }

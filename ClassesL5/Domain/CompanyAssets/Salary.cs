@@ -5,9 +5,8 @@ namespace Domain.CompanyAssets
 {
     public class Salary : Entity
     {
-        public Salary(Contractor contractor, double amount, double bonus)
+        public Salary(double amount, double bonus)
         {
-            Contractor = contractor; 
             Bonus = bonus;
             Amount = amount;
         }
@@ -16,8 +15,15 @@ namespace Domain.CompanyAssets
         protected Salary()
         {
         }
-        public virtual Contractor Contractor { get; protected set; }
+
         public virtual double Bonus { get; protected set; }
         public virtual double Amount { get; protected set; }
+        public virtual Contractor Contractor { get; protected set; }
+
+        public virtual void ChangeSalary(double amount, double bonus)
+        {
+            Bonus = bonus;
+            Amount = amount;
+        }
     }
 }

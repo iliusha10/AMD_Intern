@@ -18,7 +18,7 @@ namespace Factories
 
         public Contractor CreateContractor(string fName, string lName, string bdate,
             Dictionary<string, int> skillsDictionary,
-            Address address, Company company, double workexp, double salary)
+            Address address, Company company, double workexp, Salary salary)
         {
             var contractor = new Contractor(fName, lName, bdate, skillsDictionary,  address, company,
                 workexp, salary);

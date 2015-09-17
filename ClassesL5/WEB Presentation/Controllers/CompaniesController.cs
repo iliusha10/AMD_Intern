@@ -12,11 +12,11 @@ namespace Web.Controllers
     {
         //
         // GET: /Company/
-        private static readonly ICompanyRepository CompanyRepository = ServiceLocator.Get<ICompanyRepository>();
-        private static readonly CompanyFactory CompanyFactory = ServiceLocator.Get<CompanyFactory>();
-        private static readonly IAddressRepository AddressRepository = ServiceLocator.Get<IAddressRepository>();
+        private readonly ICompanyRepository CompanyRepository = ServiceLocator.Get<ICompanyRepository>();
+        private readonly CompanyFactory CompanyFactory = ServiceLocator.Get<CompanyFactory>();
+        private readonly IAddressRepository AddressRepository = ServiceLocator.Get<IAddressRepository>();
 
-
+        [HttpGet]
         public ActionResult Index()
         {
             var companyNamesActivity = CompanyRepository.GetAllCompanyNamesAndActivity();
@@ -26,6 +26,7 @@ namespace Web.Controllers
         //
         // GET: /Company/Details/5
 
+        [HttpGet]
         public ActionResult Details(int id)
         {
             var result = CompanyRepository.GetCompanyAllInfo(id);
@@ -36,6 +37,7 @@ namespace Web.Controllers
         //
         // GET: /Company/Create
 
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
@@ -56,7 +58,7 @@ namespace Web.Controllers
 
         //
         // GET: /Company/Edit/5
-
+        [HttpGet]
         public ActionResult Edit(long id)
         {
             var company = CompanyRepository.GetCompanyAllInfo(id);
@@ -81,7 +83,7 @@ namespace Web.Controllers
 
         //
         // GET: /Company/Delete/5
-        //[HttpGet]
+        [HttpGet]
         public ActionResult Delete(long id)
         {
             var company = CompanyRepository.GetCompanyAllInfo(id);

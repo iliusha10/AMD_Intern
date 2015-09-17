@@ -117,12 +117,38 @@ namespace ClassesL5
         {
             var personsList = new List<Person>();
             var companylist = new List<Company>();
+            
+            var salary = new Salary(1500, 0.0);
+            var salary2 = new Salary(1600, 0.0);
+            var salary3 = new Salary(1700, 0.0);
+            var salary4 = new Salary(1520, 0.0);
+            var salary5 = new Salary(1300, 0.0);
+            var salary6 = new Salary(1540, 0.0);
+            var salary7 = new Salary(1550, 0.0);
+            var salary8 = new Salary(1570, 0.0);
+            var salary9 = new Salary(1680, 0.0);
+            var salary10 = new Salary(1520, 0.0);
 
             var newAddress = new Address("Monumentul Stefan cel Mare", "Chisinau");
             var newAddress2 = new Address("Aleco Ruso", "Chisinau");
             var newAddress3 = new Address("bd Decebal", "Chisinau");
             var newAddress4 = new Address("bd Miorita", "Chisinau");
             var newAddress5 = new Address("bd Renasterii", "Chisinau");
+            var newAddress6 = new Address("Monumentul Stefan cel Mare", "Chisinau");
+            var newAddress7 = new Address("Aleco Ruso", "Chisinau");
+            var newAddress8 = new Address("bd Decebal", "Chisinau");
+            var newAddress9 = new Address("bd Miorita", "Chisinau");
+            var newAddress10 = new Address("bd Renasterii", "Chisinau");
+            var newAddress11= new Address("Monumentul Stefan cel Mare", "Chisinau");
+            var newAddress12 = new Address("Aleco Ruso", "Chisinau");
+            var newAddress13 = new Address("bd Decebal", "Chisinau");
+            var newAddress14 = new Address("bd Miorita", "Chisinau");
+            var newAddress15 = new Address("bd Renasterii", "Chisinau");
+            var newAddress16 = new Address("Monumentul Stefan cel Mare", "Chisinau");
+            var newAddress17 = new Address("Aleco Ruso", "Chisinau");
+            var newAddress18 = new Address("bd Decebal", "Chisinau");
+            var newAddress19 = new Address("bd Miorita", "Chisinau");
+            var newAddress20 = new Address("bd Renasterii", "Chisinau");
 
             var skills = new Dictionary<string, int> {{"C#", 80}, {"SQL", 90}};
             var skills2 = new Dictionary<string, int> {{"CSS", 80}, {"PHP", 90}, {"HTML", 90}};
@@ -130,8 +156,8 @@ namespace ClassesL5
             var skills4 = new Dictionary<string, int> {{"C++", 80}};
             var skills5 = new Dictionary<string, int> {{"C#", 80}, {"SQL", 90}, {"CSS", 80}, {"PHP", 90}, {"HTML", 90}};
 
-            var comp = CompanyFactory.CreateCompany("Imea", FieldOfActivity.IT, newAddress2);
-            var comp2 = CompanyFactory.CreateCompany("WIKER", FieldOfActivity.IT, newAddress);
+            var comp = CompanyFactory.CreateCompany("Imea", FieldOfActivity.IT, newAddress);
+            var comp2 = CompanyFactory.CreateCompany("WIKER", FieldOfActivity.IT, newAddress2);
             var comp3 = CompanyFactory.CreateCompany("Bones", FieldOfActivity.IT, newAddress3);
             var comp4 = CompanyFactory.CreateCompany("XQT", FieldOfActivity.IT, newAddress4);
             var comp5 = CompanyFactory.CreateCompany("Akigor", FieldOfActivity.IT, newAddress5);
@@ -217,45 +243,45 @@ namespace ClassesL5
             proj13.AddTask(task13);
             proj14.AddTask(task14);
 
-            var intern = InternFactory.CreateIntern("Vasile", "Ion", "1990-12-13", skills, newAddress5, comp, 80);
-            var intern2 = InternFactory.CreateIntern("Artur", "Rusnac", "1990-12-13", skills2, newAddress5, comp2, 80);
-            var intern3 = InternFactory.CreateIntern("Alex", "Maioco", "1990-12-13", skills3, newAddress5, comp3, 80);
-            var intern4 = InternFactory.CreateIntern("Max", "Josan", "1990-12-13", skills4, newAddress5, comp4, 80);
-            var intern5 = InternFactory.CreateIntern("Rumulus", "Remus", "1990-12-13", skills5, newAddress5, comp5, 80);
+            var intern = InternFactory.CreateIntern("Vasile", "Ion", "1990-12-13", skills, newAddress6, comp, 80);
+            var intern2 = InternFactory.CreateIntern("Artur", "Rusnac", "1990-12-13", skills2, newAddress7, comp2, 80);
+            var intern3 = InternFactory.CreateIntern("Alex", "Maioco", "1990-12-13", skills3, newAddress8, comp3, 80);
+            var intern4 = InternFactory.CreateIntern("Max", "Josan", "1990-12-13", skills4, newAddress9, comp4, 80);
+            var intern5 = InternFactory.CreateIntern("Rumulus", "Remus", "1990-12-13", skills5, newAddress10, comp5, 80);
             personsList.Add(intern);
             personsList.Add(intern2);
             personsList.Add(intern3);
             personsList.Add(intern4);
             personsList.Add(intern5);
 
-            var contr1 = ContractorFactory.CreateContractor("Iulius", "Cezar", "1980-05-01", skills3, newAddress4, comp,
-                11, 1030);
-            var contr2 = ContractorFactory.CreateContractor("Junior", "Vamp", "1980-05-01", skills2, newAddress, comp2,
-                12, 1040);
-            var contr3 = ContractorFactory.CreateContractor("Hugo", "Boss", "1980-05-01", skills, newAddress2, comp3, 13,
-                1010);
-            var contr4 = ContractorFactory.CreateContractor("Jason", "Statham", "1980-05-01", skills4, newAddress3,
-                comp4, 14, 1080);
-            var contr5 = ContractorFactory.CreateContractor("Guy", "Rich", "1980-05-01", skills3, newAddress3, comp2, 15,
-                1070);
+            var contr1 = ContractorFactory.CreateContractor("Iulius", "Cezar", "1980-05-01", skills3, newAddress11, comp,
+                11, salary);
+            var contr2 = ContractorFactory.CreateContractor("Junior", "Vamp", "1980-05-01", skills2, newAddress12, comp2,
+                12, salary2);
+            var contr3 = ContractorFactory.CreateContractor("Hugo", "Boss", "1980-05-01", skills, newAddress13, comp3, 13,
+                salary3);
+            var contr4 = ContractorFactory.CreateContractor("Jason", "Statham", "1980-05-01", skills4, newAddress14,
+                comp4, 14, salary4);
+            var contr5 = ContractorFactory.CreateContractor("Guy", "Rich", "1980-05-01", skills3, newAddress15, comp2, 15,
+                salary5);
             personsList.Add(contr1);
             personsList.Add(contr2);
             personsList.Add(contr3);
             personsList.Add(contr4);
             personsList.Add(contr5);
 
-            var emp = EmployeeFactory.CreateEmployee("John", "Doe", "1980-04-01", skills2, newAddress, comp, 20, 1400,
+            var emp = EmployeeFactory.CreateEmployee("John", "Doe", "1980-04-01", skills2, newAddress16, comp, 20, salary6,
                 "Test",
                 "Testing Ingineer");
-            var emp2 = EmployeeFactory.CreateEmployee("Jim", "Dole", "1990-05-10", skills, newAddress2, comp2, 30, 1500,
+            var emp2 = EmployeeFactory.CreateEmployee("Jim", "Dole", "1990-05-10", skills, newAddress17, comp2, 30, salary7,
                 "Softwer Development",
                 "Software developer");
-            var emp3 = EmployeeFactory.CreateEmployee("Anne", "Fireman", "1995-12-12", skills3, newAddress3, comp3, 60,
-                1600, "Test", "Testing Ingineer");
-            var emp4 = EmployeeFactory.CreateEmployee("Vanessa", "Ginger", "1996-11-01", skills4, newAddress4, comp4, 70,
-                1700, "Softwer Development", "Software developer");
-            var emp5 = EmployeeFactory.CreateEmployee("Will", "Smith", "1990-11-01", skills4, newAddress4, comp4, 70,
-                1700, "Softwer Development", "Software developer");
+            var emp3 = EmployeeFactory.CreateEmployee("Anne", "Fireman", "1995-12-12", skills3, newAddress18, comp3, 60,
+                salary8, "Test", "Testing Ingineer");
+            var emp4 = EmployeeFactory.CreateEmployee("Vanessa", "Ginger", "1996-11-01", skills4, newAddress19, comp4, 70,
+                salary9, "Softwer Development", "Software developer");
+            var emp5 = EmployeeFactory.CreateEmployee("Will", "Smith", "1990-11-01", skills4, newAddress20, comp4, 70,
+                salary10, "Softwer Development", "Software developer");
             personsList.Add(emp);
             personsList.Add(emp2);
             personsList.Add(emp3);

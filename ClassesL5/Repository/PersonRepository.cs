@@ -65,7 +65,7 @@ namespace Repository
                     var person = _session.Load<Person>(id);
                     _session.Delete(person);
                     transaction.Commit();
-                    Console.WriteLine("Deleted person");
+ 
                 }
                 catch (Exception ex)
                 {
@@ -334,6 +334,25 @@ namespace Repository
                     Logger.Logger.AddToLog("PersonRepository | AddPerson | {0}", ex);
                     tran.Rollback();
                     return null;
+                }
+            }
+        }
+
+        public Person GetPersonId(long id)
+        {
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    var result = _session.Load<Person>(id);
+                    tran.Commit();
+                    return result;
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    throw;
                 }
             }
         }
