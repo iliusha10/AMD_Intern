@@ -1,13 +1,13 @@
-﻿@model WEB_Presentation.Models.InternModel
+﻿@model WEB_Presentation.Models.PersonModel
 
 @{
-    ViewBag.Title = "InternModel";
+    ViewBag.Title = "PersonModel";
 }
 
-<h2>InternModel</h2>
+<h2>PersonModel</h2>
 
 <div>
-    <h4>InternModel</h4>
+    <h4>PersonModel</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -34,17 +34,6 @@
             @Html.DisplayFor(model => model.BirthDate)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AverageMark)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AverageMark)
-        </dd>
-
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

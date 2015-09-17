@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 using Domain.CompanyAssets;
 
 namespace WEB_Presentation.Models
 {
-    public class ContractorModel
+    public class ContractorModel:PersonModel
     {
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
-        public DateTime BirthDate { get; set; }
         public virtual Salary Salary { get; set; }
+
+        [Display(Name = "Work Experience")]
         public virtual double WorkExp { get; set; }
     }
 }

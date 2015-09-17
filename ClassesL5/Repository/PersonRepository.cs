@@ -196,7 +196,7 @@ namespace Repository
                 try
                 {
                     Person person = null;
-                    PersonDto pdto = null;
+                    //PersonDto pdto = null;
 
                     var test = _session.QueryOver(() => person).List();
                     var res2 = test.Select(x => new PersonDto

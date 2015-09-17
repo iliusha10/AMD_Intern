@@ -176,6 +176,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\InternModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -246,9 +247,11 @@
     <Content Include="Views\Companies\Edit.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EnumDropDownEditor.cshtml" />
     <Content Include="Views\Workers\Details.cshtml" />
-    <Content Include="Views\Workers\DispalyTemplates\InternModel.cshtml" />
-    <Content Include="Views\Workers\DispalyTemplates\EmployeeModel.cshtml" />
-    <Content Include="Views\Workers\DispalyTemplates\ContractorModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\InternModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\EmployeeModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ContractorModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\PersonModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
