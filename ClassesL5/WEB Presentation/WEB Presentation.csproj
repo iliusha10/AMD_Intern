@@ -163,6 +163,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CompaniesController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\WorkersController.cs" />
@@ -238,8 +239,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Companies\Index.cshtml" />
     <Content Include="Views\Companies\Details.cshtml" />
-    <Content Include="Views\Workers\Worker.cshtml" />
-    <Content Include="Views\Workers\Index.cshtml" />
+    <Content Include="Views\Workers\Index_old.cshtml" />
     <Content Include="Views\Workers\Create.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TextEditor.cshtml" />
     <Content Include="Views\Companies\Create.cshtml" />
@@ -252,6 +252,8 @@
     <Content Include="Views\Shared\DisplayTemplates\ContractorModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\PersonModel.cshtml" />
+    <Content Include="Views\Workers\Index.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

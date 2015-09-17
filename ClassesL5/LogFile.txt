@@ -5452,3 +5452,30 @@ The statement has been terminated.
 9/16/2015 4:34:09 PM, Added LunchTichetsPrivilege 
 9/16/2015 4:34:09 PM, Added SalaryBonusPrivilege 
 9/16/2015 4:34:09 PM, EmployeeFactory|CreateEmployee Employee 
+9/17/2015 12:32:16 PM, PersonRepository | AddPerson | {0} , NHibernate.QueryException: not an association: Id
+   at NHibernate.Loader.Criteria.CriteriaQueryTranslator.GetPathInfo(String path)
+   at NHibernate.Loader.Criteria.CriteriaQueryTranslator.CreateCriteriaEntityNameMap()
+   at NHibernate.Loader.Criteria.CriteriaQueryTranslator..ctor(ISessionFactoryImplementor factory, CriteriaImpl criteria, String rootEntityName, String rootSQLAlias)
+   at NHibernate.Loader.Criteria.CriteriaLoader..ctor(IOuterJoinLoadable persister, ISessionFactoryImplementor factory, CriteriaImpl rootCriteria, String rootEntityName, IDictionary`2 enabledFilters)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.PersonRepository.GetAllEmployeeFirstAndLastNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\PersonRepository.cs:line 240 
+9/17/2015 12:34:52 PM, PersonRepository | AddPerson | {0} , NHibernate.QueryException: not an association: Id
+   at NHibernate.Loader.Criteria.CriteriaQueryTranslator.GetPathInfo(String path)
+   at NHibernate.Loader.Criteria.CriteriaQueryTranslator.CreateCriteriaEntityNameMap()
+   at NHibernate.Loader.Criteria.CriteriaQueryTranslator..ctor(ISessionFactoryImplementor factory, CriteriaImpl criteria, String rootEntityName, String rootSQLAlias)
+   at NHibernate.Loader.Criteria.CriteriaLoader..ctor(IOuterJoinLoadable persister, ISessionFactoryImplementor factory, CriteriaImpl rootCriteria, String rootEntityName, IDictionary`2 enabledFilters)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.PersonRepository.GetAllEmployeeFirstAndLastNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\PersonRepository.cs:line 240 
+9/17/2015 12:41:15 PM, PersonRepository | AddPerson | {0} , NHibernate.QueryException: not an association: Id
+   at NHibernate.Loader.Criteria.CriteriaQueryTranslator.GetPathInfo(String path)
+   at NHibernate.Loader.Criteria.CriteriaQueryTranslator.CreateCriteriaEntityNameMap()
+   at NHibernate.Loader.Criteria.CriteriaQueryTranslator..ctor(ISessionFactoryImplementor factory, CriteriaImpl criteria, String rootEntityName, String rootSQLAlias)
+   at NHibernate.Loader.Criteria.CriteriaLoader..ctor(IOuterJoinLoadable persister, ISessionFactoryImplementor factory, CriteriaImpl rootCriteria, String rootEntityName, IDictionary`2 enabledFilters)
+   at NHibernate.Impl.SessionImpl.List(CriteriaImpl criteria, IList results)
+   at NHibernate.Impl.CriteriaImpl.List(IList results)
+   at NHibernate.Impl.CriteriaImpl.List[T]()
+   at Repository.PersonRepository.GetAllEmployeeFirstAndLastNames() in d:\Assignment\AMD_Intern\ClassesL5\Repository\PersonRepository.cs:line 240 

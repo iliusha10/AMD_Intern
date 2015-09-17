@@ -27,37 +27,7 @@ namespace Web.Controllers
             ActionResult Details(long id)
         {
             var result = PersonRepository.GetItemById<Person>(id);
-            //switch (result.PersonType)
-            //{
-            //    case PersonType.Intern:
-            //        InternModel pers = new InternModel
-            //        {
-            //            BirthDate = result.DateOfBirth,
-            //            Firstname = result.FName,
-            //            Id = result.Id,
-            //            Lastname = result.LName,
-            //            //AverageMark = result.
-            //        };
-            //        break;
-            //    case PersonType.Contractor:
-            //        ContractorModel pers = new ContractorModel
-            //        {
-            //            BirthDate = result.DateOfBirth,
-            //            Firstname = result.FName,
-            //            Id = result.Id,
-            //            Lastname = result.LName
-            //        };
-            //        break;
-            //    case PersonType.Employee:
-            //        var pers = new EmployeeModel
-            //        {
-            //            BirthDate = result.DateOfBirth,
-            //            Firstname = result.FName,
-            //            Id = result.Id,
-            //            Lastname = result.LName
-            //        };
-            //        break;
-            //}
+            
             var pers = new PersonModel
             {
                 BirthDate = result.DateOfBirth,

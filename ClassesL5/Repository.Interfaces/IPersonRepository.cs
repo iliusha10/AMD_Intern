@@ -18,6 +18,7 @@ namespace Repository.Interfaces
         string GetPersonLastnameById(long id);
         IList<PersonWithSkillsCount> GetPersonRowsHavingMoreThanOneSkill();
         IList<PersonDto> GetAllFirstAndLastNames();
+        IList<EmployeeNamesDto> GetAllEmployeeFirstAndLastNames();
         IList<Person> GetAllPersonsWithSkills();
         IList<Person> GetPersonByLNameOrByFName(string lastname, string firstname);
     }

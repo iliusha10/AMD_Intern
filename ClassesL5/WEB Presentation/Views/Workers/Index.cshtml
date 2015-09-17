@@ -1,45 +1,58 @@
 ﻿@model IEnumerable<Domain.Row.PersonDto>
 
-@{
-    ViewBag.Title = "Index";
-}
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>@Html.ActionLink("Employee", "Index", "Employee")</h2>
+            <p>View and edit only employees.</p>
+        </div>
+        <div class="col-md-4">
+            <h2>@Html.ActionLink("Contractors", "Index", "Contractor")</h2>
+            <p> View and edit only contractors.</p>
+        </div>
+        <div class="col-md-4">
+            <h2>@Html.ActionLink("Interns", "Index", "Intern")</h2>
+            <p> View and edit only interns.</p>
+        </div>
+    </div>
+</div>
 
-<h2>Workers</h2>
+<div class="workerstable">
+    <h2>All workers</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Firstname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lastname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Worker)
-        </th>
-        <th></th>
-    </tr>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Firstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Worker)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Firstname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lastname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Worker)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Firstname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lastname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Worker)
+                </td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>*@
+            </tr>
+        }
 
-</table>
+    </table>
+</div>

@@ -227,6 +227,38 @@ namespace Repository
             }
         }
 
+        public IList<EmployeeNamesDto> GetAllEmployeeFirstAndLastNames()
+        {
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    Person person = null;
+                    Contractor calias = null;
+                    Employee ealias = null;
+                    EmployeeNamesDto edtoalais = null;
+                    var res = _session.QueryOver(() => person)
+                        .JoinAlias(()=>person.Id, ()=> calias)
+                        .JoinAlias(()=> calias.Id, ()=> ealias)
+                        .SelectList(list => list
+                            .Select(() => person.FName).WithAlias(() => edtoalais.Firstname)
+                            .Select(() => person.LName).WithAlias(() => edtoalais.Lastname)
+                            .Select(() => person.DateOfBirth).WithAlias(() => edtoalais.BirthDate)
+                            )
+                            .TransformUsing(Transformers.AliasToBean<EmployeeNamesDto>())
+                        .List<EmployeeNamesDto>();
+
+                    return res;
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("PersonRepository | AddPerson | {0}", ex);
+                    tran.Rollback();
+                    return null;
+                }
+            }
+        }
+
         public IList<PersonWithSkillsCount> GetPersonRowsHavingMoreThanOneSkill()
         {
             using (var tran = _session.BeginTransaction())
