@@ -42,7 +42,6 @@
     <Compile Include="CompanyAssets\Address.cs" />
     <Compile Include="CompanyAssets\Company.cs" />
     <Compile Include="Persons\Contractor.cs" />
-    <Compile Include="Persons\Director.cs" />
     <Compile Include="Persons\Employee.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="CompanyAssets\HumanResources.cs" />

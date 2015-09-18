@@ -37,28 +37,25 @@ namespace Web.Controllers
                 var contractor = new ContractorModel((Contractor) person);
                 return View(contractor);
             }
-            var emp = new EmployeeModel(person as Employee);
+            var emp = new EmployeeModel((Employee) person);
             return View(emp);
         }
 
 //
 // GET: /MyView/Create
-        [HttpGet]
-        public
-        ActionResult Create
-            ()
+        [HttpGet] 
+        public ActionResult Create()
         {
-            return
-                View();
+            var pers = new AllPersonModel();
+            ViewBag.JS = "HideRows();";
+            return View(pers);
         }
 
         //
         // POST: /MyView/Create
 
         [HttpPost]
-        public ActionResult Create
-            (FormCollection
-                collection)
+        public ActionResult Create (FormCollection collection)
         {
             try
             {
@@ -81,37 +78,28 @@ namespace Web.Controllers
 
             if (person.PersonType == PersonType.Intern)
             {
-                var intern = new InternModel(person as Intern);
+                var intern = new InternModel((Intern) person);
                 return View(intern);
             }
             if (person.PersonType == PersonType.Contractor)
             {
-                var contractor = new ContractorModel(person as Contractor);
+                var contractor = new ContractorModel((Contractor) person);
                 return View(contractor);
             }
-            var emp = new EmployeeModel(person as Employee);
+            var emp = new EmployeeModel((Employee) person);
             return View(emp);
         }
 
         //
         // POST: /MyView/Edit/5
 
-        [
-            HttpPost]
-        public
-        ActionResult Edit
-            (long id, FormCollection collection)
+        [HttpPost]
+        public ActionResult Edit (long id, PersonModel newperson)
         {
-            try
-            {
-                // TODO: Add update logic here
+            
 
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+
         }
 
         //

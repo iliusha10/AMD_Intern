@@ -9,11 +9,11 @@ namespace Domain.Proxy
         private readonly IAppointment _director;
         private readonly Person _smbd;
 
-        public DirectorProxy(Person smbd, Director director)
-        {
-            _smbd = smbd;
-            _director = director;
-        }
+        //public DirectorProxy(Person smbd, Director director)
+        //{
+        //    _smbd = smbd;
+        //    _director = director;
+        //}
 
         public void NewAppontment(DateTime apointmenTime)
         {

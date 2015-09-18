@@ -1,7 +1,8 @@
-﻿<div class="form-group">
+﻿@model Double
+<div class="form-group">
     @Html.LabelFor(model => model, htmlAttributes: new { @class = "control-label col-md-2" })
     <div class="col-md-10">
-        @Html.EditorFor(model => model,new { @class = "form-control" })
+        @Html.TextBoxFor(model => model, new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model, "", new { @class = "text-danger" })
     </div>
 </div>

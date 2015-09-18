@@ -4,8 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My</title>
+
+    <link href="~/Scripts/jquery-ui/jquery-ui.theme.css" rel="stylesheet" />
+    <link href="~/Scripts/jquery-ui/jquery-ui.structure.css" rel="stylesheet" />
+    
+    <script src="~/Scripts/jquery-1.11.3.js"></script>
+    <script src="~/Scripts/jquery-ui/jquery-ui.js"></script>
+    <script src="~/Scripts/DateTime.js"></script>
+    <script src="~/Scripts/CreateForm.js"></script>
+    
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    
 
 </head>
 <body>
@@ -38,7 +48,7 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/jquery")*@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
