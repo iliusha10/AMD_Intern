@@ -1,6 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using Domain;
+using Domain.CompanyAssets;
 using Domain.Persons;
+using Factories;
 using Infrastructure.IoC;
 using Repository.Interfaces;
 using WEB_Presentation.Models;
@@ -10,7 +13,11 @@ namespace Web.Controllers
     public class WorkersController : Controller
     {
         private readonly IPersonRepository PersonRepository = ServiceLocator.Get<IPersonRepository>();
-
+        private readonly InternFactory InternFactory = ServiceLocator.Get<InternFactory>();
+        private readonly ContractorFactory ContractorFactory = ServiceLocator.Get<ContractorFactory>();
+        private readonly EmployeeFactory EmployeeFactory = ServiceLocator.Get<EmployeeFactory>();
+        private readonly ICompanyRepository CompanyRepository = ServiceLocator.Get<ICompanyRepository>();
+        
         [HttpGet]
         public ActionResult Index()
 
@@ -43,11 +50,18 @@ namespace Web.Controllers
 
 //
 // GET: /MyView/Create
-        [HttpGet] 
+        [HttpGet]
         public ActionResult Create()
         {
-            var pers = new AllPersonModel();
-            ViewBag.JS = "HideRows();";
+            var items = new List<SelectListItem>();
+            var companies = CompanyRepository.GetAllCompanyNames();
+            items.Add(new SelectListItem{Text = "no company", Value = "0", Selected = true});
+            foreach (var comp in companies)
+            {
+                items.Add(new SelectListItem{Text = comp.CompanyNames, Value = comp.Id.ToString()});
+            }
+            var pers = new AllPersonModel(items);
+
             return View(pers);
         }
 
@@ -55,18 +69,22 @@ namespace Web.Controllers
         // POST: /MyView/Create
 
         [HttpPost]
-        public ActionResult Create (FormCollection collection)
+        public ActionResult Create(AllPersonModel worker)
         {
-            try
+            if (worker.PersonType == PersonType.Intern)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                //var intn = InternFactory.CreateIntern(worker.Firstname, worker.Lastname,worker.BirthDate, new Dictionary<string, int>(),new Address("street", "city"),,worker.AverageMark  )    
+                //var intern = worker.MakeIntern();
             }
-            catch
+            else if (worker.PersonType == PersonType.Contractor)
             {
-                return View();
+                //var contarctor = worker.MakeContractor();
             }
+            else if (worker.PersonType == PersonType.Employee)
+            {
+                //var employee = worker.MakeEmployee();
+            }
+            return RedirectToAction("Index");
         }
 
         //
@@ -94,12 +112,9 @@ namespace Web.Controllers
         // POST: /MyView/Edit/5
 
         [HttpPost]
-        public ActionResult Edit (long id, PersonModel newperson)
+        public ActionResult Edit(long id, PersonModel newperson)
         {
-            
-
-                return RedirectToAction("Index");
-
+            return RedirectToAction("Index");
         }
 
         //
@@ -133,5 +148,14 @@ namespace Web.Controllers
             PersonRepository.DeletePerson(id);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Skill()
+        {
+            return View();
+        }
+
+        //public ActionResult AddSkill(string name, int level)
+        //{
+        //}
     }
 }

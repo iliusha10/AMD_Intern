@@ -5,6 +5,15 @@ namespace Domain.CompanyAssets
 {
     public class PersonSkills : Entity
     {
+
+        public PersonSkills(string name, int level)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+                throw new ArgumentException("name is required.");
+            Name = name;
+            Level = level;
+        }
+
         public PersonSkills(Person person, string name, int level)
         {
             if (string.IsNullOrWhiteSpace(name))

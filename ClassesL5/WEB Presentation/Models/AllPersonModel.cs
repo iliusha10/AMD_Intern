@@ -1,41 +1,81 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+using System.Web.Mvc;
 using Domain;
+using Domain.CompanyAssets;
 
 namespace WEB_Presentation.Models
 {
     public class AllPersonModel
     {
+        public AllPersonModel(IList<SelectListItem> companies)
+        {
+            BirthDate = DateTime.Now.Date;
+            Companies = companies;
+            Skills = new List<PersonSkills>();
+        }
+
+        public AllPersonModel()
+        {
+        }
+
         public long Id { get; set; }
 
-        [Display(Name = "Person Type")]
+        [Display(Name = "Person type")]
         public PersonType PersonType { get; set; }
 
-        [Display(Name = "First Name")]
+        [Display(Name = "First name")]
+        [Required(ErrorMessage = "First Name is required")]
         public string Firstname { get; set; }
 
-        [Display(Name = "Last Name")]
+        [Display(Name = "Last name")]
+        [Required(ErrorMessage = "Last Name is required")]
         public string Lastname { get; set; }
 
-        [Display(Name = "Birth Date")]
+        [Display(Name = "Birth date")]
+        [Required(ErrorMessage = "Birth Date is required")]
         public DateTime BirthDate { get; set; }
 
-        [Display(Name = "Average Mark")]
+        [Required(ErrorMessage = "Street is required")]
+        public string Street { get; set; }
+
+        [Required(ErrorMessage = "City is required")]
+        public string City { get; set; }
+
+        [Display(Name = "Average mark")]
+        [Required(ErrorMessage = "Average mark is required")]
+        [Range(1, 100, ErrorMessage = "Average mark  must be between $1 and $100")]
         public double AverageMark { get; set; }
 
-        public virtual double Salary { get; set; }
+        [Display(Name = "Work experience")]
+        [Required(ErrorMessage = "Work experience is required")]
+        public double WorkExp { get; set; }
 
-        [Display(Name = "Work Experience")]
-        public virtual double WorkExp { get; set; }
+        [Required(ErrorMessage = "Salary is required")]
+        public double Salary { get; set; }
 
+        [Required(ErrorMessage = "Title is required")]
         public string Department { get; set; }
 
         [Display(Name = "Function")]
+        [Required(ErrorMessage = "Title is required")]
         public string Role { get; set; }
 
-        //public string JS { get; set; }
+
+        public string CompanyName { get; set; }
+        public long CompanyId { get; set; }
+
+
+        public IList<SelectListItem> Companies { get; set; }
+
+        public IList<PersonSkills> Skills { get; set; }
+
+
+        public void AddSkill(string name, int level)
+        {
+            var skill = new PersonSkills(name, level);
+            Skills.Add(skill);
+        }
     }
 }

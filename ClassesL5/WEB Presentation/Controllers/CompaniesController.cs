@@ -49,7 +49,6 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Create(CompanyModel model)
         {
-            //Address address= AddressRepository.CheckAdress(model.Street, model.City)
             var company = CompanyFactory.CreateCompany(model.CompanyName, model.Activity,
                 new Address(model.City, model.Street));
             CompanyRepository.AddCompany(company);
