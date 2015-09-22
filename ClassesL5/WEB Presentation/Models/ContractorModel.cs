@@ -8,6 +8,10 @@ namespace WEB_Presentation.Models
     {
         public ContractorModel(Contractor cont):base(cont)
         {
+            PersonType = cont.PersonType;
+            City = cont.Address.City;
+            Street = cont.Address.Street;
+            CompanyName = cont.Company.CompanyName;
             Salary = cont.Salary.Amount;
             WorkExp = cont.WorkExp;
         }

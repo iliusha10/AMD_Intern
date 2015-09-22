@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Domain.CompanyAssets;
 using Domain.Interfaces;
 using Domain.Persons;
@@ -16,7 +17,7 @@ namespace Factories
             _displayInfoAction = displayInfoAction;
         }
 
-        public Employee CreateEmployee(string fName, string lName, string bDate,
+        public Employee CreateEmployee(string fName, string lName, DateTime bDate,
             Dictionary<string, int> skillsDictionary, Address address,
             Company company, double workexp, Salary salary,
             string department, string function)

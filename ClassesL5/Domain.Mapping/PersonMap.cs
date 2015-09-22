@@ -12,7 +12,7 @@ namespace Domain.Mapping
             HasMany(x => x.SkillsList).Cascade.All().Inverse();
             HasMany(x => x.PrivilegeList).Cascade.All();
             References(x => x.Address).Cascade.All();
-            HasOne(x => x.Company);
+            References(x => x.Company);
         }
     }
 }

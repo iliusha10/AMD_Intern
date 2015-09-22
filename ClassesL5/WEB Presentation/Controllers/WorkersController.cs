@@ -55,7 +55,7 @@ namespace Web.Controllers
         {
             var items = new List<SelectListItem>();
             var companies = CompanyRepository.GetAllCompanyNames();
-            items.Add(new SelectListItem{Text = "no company", Value = "0", Selected = true});
+            items.Add(new SelectListItem{Text = "Select copmany", Value = "0", Selected = true});
             foreach (var comp in companies)
             {
                 items.Add(new SelectListItem{Text = comp.CompanyNames, Value = comp.Id.ToString()});
@@ -71,20 +71,35 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Create(AllPersonModel worker)
         {
-            if (worker.PersonType == PersonType.Intern)
+            if (ModelState.IsValid)
             {
-                //var intn = InternFactory.CreateIntern(worker.Firstname, worker.Lastname,worker.BirthDate, new Dictionary<string, int>(),new Address("street", "city"),,worker.AverageMark  )    
-                //var intern = worker.MakeIntern();
+                var company = CompanyRepository.GetItemById<Company>(worker.CompanyId);
+                var address = new Address("street", "city");
+                var skill = new Dictionary<string, int>();
+                if (worker.PersonType == PersonType.Intern)
+                {
+                    var intern = InternFactory.CreateIntern(worker.Firstname, worker.Lastname, worker.BirthDate,
+                        skill, address, company, worker.AverageMark);
+                    PersonRepository.AddPerson(intern);
+                }
+                else if (worker.PersonType == PersonType.Contractor)
+                {
+                    var salary = new Salary(worker.Salary, 0.0);
+                    var contractor = ContractorFactory.CreateContractor(worker.Firstname, worker.Lastname,
+                        worker.BirthDate,
+                        skill, address, company, worker.WorkExp, salary);
+                    PersonRepository.AddPerson(contractor);
+                }
+                else if (worker.PersonType == PersonType.Employee)
+                {
+                    var salary = new Salary(worker.Salary, 0.0);
+                    var employee = EmployeeFactory.CreateEmployee(worker.Firstname, worker.Lastname, worker.BirthDate,
+                        skill, address, company, worker.WorkExp, salary, worker.Department, worker.Role);
+                    PersonRepository.AddPerson(employee);
+                }
+                return RedirectToAction("Index");
             }
-            else if (worker.PersonType == PersonType.Contractor)
-            {
-                //var contarctor = worker.MakeContractor();
-            }
-            else if (worker.PersonType == PersonType.Employee)
-            {
-                //var employee = worker.MakeEmployee();
-            }
-            return RedirectToAction("Index");
+            return View(worker);
         }
 
         //
@@ -92,28 +107,54 @@ namespace Web.Controllers
         [HttpGet]
         public ActionResult Edit(long id)
         {
+
             var person = PersonRepository.GetItemById<Person>(id);
+            var items = new List<SelectListItem>();
+            var companies = CompanyRepository.GetAllCompanyNames();
+            items.Add(new SelectListItem { Text = "No company", Value = "0"});
+            foreach (var comp in companies)
+            {
+                if (comp.CompanyNames==person.Company.CompanyName)
+                    items.Add(new SelectListItem { Text = comp.CompanyNames, Value = comp.Id.ToString(), Selected = true});
+                else
+                    items.Add(new SelectListItem { Text = comp.CompanyNames, Value = comp.Id.ToString() });
+            }
 
             if (person.PersonType == PersonType.Intern)
             {
                 var intern = new InternModel((Intern) person);
+                intern.Companies = items;
                 return View(intern);
             }
             if (person.PersonType == PersonType.Contractor)
             {
                 var contractor = new ContractorModel((Contractor) person);
+                contractor.Companies = items;
                 return View(contractor);
             }
             var emp = new EmployeeModel((Employee) person);
+            emp.Companies = items;
             return View(emp);
         }
 
         //
         // POST: /MyView/Edit/5
 
+        //[HttpPost]
+        //public ActionResult Edit(long id, FormCollection editedworker)
+        //{
+        //    // if (editedworker["PersonType"] == PersonType.Intern)
+        //    //Request.Form["Firstname"];
+            
+        //    return RedirectToAction("Index");
+        //}
+
         [HttpPost]
-        public ActionResult Edit(long id, PersonModel newperson)
+        public ActionResult EditIntern(long id, InternModel editIntern)
         {
+            //if (editedworker["PersonType"] == PersonType.Intern)
+            //    Request.Form["Firstname"];
+
             return RedirectToAction("Index");
         }
 
@@ -149,10 +190,10 @@ namespace Web.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Skill()
-        {
-            return View();
-        }
+        //public ActionResult Skill()
+        //{
+        //    return PartialView();
+        //}
 
         //public ActionResult AddSkill(string name, int level)
         //{

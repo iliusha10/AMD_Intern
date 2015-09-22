@@ -7,7 +7,7 @@ namespace Domain.Persons
 {
     public class Contractor : Person, IPrivileges
     {
-        public Contractor(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
+        public Contractor(string fName, string lName, DateTime bdate, Dictionary<string, int> skillsDictionary,
             Address address, Company company, double workexp, Salary salary)
             : base(fName, lName, bdate, skillsDictionary, address, company)
         {

@@ -12,7 +12,7 @@ namespace Domain.Persons
         //protected PersonType PersonTypeField;
         public abstract PersonType PersonType { get; }
 
-        public Person(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
+        public Person(string fName, string lName, DateTime bdate, Dictionary<string, int> skillsDictionary,
             Address address, Company company)
         {
             if (string.IsNullOrWhiteSpace(fName))
@@ -23,7 +23,7 @@ namespace Domain.Persons
             LName = lName;
             try
             {
-                DateOfBirth = DateTime.Parse(bdate);
+                DateOfBirth = bdate;
             }
             catch (ArgumentOutOfRangeException e)
             {

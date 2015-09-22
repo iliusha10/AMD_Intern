@@ -243,26 +243,26 @@ namespace ClassesL5
             proj13.AddTask(task13);
             proj14.AddTask(task14);
 
-            var intern = InternFactory.CreateIntern("Vasile", "Ion", "1990-12-13", skills, newAddress6, comp, 80);
-            var intern2 = InternFactory.CreateIntern("Artur", "Rusnac", "1990-12-13", skills2, newAddress7, comp2, 80);
-            var intern3 = InternFactory.CreateIntern("Alex", "Maioco", "1990-12-13", skills3, newAddress8, comp3, 80);
-            var intern4 = InternFactory.CreateIntern("Max", "Josan", "1990-12-13", skills4, newAddress9, comp4, 80);
-            var intern5 = InternFactory.CreateIntern("Rumulus", "Remus", "1990-12-13", skills5, newAddress10, comp5, 80);
+            var intern = InternFactory.CreateIntern("Vasile", "Ion", DateTime.Parse("1990-12-13"), skills, newAddress6, comp, 80);
+            var intern2 = InternFactory.CreateIntern("Artur", "Rusnac", DateTime.Parse("1990-12-13"), skills2, newAddress7, comp2, 80);
+            var intern3 = InternFactory.CreateIntern("Alex", "Maioco", DateTime.Parse("1990-12-13"), skills3, newAddress8, comp3, 80);
+            var intern4 = InternFactory.CreateIntern("Max", "Josan", DateTime.Parse("1990-12-13"), skills4, newAddress9, comp4, 80);
+            var intern5 = InternFactory.CreateIntern("Rumulus", "Remus", DateTime.Parse("1990-12-13"), skills5, newAddress10, comp5, 80);
             personsList.Add(intern);
             personsList.Add(intern2);
             personsList.Add(intern3);
             personsList.Add(intern4);
             personsList.Add(intern5);
 
-            var contr1 = ContractorFactory.CreateContractor("Iulius", "Cezar", "1980-05-01", skills3, newAddress11, comp,
+            var contr1 = ContractorFactory.CreateContractor("Iulius", "Cezar", DateTime.Parse("1980-05-01"), skills3, newAddress11, comp,
                 11, salary);
-            var contr2 = ContractorFactory.CreateContractor("Junior", "Vamp", "1980-05-01", skills2, newAddress12, comp2,
+            var contr2 = ContractorFactory.CreateContractor("Junior", "Vamp", DateTime.Parse("1980-05-01"), skills2, newAddress12, comp2,
                 12, salary2);
-            var contr3 = ContractorFactory.CreateContractor("Hugo", "Boss", "1980-05-01", skills, newAddress13, comp3, 13,
+            var contr3 = ContractorFactory.CreateContractor("Hugo", "Boss", DateTime.Parse("1980-05-01"), skills, newAddress13, comp3, 13,
                 salary3);
-            var contr4 = ContractorFactory.CreateContractor("Jason", "Statham", "1980-05-01", skills4, newAddress14,
+            var contr4 = ContractorFactory.CreateContractor("Jason", "Statham", DateTime.Parse("1980-05-01"), skills4, newAddress14,
                 comp4, 14, salary4);
-            var contr5 = ContractorFactory.CreateContractor("Guy", "Rich", "1980-05-01", skills3, newAddress15, comp2, 15,
+            var contr5 = ContractorFactory.CreateContractor("Guy", "Rich", DateTime.Parse("1980-05-01"), skills3, newAddress15, comp2, 15,
                 salary5);
             personsList.Add(contr1);
             personsList.Add(contr2);
@@ -270,17 +270,17 @@ namespace ClassesL5
             personsList.Add(contr4);
             personsList.Add(contr5);
 
-            var emp = EmployeeFactory.CreateEmployee("John", "Doe", "1980-04-01", skills2, newAddress16, comp, 20, salary6,
+            var emp = EmployeeFactory.CreateEmployee("John", "Doe", DateTime.Parse("1980-04-01"), skills2, newAddress16, comp, 20, salary6,
                 "Test",
                 "Testing Ingineer");
-            var emp2 = EmployeeFactory.CreateEmployee("Jim", "Dole", "1990-05-10", skills, newAddress17, comp2, 30, salary7,
+            var emp2 = EmployeeFactory.CreateEmployee("Jim", "Dole", DateTime.Parse("1990-05-10"), skills, newAddress17, comp2, 30, salary7,
                 "Softwer Development",
                 "Software developer");
-            var emp3 = EmployeeFactory.CreateEmployee("Anne", "Fireman", "1995-12-12", skills3, newAddress18, comp3, 60,
+            var emp3 = EmployeeFactory.CreateEmployee("Anne", "Fireman", DateTime.Parse("1995-12-12"), skills3, newAddress18, comp3, 60,
                 salary8, "Test", "Testing Ingineer");
-            var emp4 = EmployeeFactory.CreateEmployee("Vanessa", "Ginger", "1996-11-01", skills4, newAddress19, comp4, 70,
+            var emp4 = EmployeeFactory.CreateEmployee("Vanessa", "Ginger", DateTime.Parse("1996-11-01"), skills4, newAddress19, comp4, 70,
                 salary9, "Softwer Development", "Software developer");
-            var emp5 = EmployeeFactory.CreateEmployee("Will", "Smith", "1990-11-01", skills4, newAddress20, comp4, 70,
+            var emp5 = EmployeeFactory.CreateEmployee("Will", "Smith", DateTime.Parse("1990-11-01"), skills4, newAddress20, comp4, 70,
                 salary10, "Softwer Development", "Software developer");
             personsList.Add(emp);
             personsList.Add(emp2);
@@ -294,7 +294,24 @@ namespace ClassesL5
             CompanyRepository.AddCompany(companylist[2]);
             CompanyRepository.AddCompany(companylist[3]);
             CompanyRepository.AddCompany(companylist[4]);
-            PersonRepository.AddPerson(personsList);
+            PersonRepository.AddPerson(personsList[0]);
+            PersonRepository.AddPerson(personsList[1]);
+            PersonRepository.AddPerson(personsList[2]);
+            PersonRepository.AddPerson(personsList[3]);
+            PersonRepository.AddPerson(personsList[4]);
+            PersonRepository.AddPerson(personsList[5]);
+            PersonRepository.AddPerson(personsList[6]);
+            PersonRepository.AddPerson(personsList[7]);
+            PersonRepository.AddPerson(personsList[8]);
+            PersonRepository.AddPerson(personsList[9]);
+            PersonRepository.AddPerson(personsList[10]);
+            PersonRepository.AddPerson(personsList[11]);
+            PersonRepository.AddPerson(personsList[12]);
+            PersonRepository.AddPerson(personsList[13]);
+            PersonRepository.AddPerson(personsList[14]);
+            PersonRepository.AddPerson(personsList[15]);
+
+
         }
 
         private static void ShowAllPersons()

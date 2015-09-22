@@ -7,7 +7,7 @@ namespace Repository.Interfaces
 {
     public interface IPersonRepository : IRepository
     {
-        void AddPerson(IEnumerable<Person> personsList);
+        void AddPerson(Person person);
         void UpdatePerson(long id, string fname = null, string lname = null, string bdate = null);
         void DeletePerson(long id);
 

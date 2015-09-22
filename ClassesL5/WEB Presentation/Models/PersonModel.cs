@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
+using Domain;
 using Domain.Persons;
 
 namespace WEB_Presentation.Models
@@ -28,13 +31,25 @@ namespace WEB_Presentation.Models
         }
         public long Id { get; set; }
 
-        [Display(Name = "First Name")]
+        [Display(Name = "Person type")]
+        public PersonType PersonType { get; set; }
+
+        [Display(Name = "First name")]
         public string Firstname { get; set; }
 
-        [Display(Name = "Last Name")]
+        [Display(Name = "Last name")]
         public string Lastname { get; set; }
 
-        [Display(Name = "Birth Date")]
+        [Display(Name = "Birth date")]
         public DateTime BirthDate { get; set; }
+
+        public string Street { get; set; }
+
+        public string City { get; set; }
+
+        [Display(Name = "Company name")]
+        public string CompanyName { get; set; }
+        public long CompanyId { get; set; }
+        public IList<SelectListItem> Companies { get; set; }
     }
 }

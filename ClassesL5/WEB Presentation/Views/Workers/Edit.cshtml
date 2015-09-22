@@ -4,6 +4,12 @@
     ViewBag.Title = "Edit";
 }
 
+<script type="text/javascript">
+    $("#EditSubmitButton").click(function () {
+        document.location = '@Url.Action("EditIntern", "Workers")';
+    })
+</script>
+
 <h2>Edit</h2>
 
 @using (Html.BeginForm())
@@ -17,11 +23,15 @@
         @Html.EditorForModel()
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                @*<input type="submit" value="Save" class="btn btn-default" id="EditSubmitButton">*@
+                <button >@Url.Action("EditIntern", "Workers")</button>
+                
             </div>
         </div>
     </div>
 }
+
+
 
 <div>
     @Html.ActionLink("Back to List", "Index")

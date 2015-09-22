@@ -6,7 +6,7 @@ namespace Domain.Persons
 {
     public class Intern : Person
     {
-        public Intern(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
+        public Intern(string fName, string lName, DateTime bdate, Dictionary<string, int> skillsDictionary,
             Address address, Company company, double avmark)
             : base(fName, lName, bdate, skillsDictionary, address, company)
         {

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Domain.CompanyAssets;
 using Domain.Interfaces;
 using Domain.Persons;
@@ -16,7 +17,7 @@ namespace Factories
             _displayInfoAction = displayInfoAction;
         }
 
-        public Contractor CreateContractor(string fName, string lName, string bdate,
+        public Contractor CreateContractor(string fName, string lName, DateTime bdate,
             Dictionary<string, int> skillsDictionary,
             Address address, Company company, double workexp, Salary salary)
         {

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Domain.CompanyAssets;
 using Domain.Persons;
 using Domain.Privileges;
@@ -15,7 +16,7 @@ namespace Factories
             _displayInfoAction = displayInfoAction;
         }
 
-        public Intern CreateIntern(string fName, string lName, string bdate, Dictionary<string, int> skillsDictionary,
+        public Intern CreateIntern(string fName, string lName, DateTime bdate, Dictionary<string, int> skillsDictionary,
             Address address, Company company, double avmark)
         {
             Logger.Logger.AddToLog("InternFactory|CreateIntern Intern");

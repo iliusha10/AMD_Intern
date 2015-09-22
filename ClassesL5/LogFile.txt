@@ -6403,3 +6403,11 @@ The statement has been terminated.
 9/17/2015 6:10:22 PM, EmployeeFactory|CreateEmployee Employee 
 9/17/2015 6:10:23 PM, -------The End------- 
 9/17/2015 6:14:04 PM, CompanyFactory|CreateCompany Company 
+9/22/2015 9:52:44 AM, InternFactory|CreateIntern Intern 
+9/22/2015 9:52:44 AM, Added HollidayPrivilege 
+9/22/2015 9:54:08 AM, Added HollidayPrivilege 
+9/22/2015 9:54:08 AM, Added SalaryBonusPrivilege 
+9/22/2015 9:54:08 AM, ContractorFactory|CreateContractor Contractor 
+9/22/2015 10:02:14 AM, Added HollidayPrivilege 
+9/22/2015 10:02:15 AM, Added SalaryBonusPrivilege 
+9/22/2015 10:02:15 AM, ContractorFactory|CreateContractor Contractor 

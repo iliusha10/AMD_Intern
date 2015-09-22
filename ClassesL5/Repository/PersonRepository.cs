@@ -12,19 +12,15 @@ namespace Repository
 {
     public class PersonRepository : Repository, IPersonRepository
     {
-        public void AddPerson(IEnumerable<Person> personsList)
+        public void AddPerson(Person person)
         {
             using (var transaction = _session.BeginTransaction())
             {
                 try
                 {
-                    foreach (var person in personsList)
-                    {
-                        _session.SaveOrUpdate((person));
-                        //Console.WriteLine("Inserting person in DB ");
-                    }
+                    _session.SaveOrUpdate(person);
                     transaction.Commit();
-                    Console.WriteLine("Inserting persons in DB Successfull ");
+                    Console.WriteLine("Inserting person in DB Successfull ");
                 }
                 catch (Exception ex)
                 {
