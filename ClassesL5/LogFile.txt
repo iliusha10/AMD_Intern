@@ -6413,3 +6413,11 @@ The statement has been terminated.
 9/22/2015 10:02:15 AM, ContractorFactory|CreateContractor Contractor 
 9/23/2015 9:20:57 AM, InternFactory|CreateIntern Intern 
 9/23/2015 9:20:57 AM, Added HollidayPrivilege 
+9/23/2015 5:37:37 PM, InternFactory|CreateIntern Intern 
+9/23/2015 5:37:37 PM, Added HollidayPrivilege 
+9/23/2015 5:40:21 PM, InternFactory|CreateIntern Intern 
+9/23/2015 5:40:21 PM, Added HollidayPrivilege 
+9/23/2015 5:41:03 PM, InternFactory|CreateIntern Intern 
+9/23/2015 5:41:03 PM, Added HollidayPrivilege 
+9/23/2015 5:52:34 PM, InternFactory|CreateIntern Intern 
+9/23/2015 5:52:34 PM, Added HollidayPrivilege 

@@ -23,6 +23,7 @@ namespace WEB_Presentation.Models
 
         public InternModel(IList<SelectListItem> companies)
         {
+            PersonType = Domain.PersonType.Intern;
             BirthDate = DateTime.Now.Date;
             Companies = companies;
         }

@@ -12,12 +12,12 @@ namespace Web.Controllers
 {
     public class WorkersController : Controller
     {
-        private readonly IPersonRepository PersonRepository = ServiceLocator.Get<IPersonRepository>();
-        private readonly InternFactory InternFactory = ServiceLocator.Get<InternFactory>();
+        private readonly ICompanyRepository CompanyRepository = ServiceLocator.Get<ICompanyRepository>();
         private readonly ContractorFactory ContractorFactory = ServiceLocator.Get<ContractorFactory>();
         private readonly EmployeeFactory EmployeeFactory = ServiceLocator.Get<EmployeeFactory>();
-        private readonly ICompanyRepository CompanyRepository = ServiceLocator.Get<ICompanyRepository>();
-        
+        private readonly InternFactory InternFactory = ServiceLocator.Get<InternFactory>();
+        private readonly IPersonRepository PersonRepository = ServiceLocator.Get<IPersonRepository>();
+
         [HttpGet]
         public ActionResult Index()
 
@@ -50,51 +50,61 @@ namespace Web.Controllers
 
 //
 // GET: /MyView/Create
-        [HttpGet]
-        public ActionResult Create()
-        {
-            //var items = new List<SelectListItem>();
-            //var companies = CompanyRepository.GetAllCompanyNames();
-            //items.Add(new SelectListItem{Text = "Select copmany", Value = "0", Selected = true});
-            //foreach (var comp in companies)
-            //{
-            //    items.Add(new SelectListItem{Text = comp.CompanyNames, Value = comp.Id.ToString()});
-            //}
-            //var pers = new AllPersonModel(items);
-            var pers = new PersonTypeModel();
+        //[HttpGet]
+        //public ActionResult Create()
+        //{
+        //    //var items = new List<SelectListItem>();
+        //    //var companies = CompanyRepository.GetAllCompanyNames();
+        //    //items.Add(new SelectListItem{Text = "Select copmany", Value = "0", Selected = true});
+        //    //foreach (var comp in companies)
+        //    //{
+        //    //    items.Add(new SelectListItem{Text = comp.CompanyNames, Value = comp.Id.ToString()});
+        //    //}
+        //    //var pers = new AllPersonModel(items);
+        //    var pers = new PersonTypeModel();
 
-            return PartialView(pers);
-        }
+        //    return PartialView(pers);
+        //}
 
-        //
-        // POST: /MyView/Create
+        ////
+        //// POST: /MyView/Create
 
-        [HttpPost]
-        public ActionResult Create(AllPersonModel worker)
-        {
-            if (ModelState.IsValid)
-            {
-                var pers = PersonRepository.GetAllFirstAndLastNames();
-                return PartialView("WorkerList", pers);
-            }
+        //[HttpPost]
+        //public ActionResult Create(PersonTypeModel worker)
+        //{
+        //    if (worker.Type == PersonType.Intern)
+        //        return RedirectToAction("CreateIntern");
+        //    else if (worker.Type == PersonType.Contractor)
+        //        return RedirectToAction("CreateContractor");
+        //    else if (worker.Type == PersonType.Employee)
+        //        return RedirectToAction("CreateEmployee");
+        //    else
+        //    {
+        //        Response.StatusCode = 200;
+        //        return PartialView(worker);
+        //    }
 
-            Response.StatusCode = 200;
-            return PartialView(worker);
-        }
+        //    //if (ModelState.IsValid)
+        //    //{
+        //    //    var pers = PersonRepository.GetAllFirstAndLastNames();
+        //    //    return PartialView("WorkerList", pers);
+        //    //}
+
+        //    //Response.StatusCode = 200;
+        //    //return PartialView(worker);
+        //}
 
         [HttpGet]
         public ActionResult CreateIntern()
         {
             var items = new List<SelectListItem>();
             var companies = CompanyRepository.GetAllCompanyNames();
-            items.Add(new SelectListItem { Text = "Select copmany", Value = "0", Selected = true });
+            items.Add(new SelectListItem {Text = "Select copmany", Value = "0", Selected = true});
             foreach (var comp in companies)
             {
-                items.Add(new SelectListItem { Text = comp.CompanyNames, Value = comp.Id.ToString() });
+                items.Add(new SelectListItem {Text = comp.CompanyNames, Value = comp.Id.ToString()});
             }
             var pers = new InternModel(items);
-
-
             return PartialView(pers);
         }
 
@@ -102,46 +112,24 @@ namespace Web.Controllers
         // POST: /MyView/Create
 
         [HttpPost]
-        public ActionResult CreateIntern(AllPersonModel worker)
+        public ActionResult CreateIntern(InternModel newintern)
         {
             if (ModelState.IsValid)
             {
-                var company = CompanyRepository.GetItemById<Company>(worker.CompanyId);
-                var address = new Address("street", "city");
+                var company = CompanyRepository.GetItemById<Company>(newintern.CompanyId);
+                var address = new Address(newintern.Street, newintern.City);
                 var skill = new Dictionary<string, int>();
-                if (worker.PersonType == PersonType.Intern)
-                {
-                    var intern = InternFactory.CreateIntern(worker.Firstname, worker.Lastname, worker.BirthDate,
-                        skill, address, company, worker.AverageMark);
-                    PersonRepository.AddPerson(intern);
-                }
-                else if (worker.PersonType == PersonType.Contractor)
-                {
-                    var salary = new Salary(worker.Salary, 0.0);
-                    var contractor = ContractorFactory.CreateContractor(worker.Firstname, worker.Lastname,
-                        worker.BirthDate,
-                        skill, address, company, worker.WorkExp, salary);
-                    PersonRepository.AddPerson(contractor);
-                }
-                else if (worker.PersonType == PersonType.Employee)
-                {
-                    var salary = new Salary(worker.Salary, 0.0);
-                    var employee = EmployeeFactory.CreateEmployee(worker.Firstname, worker.Lastname, worker.BirthDate,
-                        skill, address, company, worker.WorkExp, salary, worker.Department, worker.Role);
-                    PersonRepository.AddPerson(employee);
-                }
+                var intern = InternFactory.CreateIntern(newintern.Firstname, newintern.Lastname, newintern.BirthDate,
+                    skill, address, company, newintern.AverageMark);
+                PersonRepository.AddPerson(intern);
 
                 var pers = PersonRepository.GetAllFirstAndLastNames();
                 return PartialView("WorkerList", pers);
             }
 
-
-
-
             Response.StatusCode = 200;
-            return PartialView(worker);
+            return PartialView(newintern);
         }
-
 
 
         [HttpGet]
@@ -149,12 +137,12 @@ namespace Web.Controllers
         {
             var items = new List<SelectListItem>();
             var companies = CompanyRepository.GetAllCompanyNames();
-            items.Add(new SelectListItem { Text = "Select copmany", Value = "0", Selected = true });
+            items.Add(new SelectListItem {Text = "Select copmany", Value = "0", Selected = true});
             foreach (var comp in companies)
             {
-                items.Add(new SelectListItem { Text = comp.CompanyNames, Value = comp.Id.ToString() });
+                items.Add(new SelectListItem {Text = comp.CompanyNames, Value = comp.Id.ToString()});
             }
-            var pers = new InternModel(items);
+            var pers = new ContractorModel(items);
 
 
             return PartialView(pers);
@@ -164,44 +152,27 @@ namespace Web.Controllers
         // POST: /MyView/Create
 
         [HttpPost]
-        public ActionResult CreateContractor(AllPersonModel worker)
+        public ActionResult CreateContractor(AllPersonModel newcontractor)
         {
             if (ModelState.IsValid)
             {
-                var company = CompanyRepository.GetItemById<Company>(worker.CompanyId);
-                var address = new Address("street", "city");
+                var company = CompanyRepository.GetItemById<Company>(newcontractor.CompanyId);
+                var address = new Address(newcontractor.Street, newcontractor.City);
                 var skill = new Dictionary<string, int>();
-                if (worker.PersonType == PersonType.Intern)
-                {
-                    var intern = InternFactory.CreateIntern(worker.Firstname, worker.Lastname, worker.BirthDate,
-                        skill, address, company, worker.AverageMark);
-                    PersonRepository.AddPerson(intern);
-                }
-                else if (worker.PersonType == PersonType.Contractor)
-                {
-                    var salary = new Salary(worker.Salary, 0.0);
-                    var contractor = ContractorFactory.CreateContractor(worker.Firstname, worker.Lastname,
-                        worker.BirthDate,
-                        skill, address, company, worker.WorkExp, salary);
+                var salary = new Salary(newcontractor.Salary, 0.0);
+                    var contractor = ContractorFactory.CreateContractor(newcontractor.Firstname, newcontractor.Lastname,
+                        newcontractor.BirthDate,
+                        skill, address, company, newcontractor.WorkExp, salary);
                     PersonRepository.AddPerson(contractor);
-                }
-                else if (worker.PersonType == PersonType.Employee)
-                {
-                    var salary = new Salary(worker.Salary, 0.0);
-                    var employee = EmployeeFactory.CreateEmployee(worker.Firstname, worker.Lastname, worker.BirthDate,
-                        skill, address, company, worker.WorkExp, salary, worker.Department, worker.Role);
-                    PersonRepository.AddPerson(employee);
-                }
+            
 
                 var pers = PersonRepository.GetAllFirstAndLastNames();
                 return PartialView("WorkerList", pers);
             }
 
 
-
-
             Response.StatusCode = 200;
-            return PartialView(worker);
+            return PartialView(newcontractor);
         }
 
 
@@ -210,12 +181,12 @@ namespace Web.Controllers
         {
             var items = new List<SelectListItem>();
             var companies = CompanyRepository.GetAllCompanyNames();
-            items.Add(new SelectListItem { Text = "Select copmany", Value = "0", Selected = true });
+            items.Add(new SelectListItem {Text = "Select copmany", Value = "0", Selected = true});
             foreach (var comp in companies)
             {
-                items.Add(new SelectListItem { Text = comp.CompanyNames, Value = comp.Id.ToString() });
+                items.Add(new SelectListItem {Text = comp.CompanyNames, Value = comp.Id.ToString()});
             }
-            var pers = new InternModel(items);
+            var pers = new EmployeeModel(items);
 
 
             return PartialView(pers);
@@ -259,13 +230,9 @@ namespace Web.Controllers
             }
 
 
-
-
             Response.StatusCode = 200;
             return PartialView(worker);
         }
-
-
 
 
         //
@@ -273,17 +240,16 @@ namespace Web.Controllers
         [HttpGet]
         public ActionResult Edit(long id)
         {
-
             var person = PersonRepository.GetItemById<Person>(id);
             var items = new List<SelectListItem>();
             var companies = CompanyRepository.GetAllCompanyNames();
-            items.Add(new SelectListItem { Text = "No company", Value = "0"});
+            items.Add(new SelectListItem {Text = "No company", Value = "0"});
             foreach (var comp in companies)
             {
-                if (comp.CompanyNames==person.Company.CompanyName)
-                    items.Add(new SelectListItem { Text = comp.CompanyNames, Value = comp.Id.ToString(), Selected = true});
+                if (comp.CompanyNames == person.Company.CompanyName)
+                    items.Add(new SelectListItem {Text = comp.CompanyNames, Value = comp.Id.ToString(), Selected = true});
                 else
-                    items.Add(new SelectListItem { Text = comp.CompanyNames, Value = comp.Id.ToString() });
+                    items.Add(new SelectListItem {Text = comp.CompanyNames, Value = comp.Id.ToString()});
             }
 
             if (person.PersonType == PersonType.Intern)
@@ -311,7 +277,7 @@ namespace Web.Controllers
         //{
         //    // if (editedworker["PersonType"] == PersonType.Intern)
         //    //Request.Form["Firstname"];
-            
+
         //    return RedirectToAction("Index");
         //}
 
@@ -363,6 +329,7 @@ namespace Web.Controllers
 
         //public ActionResult AddSkill(string name, int level)
         //{
+
         //}
     }
 }

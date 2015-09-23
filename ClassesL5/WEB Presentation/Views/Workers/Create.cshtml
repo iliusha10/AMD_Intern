@@ -15,7 +15,7 @@
         <hr/>
 
         @Html.ValidationSummary(true, "", new {@class = "text-danger"})
-        @Html.EditorFor(model => model.Type, "EnumDropDownEditor", new {@id="PersonType" })
+        @Html.EditorFor(model => model.Type, "EnumDropDownEditor")
       
     </div>
 }
