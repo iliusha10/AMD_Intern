@@ -6411,3 +6411,5 @@ The statement has been terminated.
 9/22/2015 10:02:14 AM, Added HollidayPrivilege 
 9/22/2015 10:02:15 AM, Added SalaryBonusPrivilege 
 9/22/2015 10:02:15 AM, ContractorFactory|CreateContractor Contractor 
+9/23/2015 9:20:57 AM, InternFactory|CreateIntern Intern 
+9/23/2015 9:20:57 AM, Added HollidayPrivilege 

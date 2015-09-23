@@ -171,6 +171,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\PersonTypeModel.cs" />
     <Compile Include="Models\AllPersonModel.cs" />
     <Compile Include="Models\CompanyModel.cs" />
     <Compile Include="Models\ContractorModel.cs" />
@@ -291,6 +292,10 @@
     <Content Include="Views\Shared\EditorTemplates\DropDownList.cshtml" />
     <Content Include="Views\Workers\Skill.cshtml" />
     <None Include="Views\Shared\EditorTemplates\Int32.cshtml" />
+    <Content Include="Views\Workers\WorkerList.cshtml" />
+    <Content Include="Views\Workers\CreateIntern.cshtml" />
+    <Content Include="Views\Workers\CreateContractor.cshtml" />
+    <Content Include="Views\Workers\CreateEmployee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

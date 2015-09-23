@@ -25,6 +25,8 @@ namespace WEB_Presentation.Models
             BirthDate = pers.DateOfBirth;
         }
 
+
+
         public PersonModel()
         {
             
@@ -35,16 +37,24 @@ namespace WEB_Presentation.Models
         public PersonType PersonType { get; set; }
 
         [Display(Name = "First name")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$", ErrorMessage = "First letter should be uppercase and only letters accepted")]
+        [Required(ErrorMessage = "First Name is required")]
         public string Firstname { get; set; }
 
         [Display(Name = "Last name")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$", ErrorMessage = "First letter should be uppercase and only letters accepted")]
+        [Required(ErrorMessage = "Last Name is required")]
         public string Lastname { get; set; }
 
         [Display(Name = "Birth date")]
+        [Required(ErrorMessage = "Birth Date is required")]
         public DateTime BirthDate { get; set; }
 
+        [Required(ErrorMessage = "Street is required")]
         public string Street { get; set; }
 
+        [Required(ErrorMessage = "City is required")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$", ErrorMessage = "First letter should be uppercase and only letters accepted")]
         public string City { get; set; }
 
         [Display(Name = "Company name")]
