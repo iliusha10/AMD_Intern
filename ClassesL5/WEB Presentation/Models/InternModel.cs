@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
+using Domain;
 using Domain.Persons;
+using Domain.Row;
 
 namespace WEB_Presentation.Models
 {
-    public class InternModel: PersonModel
+    public class InternModel : PersonModel
     {
-        public InternModel(Intern pers):base()
+        public InternModel(Intern pers)
         {
             PersonType = pers.PersonType;
             BirthDate = pers.DateOfBirth;
@@ -23,14 +25,13 @@ namespace WEB_Presentation.Models
 
         public InternModel(IList<SelectListItem> companies)
         {
-            PersonType = Domain.PersonType.Intern;
+            PersonType = PersonType.Intern;
             BirthDate = DateTime.Now.Date;
             Companies = companies;
         }
 
         public InternModel()
         {
-            
         }
 
 
@@ -38,5 +39,18 @@ namespace WEB_Presentation.Models
         [Required(ErrorMessage = "Average mark is required")]
         [Range(1, 100, ErrorMessage = "Average mark must be between $1 and $100")]
         public double AverageMark { get; set; }
+
+        internal void ConvertToDto(InternDetailsDto newinterndto)
+        {
+            newinterndto.Id = Id;
+            newinterndto.PersonType = PersonType;
+            newinterndto.Firstname = Firstname;
+            newinterndto.Lastname = Firstname;
+            newinterndto.BirthDate = BirthDate;
+            newinterndto.City = City;
+            newinterndto.Street = Street;
+            newinterndto.AverageMark = AverageMark;
+            newinterndto.CompanyId = CompanyId;
+        }
     }
 }

@@ -4,36 +4,36 @@
     ViewBag.Title = "Companies";
 }
 
-<h2>All Company Names</h2>
+<h2>All Companies</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new {@id = "create-company-btn"})
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CompanyNames)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Activity)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompanyNames)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Activity)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+<div id="table-container">
+    @{Html.RenderPartial("CompanyList");}
+</div>
 
-</table>
+<div id="create-company">
+    <div id="create-content">
+        test create
+    </div>
+</div>
+
+<div id="edit-company">
+    <div id="edit-content">
+        test edit
+    </div>
+</div>
+
+<div id="details-company">
+    <div id="details-content">
+        test details
+    </div>
+</div>
+
+<div id="delete-company">
+    <div id="delete-content">
+        test delete
+    </div>
+</div>

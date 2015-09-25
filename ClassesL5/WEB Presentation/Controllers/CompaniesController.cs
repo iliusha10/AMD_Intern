@@ -6,7 +6,7 @@ using Infrastructure.IoC;
 using Repository.Interfaces;
 using WEB_Presentation.Models;
 
-namespace Web.Controllers
+namespace WEB_Presentation.Controllers
 {
     public class CompaniesController : Controller
     {
@@ -27,11 +27,10 @@ namespace Web.Controllers
         // GET: /Company/Details/5
 
         [HttpGet]
-        public ActionResult Details(int id)
+        public ActionResult Details(long id)
         {
             var result = CompanyRepository.GetCompanyAllInfo(id);
-
-            return View(result);
+            return PartialView(result);
         }
 
         //
@@ -40,7 +39,7 @@ namespace Web.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            return PartialView();
         }
 
         //
@@ -49,10 +48,16 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Create(CompanyModel model)
         {
-            var company = CompanyFactory.CreateCompany(model.CompanyName, model.Activity,
-                new Address(model.City, model.Street));
-            CompanyRepository.AddCompany(company);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var company = CompanyFactory.CreateCompany(model.CompanyName, model.Activity,
+                    new Address(model.City, model.Street));
+                CompanyRepository.AddCompany(company);
+                
+                var companyNamesActivity = CompanyRepository.GetAllCompanyNamesAndActivity();
+                return PartialView("CompanyList", companyNamesActivity);
+            }
+            return PartialView(model);
         }
 
         //
@@ -62,7 +67,7 @@ namespace Web.Controllers
         {
             var company = CompanyRepository.GetCompanyAllInfo(id);
             var comp = new CompanyModel(company);
-            return View(comp);
+            return PartialView(comp);
         }
 
         //
@@ -71,13 +76,18 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Edit(long id, CompanyModel company)
         {
-            CompanyAllInfo newCompany = company.TransformToDto(id);
-            Company currentCompany = CompanyRepository.GetItemById<Company>(id);
-            Address currentAddress = AddressRepository.GetItemById<Address>(currentCompany.Address.Id);
-            AddressRepository.UpdateAddress(currentAddress, newCompany.City, newCompany.Street);
-            CompanyRepository.UpdateCompany(currentCompany, newCompany);
+            if (ModelState.IsValid)
+            {
+                CompanyAllInfo newCompany = company.TransformToDto(id);
+                Company currentCompany = CompanyRepository.GetItemById<Company>(id);
+                Address currentAddress = AddressRepository.GetItemById<Address>(currentCompany.Address.Id);
+                AddressRepository.UpdateAddress(currentAddress, newCompany.City, newCompany.Street);
+                CompanyRepository.UpdateCompany(currentCompany, newCompany);
 
-            return RedirectToAction("Index");
+                var companyNamesActivity = CompanyRepository.GetAllCompanyNamesAndActivity();
+                return PartialView("CompanyList", companyNamesActivity);
+            }
+            return PartialView(company);
         }
 
         //
@@ -86,8 +96,8 @@ namespace Web.Controllers
         public ActionResult Delete(long id)
         {
             var company = CompanyRepository.GetCompanyAllInfo(id);
-            var comp = new CompanyModel(company);
-            return View(comp);
+            var compMod = new CompanyModel(company);
+            return PartialView(compMod);
         }
 
         //
@@ -97,7 +107,8 @@ namespace Web.Controllers
         public ActionResult Delete(long id, FormCollection collection)
         {
             CompanyRepository.DeleteCompany(id);
-            return RedirectToAction("Index");
+            var companyNamesActivity = CompanyRepository.GetAllCompanyNamesAndActivity();
+            return PartialView("CompanyList", companyNamesActivity);
         }
     }
 }

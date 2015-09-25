@@ -30,27 +30,64 @@ namespace Repository
             }
         }
 
-        public void UpdatePerson(long id, string fname = null, string lname = null, string bdate = null)
+
+        public void UpdateIntern(Person currentintern, InternDetailsDto newintern, Company company)
         {
             using (var transaction = _session.BeginTransaction())
             {
                 try
                 {
-                    var person = _session.Load<Person>(id);
-                    if ((fname != null) && (lname != null))
-                        person.Rename(fname, lname);
-
-                    if (bdate != null)
-                        person.ChangeBDate(bdate);
+                    var intern = (Intern) currentintern;
+                    intern.UpdateData(newintern, company);
                     transaction.Commit();
                 }
                 catch (Exception ex)
                 {
-                    Logger.Logger.AddToLog("PersonRepository | UpdatePerson | {0}", ex);
+                    Logger.Logger.AddToLog("PersonRepository | UpdateIntern | {0}", ex);
                     transaction.Rollback();
                 }
             }
         }
+
+        public void UpdateContractor(Person currentContractor, ContractorDetailsDto newContractor, Company newCompany, Salary currentSalary)
+        {
+            using (var transaction = _session.BeginTransaction())
+            {
+                try
+                {
+                    var contractor = (Contractor)currentContractor;
+                    contractor.UpdateData(newContractor, newCompany);
+                    currentSalary.ChangeSalary(newContractor.Salary);
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("PersonRepository | UpdateIntern | {0}", ex);
+                    transaction.Rollback();
+                }
+            }
+        }
+
+        public void UpdateEmployee(Person currentEmployee, EmployeeDetailsDto newEmployee, Company newCompany, Salary currentSalary)
+        {
+            using (var transaction = _session.BeginTransaction())
+            {
+                try
+                {
+                    var employee = (Employee)currentEmployee;
+                    employee.UpdateDataEmp(newEmployee, newCompany);
+                    currentSalary.ChangeSalary(newEmployee.Salary);
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("PersonRepository | UpdateIntern | {0}", ex);
+                    transaction.Rollback();
+                }
+            }
+        }
+
+
 
         public void DeletePerson(long id)
         {

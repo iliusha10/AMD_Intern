@@ -4,6 +4,7 @@ using System.Linq;
 using Domain.CompanyAssets;
 using Domain.Interfaces;
 using Domain.Privileges;
+using Domain.Row;
 
 namespace Domain.Persons
 {
@@ -109,5 +110,7 @@ namespace Domain.Persons
             DateOfBirth = DateTime.Parse(date);
             Console.WriteLine("Changing birth date");
         }
+
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Domain.CompanyAssets;
+using Domain.Row;
 
 namespace Domain.Persons
 {
@@ -33,6 +34,17 @@ namespace Domain.Persons
             Console.WriteLine("Company: {0}", Company);
             Console.WriteLine("Average Mark: {0}", AverageMark);
             Console.WriteLine();
+        }
+
+        public virtual void UpdateData(InternDetailsDto newintern, Company company)
+        {
+            //PersonType = newintern.PersonType;
+            FName = newintern.Firstname;
+            LName = newintern.Lastname;
+            DateOfBirth = newintern.BirthDate;
+            Company = company;
+            AverageMark = newintern.AverageMark;
+
         }
     }
 }

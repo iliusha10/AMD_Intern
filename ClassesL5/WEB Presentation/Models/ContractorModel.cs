@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
+using Domain;
 using Domain.Persons;
+using Domain.Row;
 
 namespace WEB_Presentation.Models
 {
@@ -25,7 +27,7 @@ namespace WEB_Presentation.Models
 
         public ContractorModel(IList<SelectListItem> companies)
         {
-            PersonType = Domain.PersonType.Contractor;
+            PersonType = PersonType.Contractor;
             BirthDate = DateTime.Now.Date;
             Companies = companies;
         }
@@ -37,5 +39,19 @@ namespace WEB_Presentation.Models
         [Range(1, 100, ErrorMessage = "Work experience must be between $1 and $100")]
         [Required(ErrorMessage = "Work experience is required")]
         public virtual double WorkExp { get; set; }
+
+        internal void ConvertToDto(ContractorDetailsDto newContractor)
+        {
+            newContractor.Id = Id;
+            newContractor.PersonType = PersonType;
+            newContractor.Firstname = Firstname;
+            newContractor.Lastname = Firstname;
+            newContractor.BirthDate = BirthDate;
+            newContractor.City = City;
+            newContractor.Street = Street;
+            newContractor.Salary = Salary;
+            newContractor.WorkExp = WorkExp;
+            newContractor.CompanyId = CompanyId;
+        }
     }
 }

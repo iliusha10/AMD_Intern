@@ -22,6 +22,7 @@ namespace WEB_Presentation.Models
 
         [Display(Name = "Company Name")]
         public string CompanyName { get;  set; }
+        [Display(Name = "Field of activity")]
         public FieldOfActivity Activity { get;  set; }
         public string City { get;  set; }
         public string Street { get;  set; }

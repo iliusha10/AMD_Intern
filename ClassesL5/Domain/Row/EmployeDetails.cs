@@ -1,5 +1,5 @@
 ﻿using System;
-
+/////////////////////////////To delete or replace with EmployeeFullDetailsDTO
 namespace Domain.Row
 {
     public class EmployeDetails

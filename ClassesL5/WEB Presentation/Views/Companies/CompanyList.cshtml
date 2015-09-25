@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Domain.Row.CompanyNameAndActivity>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyNames)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Activity)
+        </th>
+        <th>Options</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyNames)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Activity)
+            </td>
+            <td>
+                <i class="fa fa-pencil-square-o"></i>
+                <a class="edit" id="@item.Id" href="@Url.Action("Edit", new {id = item.Id})">Edit</a> |
+                <a class="details" id="@item.Id" href="@Url.Action("Details", new {id = item.Id})">Details</a> |
+                <a class="delete" id="@item.Id" href="@Url.Action("Delete", new {id = item.Id})">Delete</a>
+            </td>
+        </tr>
+    }
+
+</table>

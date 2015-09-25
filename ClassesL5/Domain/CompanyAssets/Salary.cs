@@ -25,5 +25,10 @@ namespace Domain.CompanyAssets
             Bonus = bonus;
             Amount = amount;
         }
+
+        public virtual void ChangeSalary(double amount)
+        {
+            Amount = amount;
+        }
     }
 }

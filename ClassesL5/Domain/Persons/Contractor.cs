@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Domain.CompanyAssets;
 using Domain.Interfaces;
+using Domain.Row;
 
 namespace Domain.Persons
 {
@@ -49,6 +50,18 @@ namespace Domain.Persons
         public new virtual bool HasAcces()
         {
             return true;
+        }
+
+        public virtual void UpdateData(ContractorDetailsDto newcontractor, Company newcompany)
+        {
+            //PersonType = newintern.PersonType;
+            FName = newcontractor.Firstname;
+            LName = newcontractor.Lastname;
+            DateOfBirth = newcontractor.BirthDate;
+            Company = newcompany;
+            //Salary.Amount = newcontractor.Salary;
+            WorkExp = newcontractor.WorkExp;
+
         }
     }
 }
