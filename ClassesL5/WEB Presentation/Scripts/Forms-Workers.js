@@ -7,6 +7,8 @@
     var createDialog = $("#create-worker");
     createDialog.dialog({
         autoOpen: false,
+        show: { effect: "clip", duration: 800 },
+        hide: { effect: "clip", duration: 400 },
         width: 800,
         buttons: [
             {
@@ -88,6 +90,8 @@
     var dialogEdit = $("#edit-worker");
     dialogEdit.dialog({
         autoOpen: false,
+        show: { effect: "clip", duration: 800 },
+        hide: { effect: "clip", duration: 400 },
         width: 800,
         buttons: [
             {
@@ -172,6 +176,8 @@
     var dialogDetails = $("#details-worker");
     dialogDetails.dialog({
         autoOpen: false,
+        show: { effect: "clip", duration: 800 },
+        hide: { effect: "clip", duration: 400 },
         width: 400,
         buttons: [
             {
@@ -219,6 +225,8 @@
     var dialogDelete = $("#delete-worker");
     dialogDelete.dialog({
         autoOpen: false,
+        show: { effect: "clip", duration: 800 },
+        hide: { effect: "clip", duration: 400 },
         width: 400,
         buttons: [
             {

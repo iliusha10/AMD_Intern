@@ -8,7 +8,7 @@
     createDialog.dialog({
         autoOpen: false,
         show: { effect: "clip", duration: 800 },
-        hide: { effect: "clip", duration: 800 },
+        hide: { effect: "clip", duration: 400 },
         width: 800,
         buttons: [
             {
@@ -26,7 +26,6 @@
                             createDialog.dialog("close");
                         } else {
                             createDialog.dialog.title("option", "title", "Could not create company. Incomplete or incorrect information.");
-                            //createDialog.toggle( "clip", 1000 );
                         }
                     });
 
@@ -57,6 +56,8 @@
     var dialogEdit = $("#edit-company");
     dialogEdit.dialog({
         autoOpen: false,
+        show: { effect: "clip", duration: 800 },
+        hide: { effect: "clip", duration: 400 },
         width: 800,
         buttons: [
             {
@@ -107,6 +108,8 @@
     var dialogDetails = $("#details-company");
     dialogDetails.dialog({
         autoOpen: false,
+        show: { effect: "clip", duration: 800 },
+        hide: { effect: "clip", duration: 400 },
         width: 400,
         buttons: [
             {
@@ -135,6 +138,8 @@
     var dialogDelete = $("#delete-company");
     dialogDelete.dialog({
         autoOpen: false,
+        show: { effect: "clip", duration: 800 },
+        hide: { effect: "clip", duration: 400 },
         width: 400,
         buttons: [
             {
