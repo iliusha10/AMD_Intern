@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Net;
+using System.Web.Mvc;
 using Domain.CompanyAssets;
 using Domain.Row;
 using Factories;
@@ -17,7 +18,7 @@ namespace WEB_Presentation.Controllers
         private readonly IAddressRepository AddressRepository = ServiceLocator.Get<IAddressRepository>();
 
         [HttpGet]
-        public ActionResult Index()
+        public ViewResult Index()
         {
             var companyNamesActivity = CompanyRepository.GetAllCompanyNamesAndActivity();
             return View(companyNamesActivity);
@@ -27,17 +28,18 @@ namespace WEB_Presentation.Controllers
         // GET: /Company/Details/5
 
         [HttpGet]
-        public ActionResult Details(long id)
+        public PartialViewResult Details(long id)
         {
-            var result = CompanyRepository.GetCompanyAllInfo(id);
-            return PartialView(result);
+            var company = CompanyRepository.GetCompanyAllInfo(id);
+            var details = new CompanyModel(company);
+            return PartialView(details);
         }
 
         //
         // GET: /Company/Create
 
         [HttpGet]
-        public ActionResult Create()
+        public PartialViewResult Create()
         {
             return PartialView();
         }
@@ -57,13 +59,14 @@ namespace WEB_Presentation.Controllers
                 var companyNamesActivity = CompanyRepository.GetAllCompanyNamesAndActivity();
                 return PartialView("CompanyList", companyNamesActivity);
             }
+            Response.StatusCode = (int)HttpStatusCode.NotAcceptable;
             return PartialView(model);
         }
 
         //
         // GET: /Company/Edit/5
         [HttpGet]
-        public ActionResult Edit(long id)
+        public PartialViewResult Edit(long id)
         {
             var company = CompanyRepository.GetCompanyAllInfo(id);
             var comp = new CompanyModel(company);
@@ -74,7 +77,7 @@ namespace WEB_Presentation.Controllers
         // POST: /Company/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(long id, CompanyModel company)
+        public PartialViewResult Edit(long id, CompanyModel company)
         {
             if (ModelState.IsValid)
             {
@@ -87,13 +90,14 @@ namespace WEB_Presentation.Controllers
                 var companyNamesActivity = CompanyRepository.GetAllCompanyNamesAndActivity();
                 return PartialView("CompanyList", companyNamesActivity);
             }
+            Response.StatusCode = (int)HttpStatusCode.NotAcceptable;
             return PartialView(company);
         }
 
         //
         // GET: /Company/Delete/5
         [HttpGet]
-        public ActionResult Delete(long id)
+        public PartialViewResult Delete(long id)
         {
             var company = CompanyRepository.GetCompanyAllInfo(id);
             var compMod = new CompanyModel(company);
@@ -104,7 +108,7 @@ namespace WEB_Presentation.Controllers
         // POST: /Company/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(long id, FormCollection collection)
+        public PartialViewResult Delete(long id, FormCollection collection)
         {
             CompanyRepository.DeleteCompany(id);
             var companyNamesActivity = CompanyRepository.GetAllCompanyNamesAndActivity();

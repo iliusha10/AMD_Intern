@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Domain;
-using Domain.CompanyAssets;
 using Domain.Row;
 
 namespace WEB_Presentation.Models
@@ -9,6 +8,7 @@ namespace WEB_Presentation.Models
     {
         public CompanyModel(CompanyAllInfo company)
         {
+            Id = company.Id;
             CompanyName = company.CompanyName;
             Activity = company.Activity;
             City = company.City;
@@ -17,15 +17,26 @@ namespace WEB_Presentation.Models
 
         public CompanyModel()
         {
-
         }
 
+        public long Id { get; set; }
+
         [Display(Name = "Company Name")]
-        public string CompanyName { get;  set; }
+        [Required(ErrorMessage = "Company name is required")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$", ErrorMessage = "First letter should be uppercase and only letters accepted")]
+        public string CompanyName { get; set; }
+
         [Display(Name = "Field of activity")]
-        public FieldOfActivity Activity { get;  set; }
-        public string City { get;  set; }
-        public string Street { get;  set; }
+        [Required(ErrorMessage = "Activity name is required")]
+        public FieldOfActivity Activity { get; set; }
+
+        [Required(ErrorMessage = "City is required")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$", ErrorMessage = "First letter should be uppercase and only letters accepted")]
+        public string City { get; set; }
+
+        [Required(ErrorMessage = "Street is required")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$", ErrorMessage = "First letter should be uppercase and only letters accepted")]
+        public string Street { get; set; }
 
 
         public CompanyAllInfo TransformToDto(long id)

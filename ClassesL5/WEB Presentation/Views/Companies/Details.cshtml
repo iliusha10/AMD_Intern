@@ -1,4 +1,4 @@
-﻿@model Domain.Row.CompanyAllInfo
+﻿@model WEB_Presentation.Models.CompanyModel
 
 @{
     ViewBag.Title = "Details";
@@ -10,13 +10,14 @@
     <h4>Company</h4>
     <hr />
     <dl class="dl-horizontal">
-        @{Html.RenderPartial("EditorTemplates/CompanyModel");}
+        @Html.DisplayForModel()
 
     </dl>
 </div>
 <p>
-    <a class="details" id="@Model.Id" href="@Url.Action("Edit", new {id = Model.Id})">Edit</a> |
 
-    @*@Html.ActionLink("Edit", "Edit", new {id = Model.Id}) |
-    @Html.ActionLink("Back to List", "Index")*@
+    @*<a class="edit" id="@Model.Id" href="@Url.Action("Edit", new {id = Model.Id})">
+        <i class="fa fa-pencil-square-o"></i>    
+        Edit
+    </a> |*@
 </p>

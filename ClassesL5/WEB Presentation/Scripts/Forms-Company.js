@@ -7,6 +7,8 @@
     var createDialog = $("#create-company");
     createDialog.dialog({
         autoOpen: false,
+        show: { effect: "clip", duration: 800 },
+        hide: { effect: "clip", duration: 800 },
         width: 800,
         buttons: [
             {
@@ -24,6 +26,7 @@
                             createDialog.dialog("close");
                         } else {
                             createDialog.dialog.title("option", "title", "Could not create company. Incomplete or incorrect information.");
+                            //createDialog.toggle( "clip", 1000 );
                         }
                     });
 
@@ -86,8 +89,7 @@
 
 
     $(".edit").click(editCompany);
-
-
+    
     function editCompany(e) {
         e.preventDefault();
         var id = $(this).attr("id");
@@ -109,10 +111,11 @@
         buttons: [
             {
                 text: "Thanks",
-                click: function() {
+                click: function () {
                     dialogDetails.dialog("close");
                 }
             }
+
         ]
     });
 
