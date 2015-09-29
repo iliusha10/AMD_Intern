@@ -6447,3 +6447,6 @@ The statement has been terminated.
 9/25/2015 4:01:54 PM, CompanyFactory|CreateCompany Company 
 9/25/2015 5:10:30 PM, CompanyFactory|CreateCompany Company 
 9/25/2015 5:42:20 PM, CompanyFactory|CreateCompany Company 
+9/27/2015 3:26:49 PM, CompanyFactory|CreateCompany Company 
+9/28/2015 9:10:09 AM, InternFactory|CreateIntern Intern 
+9/28/2015 9:10:09 AM, Added HollidayPrivilege 

@@ -22,7 +22,7 @@ namespace WEB_Presentation.Controllers
         private readonly IPersonRepository PersonRepository = ServiceLocator.Get<IPersonRepository>();
 
         [HttpGet]
-        public ActionResult Index()
+        public ViewResult Index()
         {
             var pers = PersonRepository.GetAllFirstAndLastNames();
             return View(pers);
@@ -30,7 +30,7 @@ namespace WEB_Presentation.Controllers
 
 
         [HttpGet]
-        public ActionResult DetailsIntern(long id)
+        public PartialViewResult DetailsIntern(long id)
         {
             var person = PersonRepository.GetItemById<Intern>(id);
             var intern = new InternModel(person);
@@ -38,7 +38,7 @@ namespace WEB_Presentation.Controllers
         }
 
         [HttpGet]
-        public ActionResult DetailsContractor(long id)
+        public PartialViewResult DetailsContractor(long id)
         {
             var person = PersonRepository.GetItemById<Contractor>(id);
             var contractor = new ContractorModel(person);
@@ -46,7 +46,7 @@ namespace WEB_Presentation.Controllers
         }
 
         [HttpGet]
-        public ActionResult DetailsEmployee(long id)
+        public PartialViewResult DetailsEmployee(long id)
         {
             var person = PersonRepository.GetItemById<Employee>(id);
             var emp = new EmployeeModel(person);
@@ -55,7 +55,7 @@ namespace WEB_Presentation.Controllers
 
 
         [HttpGet]
-        public ActionResult CreateIntern()
+        public PartialViewResult CreateIntern()
         {
             var items = new List<SelectListItem>();
             var companies = CompanyRepository.GetAllCompanyNames();
@@ -91,7 +91,7 @@ namespace WEB_Presentation.Controllers
 
 
         [HttpGet]
-        public ActionResult CreateContractor()
+        public PartialViewResult CreateContractor()
         {
             var items = new List<SelectListItem>();
             var companies = CompanyRepository.GetAllCompanyNames();
@@ -129,7 +129,7 @@ namespace WEB_Presentation.Controllers
 
 
         [HttpGet]
-        public ActionResult CreateEmployee()
+        public PartialViewResult CreateEmployee()
         {
             var items = new List<SelectListItem>();
             var companies = CompanyRepository.GetAllCompanyNames();
@@ -167,7 +167,7 @@ namespace WEB_Presentation.Controllers
 
 
         [HttpGet]
-        public ActionResult EditIntern(long id)
+        public PartialViewResult EditIntern(long id)
         {
             var person = PersonRepository.GetItemById<Intern>(id);
             var items = new List<SelectListItem>();
@@ -208,7 +208,7 @@ namespace WEB_Presentation.Controllers
 
 
         [HttpGet]
-        public ActionResult EditContractor(long id)
+        public PartialViewResult EditContractor(long id)
         {
             var person = PersonRepository.GetItemById<Contractor>(id);
             var items = new List<SelectListItem>();
@@ -251,7 +251,7 @@ namespace WEB_Presentation.Controllers
 
 
         [HttpGet]
-        public ActionResult EditEmployee(long id)
+        public PartialViewResult EditEmployee(long id)
         {
             var person = PersonRepository.GetItemById<Employee>(id);
             var items = new List<SelectListItem>();
@@ -295,7 +295,7 @@ namespace WEB_Presentation.Controllers
         // GET: /MyView/Delete/5
 
         [HttpGet]
-        public ActionResult DeleteIntern(long id)
+        public PartialViewResult DeleteIntern(long id)
         {
             var person = PersonRepository.GetItemById<Intern>(id);
             var intern = new InternModel(person);
@@ -306,8 +306,8 @@ namespace WEB_Presentation.Controllers
         //
         // POST: /MyView/Delete/5
 
-        [HttpPost]
-        public ActionResult DeleteIntern(long id, FormCollection collection)
+        [HttpPost, ActionName("DeleteIntern")]
+        public PartialViewResult DeleteInternPost(long id, FormCollection collection)
         {
             PersonRepository.DeletePerson(id);
             var pers = PersonRepository.GetAllFirstAndLastNames();
@@ -316,7 +316,7 @@ namespace WEB_Presentation.Controllers
 
 
         [HttpGet]
-        public ActionResult DeleteContractor(long id)
+        public PartialViewResult DeleteContractor(long id)
         {
             var person = PersonRepository.GetItemById<Contractor>(id);
             var contractor = new ContractorModel(person);
@@ -326,8 +326,8 @@ namespace WEB_Presentation.Controllers
         //
         // POST: /MyView/Delete/5
 
-        [HttpPost]
-        public ActionResult DeleteContractor(long id, FormCollection collection)
+        [HttpPost, ActionName("DeleteContractor")]
+        public PartialViewResult DeleteContractorPost(long id)
         {
             PersonRepository.DeletePerson(id);
             var pers = PersonRepository.GetAllFirstAndLastNames();
@@ -335,7 +335,7 @@ namespace WEB_Presentation.Controllers
         }
 
         [HttpGet]
-        public ActionResult DeleteEmployee(long id)
+        public PartialViewResult DeleteEmployee(long id)
         {
             var person = PersonRepository.GetItemById<Employee>(id);
             var emp = new EmployeeModel(person);
@@ -345,8 +345,8 @@ namespace WEB_Presentation.Controllers
         //
         // POST: /MyView/Delete/5
 
-        [HttpPost]
-        public ActionResult DeleteEmployee(long id, FormCollection collection)
+        [HttpPost, ActionName("DeleteEmployee")]
+        public PartialViewResult DeleteEmployeePost(long id)
         {
             PersonRepository.DeletePerson(id);
             var pers = PersonRepository.GetAllFirstAndLastNames();

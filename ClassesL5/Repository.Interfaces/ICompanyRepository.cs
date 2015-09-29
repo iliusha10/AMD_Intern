@@ -13,5 +13,6 @@ namespace Repository.Interfaces
         IList<CompanyName> GetAllCompanyNames();
         IList<CompanyNameAndActivity> GetAllCompanyNamesAndActivity();
         CompanyAllInfo GetCompanyAllInfo(long id);
+        IList<CompanyAllInfo> GetAllCompaniesAllInfo();
     }
 }

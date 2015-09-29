@@ -141,6 +141,39 @@ namespace Repository
                     return null;
                 }
             }
-        }        
+        }
+
+
+        public IList<CompanyAllInfo> GetAllCompaniesAllInfo()
+        {
+            using (var tran = _session.BeginTransaction())
+            {
+                try
+                {
+                    Address address = null;
+                    Company company = null;
+                    CompanyAllInfo all = null;
+
+                    var result = _session.QueryOver(() => company)
+                        .JoinAlias(() => company.Address, () => address)
+                        .SelectList(list => list
+                            .Select(() => company.Id).WithAlias(() => all.Id)
+                            .Select(() => company.CompanyName).WithAlias(() => all.CompanyName)
+                            .Select(() => company.Activity).WithAlias(() => all.Activity)
+                            .Select(() => company.Address.Id).WithAlias(() => all.AddressId)
+                            .Select(() => address.City).WithAlias(() => all.City)
+                            .Select(() => address.Street).WithAlias(() => all.Street))
+                        .TransformUsing(Transformers.AliasToBean<CompanyAllInfo>())
+                        .List<CompanyAllInfo>();
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    Logger.Logger.AddToLog("ComapnyRepository | GetCompanyAllInfo | {0}", ex);
+                    tran.Rollback();
+                    return null;
+                }
+            }
+        } 
     }
 }

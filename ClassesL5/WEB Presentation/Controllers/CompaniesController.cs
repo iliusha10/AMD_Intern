@@ -24,6 +24,8 @@ namespace WEB_Presentation.Controllers
             return View(companyNamesActivity);
         }
 
+
+
         //
         // GET: /Company/Details/5
 
@@ -107,8 +109,8 @@ namespace WEB_Presentation.Controllers
         //
         // POST: /Company/Delete/5
 
-        [HttpPost]
-        public PartialViewResult Delete(long id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        public PartialViewResult DeleteItem(long id)
         {
             CompanyRepository.DeleteCompany(id);
             var companyNamesActivity = CompanyRepository.GetAllCompanyNamesAndActivity();

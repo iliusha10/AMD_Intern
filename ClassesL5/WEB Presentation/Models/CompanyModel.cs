@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Domain;
 using Domain.Row;
 
@@ -23,7 +24,6 @@ namespace WEB_Presentation.Models
 
         [Display(Name = "Company Name")]
         [Required(ErrorMessage = "Company name is required")]
-        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$", ErrorMessage = "First letter should be uppercase and only letters accepted")]
         public string CompanyName { get; set; }
 
         [Display(Name = "Field of activity")]
@@ -31,11 +31,13 @@ namespace WEB_Presentation.Models
         public FieldOfActivity Activity { get; set; }
 
         [Required(ErrorMessage = "City is required")]
-        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$", ErrorMessage = "First letter should be uppercase and only letters accepted")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$",
+            ErrorMessage = "First letter should be uppercase and only letters accepted")]
         public string City { get; set; }
 
         [Required(ErrorMessage = "Street is required")]
-        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$", ErrorMessage = "First letter should be uppercase and only letters accepted")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$",
+            ErrorMessage = "First letter should be uppercase and only letters accepted")]
         public string Street { get; set; }
 
 
@@ -48,6 +50,23 @@ namespace WEB_Presentation.Models
             newcompany.City = City;
             newcompany.Street = Street;
             return newcompany;
+        }
+
+        public IList<CompanyModel> ConvertToCompanyModel(IList<CompanyAllInfo> company)
+        {
+            var allCompanies = new List<CompanyModel>();
+            foreach (var comp in company)
+            {
+                var item = new CompanyModel();
+                item.Id = comp.Id;
+                item.CompanyName = comp.CompanyName;
+                item.Activity = comp.Activity;
+                item.City = comp.City;
+                item.Street = comp.Street;
+
+                allCompanies.Add(item);
+            }
+            return allCompanies;
         }
     }
 }

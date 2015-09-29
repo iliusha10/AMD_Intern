@@ -14,21 +14,7 @@
             {
                 text: "Create",
                 click: function() {
-                    var form = $("#create-content form");
-                    var data = form.serialize();
-                    $.post(fullUrl, data, function(result, status, xhr) {
-                        if (xhr.status == 200) {
-                            $("#table-container").html(result);
-                            $("#create-company-btn").click(createCompany);
-                            $(".edit").click(editCompany);
-                            $(".details").click(detailsCompany);
-                            $(".delete").click(deleteCompany);
-                            createDialog.dialog("close");
-                        } else {
-                            createDialog.dialog.title("option", "title", "Could not create company. Incomplete or incorrect information.");
-                        }
-                    });
-
+                    $("#create-content").submit();
                 }
             },
             {
@@ -40,12 +26,34 @@
         ]
     });
 
+    function createSubmit() {
+        if ($(this).valid()) {
+            var form = $("#create-content form");
+            var data = form.serialize();
+            $.post(fullUrl, data, function(result, status, xhr) {
+                if (xhr.status == 200) {
+                    $("#table-container").html(result);
+                    $("#create-company-btn").click(createCompany);
+                    $(".edit").click(editCompany);
+                    $(".details").click(detailsCompany);
+                    $(".delete").click(deleteCompany);
+                    createDialog.dialog("close");
+                } else {
+                    createDialog.dialog.title("option", "title", "Could not create company. Incomplete or incorrect information.");
+                }
+            });
+        };
+    }
+
+
+
     $("#create-company-btn").click(createCompany);
 
     function createCompany(e) {
         e.preventDefault();
         fullUrl = "/WEB/Companies/Create";
-        $("#create-content").load(fullUrl, function() {
+        $("#create-content").load(fullUrl, function () {
+            $("#create-content form").submit(createSubmit);
             $.validator.unobtrusive.parse("#create-content");
             createDialog.dialog("open");
         });
